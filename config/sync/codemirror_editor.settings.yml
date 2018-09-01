@@ -1,0 +1,7 @@
+cdn: true
+theme: default
+language_modes:
+  - xml
+_core:
+  default_config_hash: jmSW3ENZnSRhjXRZMBmyvPIAFxruNQ0sFvIEts1uP2o
+langcode: ru
