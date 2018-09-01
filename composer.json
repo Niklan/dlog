@@ -20,11 +20,32 @@
         }
     ],
     "require": {
+        "bower-asset/photoswipe": "^4.1",
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6.5",
         "drupal-composer/drupal-scaffold": "^2.5",
+        "drupal/admin_toolbar": "^1.24",
+        "drupal/block_visibility_groups": "^1.2",
         "drupal/console": "^1.0.2",
+        "drupal/contact_emails": "^1.15",
+        "drupal/contact_storage": "^1.0@beta",
+        "drupal/contact_tools": "^1.0@RC",
         "drupal/core": "~8.5.3",
+        "drupal/easy_breadcrumb": "^1.8",
+        "drupal/field_group": "^1.0",
+        "drupal/imagemagick": "^2.3",
+        "drupal/metatag": "^1.7",
+        "drupal/paragraphs": "^1.3",
+        "drupal/pathauto": "^1.2",
+        "drupal/photoswipe": "^1.0@beta",
+        "drupal/redirect": "^1.2",
+        "drupal/robotstxt": "^1.2",
+        "drupal/scheduler": "^1.0",
+        "drupal/snippet_manager": "^1.5",
+        "drupal/swiftmailer": "^1.0@beta",
+        "drupal/tvi": "^1.0@beta",
+        "drupal/twig_tweak": "^2.1",
+        "drupal/youtube": "^1.0@beta",
         "drush/drush": "^9.0.0",
         "oomphinc/composer-installers-extender": "^1.1",
         "vlucas/phpdotenv": "^2.4",
@@ -59,7 +80,8 @@
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
         ],
         "post-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+            "rm -f web/robots.txt"
         ]
     },
     "extra": {
@@ -79,6 +101,14 @@
             "initial": {
                 ".editorconfig": "../.editorconfig",
                 ".gitattributes": "../.gitattributes"
+            }
+        },
+        "patches": {
+            "drupal/photoswipe": {
+                "view() error": "https://www.drupal.org/files/issues/photoswipe-caption-unset-2666636-3-D8.patch"
+            },
+            "drupal/tvi": {
+                "Route enhancer": "https://www.drupal.org/files/issues/2018-08-17/route_enhancer-2993234-3.patch"
             }
         }
     }
