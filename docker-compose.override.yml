@@ -1,0 +1,9 @@
+version: "2"
+
+services:
+  mariadb:
+    volumes:
+      - /home/nikita/.docker-databases/dlog:/var/lib/mysql
+  traefik:
+    ports:
+      - '80:80'
