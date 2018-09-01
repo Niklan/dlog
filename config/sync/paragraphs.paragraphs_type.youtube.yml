@@ -1,0 +1,9 @@
+uuid: 0981e134-3a28-482d-9ef5-0b8127a47f38
+langcode: ru
+status: true
+dependencies: {  }
+id: youtube
+label: 'Видео YouTube'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

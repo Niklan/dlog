@@ -1,0 +1,19 @@
+uuid: d2ca16e6-6524-40a0-8785-f1693977b850
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.image_and_text
+id: paragraph.image_and_text.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: image_and_text
+label: Заголовок
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

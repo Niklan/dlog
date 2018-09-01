@@ -1,0 +1,40 @@
+uuid: 8c4c3ec8-2378-40b0-a12f-b568db15adcd
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.youtube_gallery.field_title
+    - field.field.paragraph.youtube_gallery.field_youtubes
+    - paragraphs.paragraphs_type.youtube_gallery
+  module:
+    - youtube
+id: paragraph.youtube_gallery.default
+targetEntityType: paragraph
+bundle: youtube_gallery
+mode: default
+content:
+  field_title:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_youtubes:
+    weight: 1
+    label: above
+    settings:
+      youtube_size: 450x315
+      youtube_width: ''
+      youtube_height: ''
+      youtube_autoplay: false
+      youtube_loop: false
+      youtube_showinfo: false
+      youtube_controls: false
+      youtube_autohide: false
+      youtube_iv_load_policy: false
+    third_party_settings: {  }
+    type: youtube_video
+    region: content
+hidden: {  }

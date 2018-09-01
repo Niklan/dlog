@@ -1,0 +1,9 @@
+uuid: c9cedd2b-02da-4e97-8d8d-c5ee7e90d746
+langcode: ru
+status: true
+dependencies: {  }
+id: image_and_text
+label: 'Изображение и текст'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }
