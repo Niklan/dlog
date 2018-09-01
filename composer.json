@@ -32,6 +32,7 @@
         "drupal/contact_tools": "^1.0@RC",
         "drupal/core": "~8.5.3",
         "drupal/easy_breadcrumb": "^1.8",
+        "drupal/entity_usage": "^2.0@alpha",
         "drupal/field_group": "^1.0",
         "drupal/imagemagick": "^2.3",
         "drupal/metatag": "^1.7",
