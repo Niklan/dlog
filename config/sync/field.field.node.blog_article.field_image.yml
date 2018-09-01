@@ -1,36 +1,34 @@
-uuid: 89b3c69b-f9a0-4e77-9cd8-74fc470a7358
+uuid: 22d7bd7c-7667-48f8-bc9d-2b4d1d98b52e
 langcode: ru
 status: true
 dependencies:
   config:
     - field.storage.node.field_image
-    - node.type.article
+    - node.type.blog_article
   module:
     - image
-_core:
-  default_config_hash: tgJzhA7Swh4M_gWU5FwFe5lPxPj5rebpMbvhpdNrERs
-id: node.article.field_image
+id: node.blog_article.field_image
 field_name: field_image
 entity_type: node
-bundle: article
-label: Изображение
+bundle: blog_article
+label: Промо-изображение
 description: ''
-required: false
-translatable: true
+required: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_directory: 'fields/node.blog_article.field_image/[date:custom:Y]-[date:custom:m]'
   file_extensions: 'png gif jpg jpeg'
   max_filesize: ''
   max_resolution: ''
   min_resolution: ''
   alt_field: true
+  alt_field_required: false
   title_field: false
-  alt_field_required: true
   title_field_required: false
   default_image:
-    uuid: null
+    uuid: ''
     alt: ''
     title: ''
     width: null

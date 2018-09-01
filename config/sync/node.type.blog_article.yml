@@ -1,4 +1,4 @@
-uuid: dac84e4e-5200-4059-864a-e870a53e67f2
+uuid: 9b169677-b8dc-486a-a078-6dbf9b4c0356
 langcode: ru
 status: true
 dependencies:
@@ -21,10 +21,8 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-_core:
-  default_config_hash: KuyA4NHPXcmKAjRtwa0vQc2ZcyrUJy6IlS2TAyMNRbc
-name: Страница
-type: page
+name: 'Запись в блог'
+type: blog_article
 description: ''
 help: ''
 new_revision: true
