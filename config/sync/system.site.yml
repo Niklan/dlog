@@ -1,0 +1,14 @@
+uuid: e5f886a7-a68f-4a93-8502-e9d592be0726
+name: 'Drupal Blog'
+mail: example@example.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: ru
+default_langcode: ru
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
