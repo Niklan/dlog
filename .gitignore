@@ -23,5 +23,7 @@
 # Ignore .env files as they are personal
 /.env
 
+# Custom rules.
 node_modules
 .directory
+docker-compose.override.yml
