@@ -5,11 +5,13 @@ dependencies:
   config:
     - field.field.node.blog_article.body
     - field.field.node.blog_article.field_attachments
+    - field.field.node.blog_article.field_comments
     - field.field.node.blog_article.field_image
     - field.field.node.blog_article.field_paragraphs
     - field.field.node.blog_article.field_tags
     - node.type.blog_article
   module:
+    - comment
     - field_group
     - media_library
     - paragraphs
@@ -97,6 +99,12 @@ content:
     weight: 126
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_comments:
+    weight: 128
+    settings: {  }
+    third_party_settings: {  }
+    type: comment_default
     region: content
   field_image:
     type: media_library_widget
