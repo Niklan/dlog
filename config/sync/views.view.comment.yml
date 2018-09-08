@@ -180,7 +180,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          action_title: Действие
+          action_title: Action
           include_exclude: include
           selected_actions:
             - comment_delete_action
@@ -453,7 +453,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Обновлено
+          label: Updated
           exclude: false
           alter:
             alter_text: false
@@ -1117,7 +1117,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          action_title: Действие
+          action_title: Action
           include_exclude: include
           selected_actions:
             - comment_delete_action
@@ -1390,7 +1390,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Обновлено
+          label: Updated
           exclude: false
           alter:
             alter_text: false

@@ -660,12 +660,10 @@ display:
           field: area
           relationship: none
           group_type: group
-          admin_label: ''
+          admin_label: 'В системном журнале нет сообщений.'
           empty: true
           tokenize: false
-          content:
-            value: 'В системном журнале нет сообщений.'
-            format: basic_html
+          content: 'В системном журнале нет сообщений.'
           plugin_id: text
       relationships:
         uid:

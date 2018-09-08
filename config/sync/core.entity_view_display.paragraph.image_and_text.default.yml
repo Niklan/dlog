@@ -8,7 +8,6 @@ dependencies:
     - field.field.paragraph.image_and_text.field_title
     - paragraphs.paragraphs_type.image_and_text
   module:
-    - image
     - text
 id: paragraph.image_and_text.default
 targetEntityType: paragraph
@@ -23,13 +22,12 @@ content:
     type: text_default
     region: content
   field_image:
-    weight: 1
+    weight: 3
     label: above
     settings:
-      image_style: ''
-      image_link: ''
+      link: true
     third_party_settings: {  }
-    type: image
+    type: entity_reference_label
     region: content
   field_title:
     weight: 0

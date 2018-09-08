@@ -1,9 +1,0 @@
-uuid: dc5d91ff-1217-4f3b-b2ec-ae579a4415ee
-langcode: ru
-status: true
-dependencies: {  }
-id: youtube_gallery
-label: 'Галерея YouTube'
-icon_uuid: null
-description: ''
-behavior_plugins: {  }
