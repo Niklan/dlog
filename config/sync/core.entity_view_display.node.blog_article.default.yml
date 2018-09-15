@@ -3,6 +3,7 @@ langcode: ru
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comment.default
     - field.field.node.blog_article.body
     - field.field.node.blog_article.field_attachments
     - field.field.node.blog_article.field_comments
@@ -23,13 +24,13 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     region: content
   field_attachments:
     type: entity_reference_entity_view
-    weight: 106
+    weight: 4
     label: above
     settings:
       view_mode: default
@@ -37,7 +38,7 @@ content:
     third_party_settings: {  }
     region: content
   field_comments:
-    weight: 108
+    weight: 6
     label: above
     settings:
       view_mode: default
@@ -47,7 +48,7 @@ content:
     region: content
   field_image:
     type: entity_reference_entity_view
-    weight: 107
+    weight: 5
     label: above
     settings:
       view_mode: default
@@ -55,7 +56,7 @@ content:
     third_party_settings: {  }
     region: content
   field_paragraphs:
-    weight: 102
+    weight: 2
     label: above
     settings:
       view_mode: default
@@ -64,7 +65,7 @@ content:
     type: entity_reference_revisions_entity_view
     region: content
   field_tags:
-    weight: 103
+    weight: 3
     label: above
     settings:
       link: true
@@ -72,7 +73,12 @@ content:
     type: entity_reference_label
     region: content
   links:
-    weight: 100
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  previous_next:
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
