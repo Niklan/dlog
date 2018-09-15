@@ -55,7 +55,7 @@ class ParagraphTitleBehavior extends ParagraphsBehaviorBase {
         '#type' => 'select',
         '#title' => $this->t('Title wrapper element'),
         '#options' => $this->getHeadingOptions(),
-        '#default_value' => $paragraph->getBehaviorSetting($this->getPluginId(), 'title-wrapper', 'h2'),
+        '#default_value' => $paragraph->getBehaviorSetting($this->getPluginId(), 'title_wrapper', 'h2'),
       ];
     }
 
