@@ -116,6 +116,10 @@
             },
             "drupal/config_installer": {
                 "Memory leak": "https://www.drupal.org/files/issues/2018-08-21/2991182-6.patch"
+            },
+            "drupal/core": {
+                "Expose oEmbed provider URL setting in the Media configuration form": "https://www.drupal.org/files/issues/2018-09-14/expose_oembed_providers_url-2999018-17.patch",
+                "Responsive remote videos via the Media module": "https://www.drupal.org/files/issues/2018-09-14/oembed_media_without_iframe-2998091-5.patch"
             }
         }
     }
