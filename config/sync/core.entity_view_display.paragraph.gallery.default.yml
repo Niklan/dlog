@@ -6,18 +6,20 @@ dependencies:
     - field.field.paragraph.gallery.field_images
     - field.field.paragraph.gallery.field_title
     - paragraphs.paragraphs_type.gallery
+  module:
+    - media
 id: paragraph.gallery.default
 targetEntityType: paragraph
 bundle: gallery
 mode: default
 content:
   field_images:
-    type: entity_reference_entity_view
+    type: media_thumbnail
     weight: 1
     label: above
     settings:
-      view_mode: default
-      link: false
+      image_style: ''
+      image_link: ''
     third_party_settings: {  }
     region: content
   field_title:

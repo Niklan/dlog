@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1b62938be965f2d9fd2e2367832ea53d",
+    "content-hash": "c16b6c2194692ff8424fb47df44003f7",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3562,41 +3562,44 @@
         },
         {
             "name": "drupal/photoswipe",
-            "version": "1.0.0-beta8",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/photoswipe",
-                "reference": "8.x-1.0-beta8"
+                "reference": "8.x-2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/photoswipe-8.x-1.0-beta8.zip",
-                "reference": "8.x-1.0-beta8",
-                "shasum": "d7ecbfcb43a01ee91d9475ce0babf8bd6b491b84"
+                "url": "https://ftp.drupal.org/files/projects/photoswipe-8.x-2.2.zip",
+                "reference": "8.x-2.2",
+                "shasum": "8582478abec1bfb1c654fef4b8d80c9bcbead4b0"
             },
             "require": {
                 "drupal/core": "~8.0"
             },
+            "suggest": {
+                "bower-asset/photoswipe": "Required to user drupal/photoswipe."
+            },
             "type": "drupal-module",
             "extra": {
                 "branch-alias": {
-                    "dev-1.x": "1.x-dev"
+                    "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta8",
-                    "datestamp": "1536259980",
+                    "version": "8.x-2.2",
+                    "datestamp": "1536266280",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
                     }
                 },
                 "patches_applied": {
-                    "view() error": "https://www.drupal.org/files/issues/photoswipe-caption-unset-2666636-3-D8.patch"
+                    "Support Media and Entity References": "https://www.drupal.org/files/issues/2018-09-12/2977943-17-media-support.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0-or-later"
+                "GPL-2.0+"
             ],
             "authors": [
                 {
@@ -3622,8 +3625,16 @@
             ],
             "description": "Javascript-based photo gallery display for your Drupal website (very sleek with mobile browsers).",
             "homepage": "https://www.drupal.org/project/photoswipe",
+            "keywords": [
+                "Drupal",
+                "Gallery",
+                "Lightbox",
+                "Mobile",
+                "Photoswipe"
+            ],
             "support": {
-                "source": "http://cgit.drupalcode.org/photoswipe"
+                "source": "http://cgit.drupalcode.org/photoswipe",
+                "issues": "https://www.drupal.org/project/issues/photoswipe"
             }
         },
         {
@@ -9928,7 +9939,6 @@
         "drupal/contact_storage": 10,
         "drupal/contact_tools": 5,
         "drupal/entity_usage": 15,
-        "drupal/photoswipe": 10,
         "drupal/swiftmailer": 10,
         "drupal/tvi": 10,
         "drupal/youtube": 10

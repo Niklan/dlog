@@ -1,9 +1,17 @@
 uuid: 34751eb7-7b71-442b-8e0b-ea6c2725b5f8
 langcode: ru
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - dlog_paragraphs
 id: text
 label: Текст
 icon_uuid: null
 description: ''
-behavior_plugins: {  }
+behavior_plugins:
+  dlog_paragraphs_paragraph_class:
+    enabled: true
+  dlog_paragraphs_paragraph_style:
+    enabled: true
+  dlog_paragraphs_paragraph_title:
+    enabled: true

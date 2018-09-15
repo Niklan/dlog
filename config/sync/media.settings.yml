@@ -1,6 +1,6 @@
 icon_base_uri: 'public://media-icons/generic'
 iframe_domain: ''
-oembed_providers_url: 'https://oembed.com/providers.json'
+oembed_providers_url: 'https://gist.githubusercontent.com/Niklan/56cf7d3d72fe906a6458cf5ad296762d/raw/f44a606535b9e5afa4ba3d52c652681e152bf4ff/providers.json'
 _core:
   default_config_hash: mGSTibn3G5f_XQIgH_Z_kcDNAETg9anSk60kZdhXarE
 langcode: ru

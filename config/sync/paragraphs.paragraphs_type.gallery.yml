@@ -11,3 +11,9 @@ description: ''
 behavior_plugins:
   dlog_paragraphs_gallery:
     enabled: true
+  dlog_paragraphs_paragraph_class:
+    enabled: true
+  dlog_paragraphs_paragraph_style:
+    enabled: true
+  dlog_paragraphs_paragraph_title:
+    enabled: true
