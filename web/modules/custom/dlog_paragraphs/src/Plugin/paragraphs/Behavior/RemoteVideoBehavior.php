@@ -46,7 +46,7 @@ class RemoteVideoBehavior extends ParagraphsBehaviorBase {
 
     $form['video_width'] = [
       '#type' => 'select',
-      '#title' => $this->t('Video with'),
+      '#title' => $this->t('Video width'),
       '#description' => $this->t('Maximum width for video'),
       '#options' => [
         'full' => '100%',
