@@ -16,8 +16,8 @@ use Drupal\paragraphs\ParagraphsBehaviorBase;
  * @ParagraphsBehavior(
  *   id = "dlog_paragraphs_paragraph_style",
  *   label = @Translation("Paragraph styles"),
- *   description= @Translation("Allows to select special style for paragraphs."),
- *   weight = 0,
+ *   description= @Translation("Allows to select special style for
+ *   paragraphs."), weight = 0,
  * )
  */
 class ParagraphStyleBehavior extends ParagraphsBehaviorBase {
@@ -37,7 +37,7 @@ class ParagraphStyleBehavior extends ParagraphsBehaviorBase {
     $selected_styles = $paragraph->getBehaviorSetting($this->getPluginId(), 'styles', []);
 
     foreach ($selected_styles as $style) {
-      $build['#attributes']['class'][] = $bem_block . '--' . Html::getClass($style);
+      $build['#attributes']['class'][] = Html::getClass($bem_block . '--' . $style);
     }
   }
 
