@@ -1,0 +1,5 @@
+enable_override: 1
+view: blog_articles
+view_display: in_tag
+inherit_settings: 1
+pass_arguments: 1
