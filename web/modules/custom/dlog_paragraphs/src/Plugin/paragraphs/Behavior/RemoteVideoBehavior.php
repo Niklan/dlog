@@ -33,10 +33,10 @@ class RemoteVideoBehavior extends ParagraphsBehaviorBase {
    * Extends the paragraph render array with behavior.
    */
   public function view(array &$build, Paragraph $paragraph, EntityViewDisplayInterface $display, $view_mode) {
-    $maximum_video_with = $paragraph->getBehaviorSetting($this->getPluginId(), 'video_width', 'full');
+    $maximum_video_width = $paragraph->getBehaviorSetting($this->getPluginId(), 'video_width', 'full');
     $bem_block = 'paragraph-' . $paragraph->bundle() . ($view_mode == 'default' ? '' : '-' . $view_mode);
 
-    $build['#attributes']['class'][] = Html::getClass($bem_block . '--video-width-' . $maximum_video_with);
+    $build['#attributes']['class'][] = Html::getClass($bem_block . '--video-width-' . $maximum_video_width);
   }
 
   /**
