@@ -14,7 +14,7 @@ use Drupal\paragraphs\ParagraphsBehaviorBase;
 
 /**
  * @ParagraphsBehavior(
- *   id = "dlog_paragraphs_remove_video",
+ *   id = "dlog_paragraphs_remote_video",
  *   label = @Translation("Remote video settings"),
  *   description= @Translation("Additional settings for remote video paragraph."),
  *   weight = 0,
