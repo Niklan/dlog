@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * Main file for custom hooks and functions.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function dlog_hero_theme($existing, $type, $theme, $path) {
+  return [
+    'dlog_hero' => [
+      'variables' => [
+        'title' => NULL,
+        'subtitle' => NULL,
+        'image' => NULL,
+        'video' => [],
+      ],
+      'file' => 'dlog_hero.theme.inc',
+      'pattern' => 'dlog_hero__',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK() for dlog-hero.html.twig.
+ */
+function dlog_hero_theme_suggestions_dlog_hero(array $variables) {
+  $suggestions = [];
+
+  if (!empty($variables['image'])) {
+    $suggestions[] = 'dlog_hero__image';
+  }
+
+  if (!empty($variables['video']) && !empty($variables['image'])) {
+    $suggestions[] = 'dlog_hero__video';
+  }
+
+  return $suggestions;
+}
