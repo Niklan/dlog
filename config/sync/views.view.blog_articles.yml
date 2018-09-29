@@ -241,3 +241,27 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
+  page:
+    display_plugin: page
+    id: page
+    display_title: 'Записи в блог'
+    position: 2
+    display_options:
+      display_extenders:
+        metatag_display_extender: {  }
+      display_description: ''
+      title: Блог
+      defaults:
+        title: false
+        arguments: false
+      path: blog
+      arguments: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
