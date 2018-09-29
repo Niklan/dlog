@@ -1,0 +1,82 @@
+// =============================================================================
+// Drupal breadcrumbs.
+// =============================================================================
+
+$breadcrumb-padding-vertical: 0 !default;
+$breadcrumb-padding-horizontal: 0 !default;
+$breadcrumb-margin-bottom: 0 !default;
+$breadcrumb-bg: transparent !default;
+$breadcrumb-delimiter-content: '/' !default;
+$breadcrumb-delimiter-color: gray('500') !default;
+$breadcrumb-link-color: $link-color !default;
+$breadcrumb-font-size: $font-size-base !default;
+
+.breadcrumbs {
+  background: $breadcrumb-bg;
+  padding: $breadcrumb-padding-vertical $breadcrumb-padding-horizontal;
+  margin-bottom: $breadcrumb-margin-bottom;
+  border-radius: $border-radius-base;
+  font-size: $breadcrumb-font-size;
+  display: flex;
+
+  &__path {
+    display: inline;
+  }
+
+  &__item-link {
+    color: $breadcrumb-link-color;
+
+    &::after {
+      margin: 0 4px;
+      content: $breadcrumb-delimiter-content;
+      color: $breadcrumb-delimiter-color;
+    }
+
+    &.is-current {
+      &::after {
+        display: none;
+      }
+    }
+
+    &--text {
+      color: $text-color;
+    }
+  }
+
+  &__current {
+    display: inline;
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__path {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      flex-grow: 0;
+      flex-shrink: 1;
+    }
+
+    &__item-link {
+      &.is-current {
+        &::before {
+          margin: 0 4px;
+          content: $breadcrumb-delimiter-content;
+          color: $breadcrumb-delimiter-color;
+        }
+      }
+
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    &__current {
+      display: block;
+      flex-grow: 1;
+      flex-shrink: 0;
+    }
+  }
+}

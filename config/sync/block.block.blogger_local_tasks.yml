@@ -1,0 +1,22 @@
+uuid: 19912808-6244-4051-903e-193081127f55
+langcode: ru
+status: true
+dependencies:
+  theme:
+    - blogger
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: blogger_local_tasks
+theme: blogger
+region: content
+weight: -5
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Вкладки
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

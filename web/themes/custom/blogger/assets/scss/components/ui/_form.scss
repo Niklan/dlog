@@ -1,0 +1,71 @@
+// =============================================================================
+// Drupal Form API elements.
+// =============================================================================
+
+$label-required-enabled: true !default;
+$label-required-content: '*' !default;
+$label-required-color: theme-color('error') !default;
+$label-required-margin: 0 0 0 4px !default;
+
+.form-item {
+  margin: 0 0 gap(2);
+
+  &__description {
+    display: block;
+    margin-top: gap();
+    margin-bottom: gap();
+    color: $text-color-subtle;
+    font-size: 85%;
+  }
+
+  &__label {
+    @if ($label-required-enabled) {
+      &.is-required {
+        &:after {
+          content: $label-required-content;
+          display: inline-block;
+          color: $label-required-color;
+          margin: $label-required-margin;
+        }
+      }
+    }
+  }
+}
+
+.form-actions {
+  input {
+    margin: 0 gap() 0 0;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+.filter-wrapper {
+  margin-top: gap(-2);
+}
+
+.form-item__label {
+  &.option {
+    margin-bottom: 0;
+  }
+}
+
+.form-item--radio {
+  margin-bottom: 0;
+}
+
+.form-wrapper {
+  border: 1px solid gray(300);
+
+  &__summary {
+    background: gray(100);
+    padding: gap();
+    cursor: pointer;
+  }
+
+  &__content {
+    padding: gap();
+  }
+}

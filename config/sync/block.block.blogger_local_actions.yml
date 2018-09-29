@@ -1,0 +1,20 @@
+uuid: 7e7a0372-87b3-4df9-8bac-2f403bb3ac3f
+langcode: ru
+status: true
+dependencies:
+  theme:
+    - blogger
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: blogger_local_actions
+theme: blogger
+region: content
+weight: -3
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Основные действия администратора'
+  provider: core
+  label_display: '0'
+visibility: {  }

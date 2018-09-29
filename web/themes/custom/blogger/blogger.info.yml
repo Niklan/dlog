@@ -1,0 +1,19 @@
+# Theme base information.
+screenshot: screenshot.png
+name: Blogger theme
+type: theme
+base theme: glisseo
+description: 'Our custom theme for blog'
+package: Glisseo
+core: 8.x
+libraries:
+  - blogger/style.base
+  - blogger/style.layout
+  - blogger/style.component
+  - blogger/style.utilities
+regions:
+  header: Header
+  navigation: Navigation
+  content: Content
+  sidebar_first: 'Sidebar first'
+  footer: Footer
