@@ -6,18 +6,24 @@ dependencies:
     - field.field.paragraph.image.field_image
     - field.field.paragraph.image.field_title
     - paragraphs.paragraphs_type.image
+  module:
+    - photoswipe
 id: paragraph.image.default
 targetEntityType: paragraph
 bundle: image
 mode: default
 content:
   field_image:
-    type: entity_reference_entity_view
+    type: photoswipe_field_formatter
     weight: 1
     label: above
     settings:
-      view_mode: default
-      link: false
+      photoswipe_node_style_first: ''
+      photoswipe_node_style: ''
+      photoswipe_image_style: ''
+      photoswipe_reference_image_field: field_media_image
+      photoswipe_caption: title
+      photoswipe_view_mode: default
     third_party_settings: {  }
     region: content
   field_title:

@@ -110,7 +110,7 @@
         },
         "patches": {
             "drupal/photoswipe": {
-                "Support Media and Entity References": "https://www.drupal.org/files/issues/2018-09-12/2977943-17-media-support.patch"
+                "Support Media and Entity References": "https://www.drupal.org/files/issues/2018-09-24/2977943-33-media-support.patch"
             },
             "drupal/tvi": {
                 "Route enhancer": "https://www.drupal.org/files/issues/2018-08-17/route_enhancer-2993234-3.patch"
