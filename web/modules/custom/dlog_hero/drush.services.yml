@@ -1,0 +1,6 @@
+services:
+  dlog_hero.generator:
+    class: Drupal\dlog_hero\Generator\DlogHeroPluginGenerator
+    arguments: ['@entity_type.manager']
+    tags:
+      - { name: drush.generator }

@@ -1,0 +1,54 @@
+<?php
+
+namespace Drupal\{{ machine_name }}\Plugin\DlogHero\Entity;
+
+use Drupal\dlog_hero\Plugin\DlogHero\Entity\DlogHeroEntityPluginBase;
+
+/**
+ * Hero block for entity.
+ *
+ * @DlogHeroEntity(
+ *   id = "{{ plugin_id }}",
+ *   entity_type = "{{ entity_type }}",
+ *   entity_bundle = {"*"}
+ * )
+ */
+class {{ name }} extends DlogHeroEntityPluginBase {
+
+{% if is_title %}
+  /**
+   * {@inheritdoc}
+   */
+  public function getHeroTitle() {
+    return $this->getPageTitle();
+  }
+
+{% endif %}
+{% if is_subtitle %}
+  /**
+   * {@inheritdoc}
+   */
+  public function getHeroSubtitle() {
+    
+  }
+
+{% endif %}
+{% if is_image %}
+  /**
+   * {@inheritdoc}
+   */
+  public function getHeroImage() {
+
+  }
+
+{% endif %}
+{% if is_video %}
+  /**
+   * {@inheritdoc}
+   */
+  public function getHeroVideo() {
+    
+  }
+
+{% endif %}
+}
