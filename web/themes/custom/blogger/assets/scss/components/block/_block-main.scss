@@ -1,0 +1,27 @@
+.block-main {
+  &__menu {
+    @include list-unstyled;
+    lost-flex-container: row;
+  }
+
+  &__menu-item {
+    margin-right: gap(3);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__menu-item-link {
+    display: block;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 42px;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      color: theme-color();
+    }
+  }
+}

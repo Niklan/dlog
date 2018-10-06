@@ -12,8 +12,6 @@ libraries:
   - blogger/style.component
   - blogger/style.utilities
 regions:
-  header: Header
-  navigation: Navigation
   content: Content
   sidebar_first: 'Sidebar first'
-  footer: Footer
+

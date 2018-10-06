@@ -1,0 +1,15 @@
+uuid: c4aee38f-d80e-480c-9744-4f2035208204
+langcode: ru
+status: true
+dependencies: {  }
+name: dlog_hero
+label: 'Dlog Hero'
+effects:
+  dc66480e-fde5-4387-b498-77259e9541e0:
+    uuid: dc66480e-fde5-4387-b498-77259e9541e0
+    id: image_scale
+    weight: 1
+    data:
+      width: 1920
+      height: null
+      upscale: false

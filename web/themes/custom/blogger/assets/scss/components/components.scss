@@ -9,6 +9,9 @@
 @import "../tools/core";
 
 // Blocks.
+@import "block/block-main";
+@import "block/block-system-branding-block";
+@import "block/block-footer";
 
 // UI elements.
 @import "ui/material-design-icons";
@@ -33,8 +36,17 @@
 @import "node/blog-article/node-blog-article-full";
 @import "node/blog-article/node-blog-article-teaser";
 
+// Snippet.
+@import "snippet/header-main";
+@import "snippet/footer-main";
+@import "snippet/social-links";
+
 // Taxonomy term.
 
 // Theme (hook_theme).
+@import "theme/dlog-hero";
 
 // Views.
+
+// Layout.
+@import "layout/main-layout";

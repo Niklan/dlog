@@ -1,0 +1,75 @@
+uuid: 29cbbd37-c103-45d0-b178-0a1a6ad10785
+langcode: ru
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+    - system.menu.main
+  module:
+    - block
+    - dlog_hero
+    - system
+id: header_main
+label: 'Header: Main'
+page:
+  status: false
+  title: ''
+  path: ''
+  theme: ''
+  display_variant: ''
+  access:
+    type: all
+    permission: ''
+    role: {  }
+block:
+  status: false
+  name: ''
+display_variant:
+  status: false
+  admin_label: ''
+layout:
+  status: false
+  label: null
+  default_region: null
+template:
+  value: "{% set bem_block = 'header' %}\r\n<header class=\"{{ bem_block }}\" role=\"banner\">\r\n  <div class=\"{{ bem_block }}__top\">\r\n    {{ branding_block }}\r\n    {{ main_menu }}\r\n  </div>\r\n  \r\n  {{ dlog_hero }}\r\n</header>"
+  format: full_html
+css:
+  status: false
+  preprocess: true
+  value: null
+  group: component
+js:
+  status: false
+  preprocess: true
+  value: null
+variables:
+  branding_block:
+    plugin_id: 'block:system_branding_block'
+    configuration:
+      label: 'Брендинг сайта'
+      label_display: 0
+      use_site_logo: 0
+      use_site_name: 1
+      use_site_slogan: 0
+      settings:
+        label: ''
+        label_display: false
+  dlog_hero:
+    plugin_id: 'block:dlog_hero'
+    configuration:
+      label: 'Dlog Hero'
+      label_display: 0
+      settings:
+        label: ''
+        label_display: false
+  main_menu:
+    plugin_id: 'block:system_menu_block:main'
+    configuration:
+      label: 'Основная навигация'
+      label_display: 0
+      level: '1'
+      depth: '0'
+      settings:
+        label: ''
+        label_display: false

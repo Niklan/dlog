@@ -1,0 +1,28 @@
+{% set bem_block = 'dlog-hero' %}
+{% set classes = [
+  bem_block,
+  image and video ? bem_block ~ '--image-and-video',
+  image and not video ? bem_block ~ '--image',
+  not image ? bem_block ~ '--plain',
+  subtitle ? bem_block ~ '--subtitle' : bem_block ~ '--no-subtitle',
+] %}
+<div{{ attributes.addClass(classes) }}>
+  {% if image and video %}
+    <video poster="{{ image|image_style('dlog_hero') }}" autoplay loop muted class="{{ bem_block }}__video">
+      {% for type, video_uri in video %}
+        <source src="{{ file_url(video_uri) }}" type="{{ type }}">
+      {% endfor %}
+      {{ 'Your browser does not support the video tag'|t }}
+    </video>
+  {% elseif image %}
+    <img src="{{ image|image_style('dlog_hero') }}" alt="{{ title }}" class="{{ bem_block }}__image">
+  {% endif %}
+
+  <div class="{{ bem_block }}__content">
+    <h1 class="{{ bem_block }}__title">{{ title }}</h1>
+
+    {% if subtitle %}
+      <div class="{{ bem_block }}__subtitle">{{ subtitle|raw }}</div>
+    {% endif %}
+  </div>
+</div>

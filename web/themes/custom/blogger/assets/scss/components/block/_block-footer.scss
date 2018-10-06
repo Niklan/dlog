@@ -1,0 +1,22 @@
+.block-footer {
+  &__menu {
+    @include list-unstyled;
+    lost-flex-container: row;
+    justify-content: center;
+  }
+
+  &__menu-item {
+    margin: 0 gap(2);
+  }
+
+  &__menu-item-link {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $text-color;
+    font-size: 14px;
+
+    &:hover {
+      color: $link-color;
+    }
+  }
+}

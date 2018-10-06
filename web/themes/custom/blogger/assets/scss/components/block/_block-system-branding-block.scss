@@ -1,0 +1,8 @@
+.block-system-branding-block {
+  &__site-name {
+    display: block;
+    color: theme-color();
+    font-weight: bold;
+    font-size: 28px;
+  }
+}

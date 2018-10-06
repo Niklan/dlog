@@ -1,0 +1,48 @@
+$social_icons: (
+  'facebook': 'facebook',
+  'vk': 'vk',
+  'twitter': 'twitter',
+  'instagram': 'instagram',
+  'youtube': 'youtube',
+  'linkedin': 'linkedin',
+);
+
+.social-links {}
+
+.footer-social {
+  &__items {
+    @include list-unstyled;
+    lost-flex-container: row;
+    justify-content: center;
+  }
+
+  &__item {
+    margin: 0 gap();
+  }
+
+  &__link {
+    display: block;
+    width: 42px;
+    height: 42px;
+    border-radius: 50px;
+    background: theme-color();
+    box-shadow: 0 2px 4px rgba(theme-color(), 0.35);
+    color: white;
+    font-size: 24px;
+    line-height: 42px;
+    text-align: center;
+    transition: all 0.25s ease;
+
+    &:hover {
+      background: theme-color(secondary);
+      box-shadow: 0 2px 4px rgba(theme-color(secondary), 0.35);
+      transition: all 0.25s ease;
+    }
+  }
+
+  @each $modifier, $icon in $social_icons {
+    &__link--#{$modifier} {
+      @include mdi-icon($icon, before, 0);
+    }
+  }
+}
