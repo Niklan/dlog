@@ -1,0 +1,20 @@
+{% macro links(bem_block) %}
+  {% set bem_block = bem_block ?: 'social-links' %}
+  {% set social_items = {
+    'facebook': '#',
+    'vk': '#',
+    'twitter': '#',
+    'instagram': '#',
+    'youtube': '#',
+    'linkedin': '#',
+  } %}
+  <div class="{{ bem_block }}">
+    <ul class="{{ bem_block }}__items">
+      {% for name, url in social_items %}
+        <li class="{{ bem_block }}__item">
+          <a href="{{ url }}" class="{{ bem_block }}__link {{ bem_block }}__link--{{ name }}"></a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endmacro %}
