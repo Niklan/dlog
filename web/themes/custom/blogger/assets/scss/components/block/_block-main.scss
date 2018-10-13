@@ -1,4 +1,8 @@
 .block-main {
+  &__title {
+    display: none;
+  }
+  
   &__menu {
     @include list-unstyled;
     lost-flex-container: row;

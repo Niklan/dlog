@@ -3,5 +3,13 @@ langcode: ru
 status: true
 dependencies: {  }
 name: paragraph_image_text_6_of_12
-label: 'Paragraph image text 6 of 12'
-effects: {  }
+label: 'Paragraph - Image text - Image 6 of 12'
+effects:
+  c4a8b183-3edb-4141-92bc-bee9bdc95fd1:
+    uuid: c4a8b183-3edb-4141-92bc-bee9bdc95fd1
+    id: image_scale
+    weight: 1
+    data:
+      width: 540
+      height: null
+      upscale: false

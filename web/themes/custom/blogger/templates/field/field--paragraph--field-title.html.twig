@@ -1,0 +1,12 @@
+{# ENTITY_TYPE-ENTITY_BUNDLE-VIEW_MODE-FIELD_NAME #}
+{% set bem_block = (entity_type ~ '-' ~ bundle ~ (view_mode != 'default' ? '-' ~ view_mode))|clean_class ~ '__' ~ field_name|replace({(bundle ~ '__'): ''})|clean_class %}
+{% set bem_element_prefix = bem_element_prefix ?: bem_block ~ '-' %}
+{% set classes = classes ?: [
+  bem_block,
+  'paragraph-title',
+] %}
+{% set paragraph = element['#object'] %}
+{% set title_wrapper = paragraph.getBehaviorSetting('dlog_paragraphs_paragraph_title', 'title_wrapper', 'h2') %}
+<{{ title_wrapper }}{{ attributes.addClass(classes) }}>
+  {{ items[0].content }}
+</{{ title_wrapper }}>

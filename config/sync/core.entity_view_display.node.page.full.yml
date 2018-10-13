@@ -1,8 +1,9 @@
-uuid: ade1313a-003a-4b73-8432-11b1eb7d105a
+uuid: ad3e1498-f8a9-45de-95bf-39560983de98
 langcode: ru
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.full
     - field.field.node.page.field_paragraphs
     - node.type.page
   module:
@@ -10,10 +11,10 @@ dependencies:
     - user
 _core:
   default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
-id: node.page.default
+id: node.page.full
 targetEntityType: node
 bundle: page
-mode: default
+mode: full
 content:
   field_paragraphs:
     type: entity_reference_revisions_entity_view

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.remote_video_gallery.field_remote_videos
+    - field.field.paragraph.remote_video_gallery.field_title
     - paragraphs.paragraphs_type.remote_video_gallery
   module:
     - media_library
@@ -14,9 +15,17 @@ mode: default
 content:
   field_remote_videos:
     type: media_library_widget
-    weight: 0
+    weight: 1
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
 hidden:
   created: true

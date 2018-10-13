@@ -1,0 +1,23 @@
+.paragraph-gallery {
+  &__field-images {
+    lost-flex-container: row;
+  }
+
+  &--images-per-row-4 {
+    .paragraph-gallery__field-images-item {
+      lost-waffle: 3/12 4;
+    }
+  }
+
+  &--images-per-row-3 {
+    .paragraph-gallery__field-images-item {
+      lost-waffle: 4/12 3;
+    }
+  }
+
+  &--images-per-row-2 {
+    .paragraph-gallery__field-images-item {
+      lost-waffle: 6/12 2;
+    }
+  }
+}

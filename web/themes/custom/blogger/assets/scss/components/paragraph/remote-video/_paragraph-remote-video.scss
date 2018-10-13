@@ -1,0 +1,8 @@
+.paragraph-remote-video {
+  &--video-width-720px {
+    .paragraph-remote-video__field-remote-video {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+  }
+}

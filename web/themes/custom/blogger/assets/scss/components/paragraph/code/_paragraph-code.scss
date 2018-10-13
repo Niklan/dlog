@@ -1,0 +1,23 @@
+.paragraph-code {
+  &__content {
+    border: 1px solid gray(300);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  &__field-title {
+    @include mdi-icon('code-braces');
+    background: gray(100);
+    padding: gap(1) gap(2);
+    font-weight: bold;
+  }
+
+  pre {
+    margin: 0;
+    padding: 0;
+  }
+
+  .hljs {
+    padding: gap(2);
+  }
+}

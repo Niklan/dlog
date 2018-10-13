@@ -35,6 +35,18 @@
 // Node.
 @import "node/blog-article/node-blog-article-full";
 @import "node/blog-article/node-blog-article-teaser";
+@import "node/page/node-page-full";
+
+// Paragraphs.
+@import "paragraph/paragraph-styles";
+@import "paragraph/image-and-text/paragraph-image-and-text";
+@import "paragraph/gallery/paragraph-gallery";
+@import "paragraph/code/paragraph-code";
+@import "paragraph/remote-video/paragraph-remote-video";
+@import "paragraph/remote-video-gallery/paragraph-remote-video-gallery";
+
+// Media.
+@import "media/remote-video/media-remote-video";
 
 // Snippet.
 @import "snippet/header-main";
