@@ -1,0 +1,14 @@
+{
+  "name": "Blogger",
+  "description": "The blog theme.",
+  "type": "drupal-custom-theme",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "require": {
+    "npm-asset/highlightjs": "^9.10"
+  }
+}

@@ -25,3 +25,24 @@ google.fonts:
   css:
     theme:
       //fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&subset=cyrillic: { type: external, minified: true }
+
+paragraph.code:
+  js:
+    assets/js/paragraph-code.js: {}
+  dependencies:
+    - blogger/highlightjs
+    - core/drupal
+    - core/jquery.once
+
+# Third party libraries
+highlightjs:
+  remote: https://highlightjs.org/
+  version: 9.10
+  license:
+    name: BSD
+    gpl-compatible: true
+  css:
+    theme:
+      /libraries/highlightjs/styles/arduino-light.css: {}
+  js:
+    /libraries/highlightjs/highlight.pack.min.js: { minfied: true }

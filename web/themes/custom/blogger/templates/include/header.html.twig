@@ -1,0 +1,13 @@
+{% set bem_block = 'header' %}
+{% set branding_config = {
+  use_site_logo: false,
+  use_site_slogan: false,
+} %}
+<header class="{{ bem_block }}" role="banner">
+  <div class="{{ bem_block }}__top">
+    {{ drupal_block('system_branding_block', branding_config) }}
+    {{ drupal_block('system_menu_block:main', { label_display: false }) }}
+  </div>
+
+ {{ drupal_block('dlog_hero') }}
+</header>

@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.field.paragraph.gallery.field_images
     - field.field.paragraph.gallery.field_title
+    - image.style.big_image
+    - image.style.paragraph_gallery_image_3_of_12
     - paragraphs.paragraphs_type.gallery
   module:
     - photoswipe
@@ -16,11 +18,11 @@ content:
   field_images:
     type: photoswipe_field_formatter
     weight: 1
-    label: above
+    label: hidden
     settings:
       photoswipe_node_style_first: ''
-      photoswipe_node_style: ''
-      photoswipe_image_style: ''
+      photoswipe_node_style: paragraph_gallery_image_3_of_12
+      photoswipe_image_style: big_image
       photoswipe_reference_image_field: field_media_image
       photoswipe_caption: title
       photoswipe_view_mode: default
@@ -28,7 +30,7 @@ content:
     region: content
   field_title:
     weight: 0
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }

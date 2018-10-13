@@ -1,0 +1,15 @@
+{% import '@blogger/include/social-links.html.twig' as social_links %}
+{% set bem_block = 'footer' %}
+<footer class="{{ bem_block }}">
+  <div class="{{ bem_block }}__content">
+    {{ social_links.links('footer-social') }}
+
+    {{ drupal_block('system_menu_block:footer') }}
+
+    <div class="{{ bem_block }}__copyright">
+      &copy; {{ 'now'|date('Y') }} <strong>Dlog Hero</strong> Все права защищены.
+    </div>
+
+    <a href="#" class="{{ bem_block }}__top">Вверх</a>
+  </div>
+</footer>

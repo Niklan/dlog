@@ -50,7 +50,7 @@ class RemoteVideoBehavior extends ParagraphsBehaviorBase {
       '#description' => $this->t('Maximum width for video'),
       '#options' => [
         'full' => '100%',
-        '720p' => '720p',
+        '720px' => '720px',
       ],
       '#default_value' => $paragraph->getBehaviorSetting($this->getPluginId(), 'video_width', 'full'),
     ];

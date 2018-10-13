@@ -50,6 +50,6 @@
     bottom: 0;
     left: 0;
     //@include gradient-y-three-colors(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.15), 10%, rgba(0, 0, 0, 0.1))
-    @include gradient-y(rgba(0, 21, 16, 0.4), rgba(0, 191, 143, 0.2))
+    @include gradient-y(#373B44, rgba(#4286f4, 0.2))
   }
 }
