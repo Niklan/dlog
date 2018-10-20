@@ -38,7 +38,7 @@
       background-size: cover;
 
       &::before {
-        @include gradient-radial(rgba(theme-color(), 0.3), rgba(theme-color('secondary'), 0.3));
+        @include gradient-directional(rgba(theme-color(), 0.3), rgba(theme-color('secondary'), 0.3));
         content: '';
         display: block;
         position: absolute;

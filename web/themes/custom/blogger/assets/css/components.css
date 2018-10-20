@@ -1427,8 +1427,8 @@ a.tabledrag-handle .handle {
   left: 0;
   background-size: cover; }
   .previous-next--blog-article .previous-next__promo-image::before {
-    background-image: radial-gradient(circle, rgba(63, 94, 251, 0.3), rgba(252, 70, 107, 0.3));
-    background-repeat: no-repeat;
+    background-image: linear-gradient(45deg, rgba(63, 94, 251, 0.3), rgba(252, 70, 107, 0.3));
+    background-repeat: repeat-x;
     content: '';
     display: block;
     position: absolute;
