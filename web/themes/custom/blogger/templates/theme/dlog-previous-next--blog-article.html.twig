@@ -1,0 +1,42 @@
+{% set bem_block = 'previous-next' %}
+<div{{ attributes.addClass(bem_block, bem_block ~ '--blog-article') }}>
+  <div class="{{ bem_block }}__previous">
+    {% if previous %}
+      <a href="{{ previous.url }}" class="{{ bem_block }}__link {{ bem_block }}__link--previous">
+        <div class="{{ bem_block }}__promo-image"
+             style="background-image: url({{ previous.promo_uri|image_style('previous_next_blog_article_image') }});"></div>
+        <div class="{{ bem_block }}__icon {{ bem_block }}__icon--previous"></div>
+        <div class="{{ bem_block }}__content {{ bem_block }}__content--previous">
+          {% if previous.tags %}
+            <div class="{{ bem_block }}__tags">
+              {% for tag in previous.tags %}
+                <span class="{{ bem_block }}__tag">{{ tag.label }}</span>
+              {% endfor %}
+            </div>
+          {% endif %}
+          {{ previous.label }}
+        </div>
+      </a>
+    {% endif %}
+  </div>
+
+  <div class="{{ bem_block }}__next">
+    {% if next %}
+      <a href="{{ next.url }}" class="{{ bem_block }}__link {{ bem_block }}__link--next">
+        <div class="{{ bem_block }}__promo-image"
+             style="background-image: url({{ next.promo_uri|image_style('previous_next_blog_article_image') }});"></div>
+        <div class="{{ bem_block }}__content {{ bem_block }}__content--next">
+          {% if next.tags %}
+            <div class="{{ bem_block }}__tags">
+              {% for tag in next.tags %}
+                <span class="{{ bem_block }}__tag">{{ tag.label }}</span>
+              {% endfor %}
+            </div>
+          {% endif %}
+          {{ next.label }}
+        </div>
+        <div class="{{ bem_block }}__icon {{ bem_block }}__icon--next"></div>
+      </a>
+    {% endif %}
+  </div>
+</div>

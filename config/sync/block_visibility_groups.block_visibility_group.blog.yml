@@ -1,0 +1,17 @@
+uuid: 5d64ef7e-bdf1-4162-9079-1285ebba695c
+langcode: ru
+status: true
+dependencies:
+  module:
+    - system
+id: blog
+label: Блог
+logic: and
+conditions:
+  19a3085a-0800-4c24-b1ec-e6af23878f22:
+    id: request_path
+    pages: /blog
+    negate: false
+    context_mapping: {  }
+    uuid: 19a3085a-0800-4c24-b1ec-e6af23878f22
+allow_other_conditions: false

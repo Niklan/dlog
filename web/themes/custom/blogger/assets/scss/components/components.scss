@@ -48,17 +48,20 @@
 // Media.
 @import "media/remote-video/media-remote-video";
 
-// Snippet.
-@import "snippet/header-main";
-@import "snippet/footer-main";
-@import "snippet/social-links";
+// Include.
+@import "include/header";
+@import "include/footer";
+@import "include/social-links";
 
 // Taxonomy term.
 
 // Theme (hook_theme).
 @import "theme/dlog-hero";
+@import "theme/previous-next";
 
 // Views.
+@import "views/articles";
 
 // Layout.
+@import "layout/app";
 @import "layout/main-layout";

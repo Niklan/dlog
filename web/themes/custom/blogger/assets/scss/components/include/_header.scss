@@ -1,5 +1,6 @@
 .header {
   position: relative;
+  z-index: 10;
 
   &__top {
     @include media-container();

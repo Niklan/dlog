@@ -1,0 +1,13 @@
+{% extends 'node.html.twig' %}
+{% block node %}
+  {{ content.field_image }}
+
+  <h2 class="{{ bem_block }}__title"><a href="{{ url }}">{{ label }}</a></h2>
+
+  {{ content.field_tags }}
+
+  <div class="{{ bem_block }}__meta">
+    <div class="{{ bem_block }}__created">{{ node.getCreatedTime|date('d.m.y') }}</div>
+    {{ content.estimated_read_time }}
+  </div>
+{% endblock node %}

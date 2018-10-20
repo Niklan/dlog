@@ -1,0 +1,88 @@
+.previous-next {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+
+  &__previous,
+  &__next {
+    width: 47%;
+  }
+
+}
+
+.previous-next {
+  &--blog-article & {
+    &__previous,
+    &__next {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    &__link {
+      display: flex;
+      align-items: center;
+      padding: gap(2) gap(4);
+      height: 100%;
+      position: relative;
+      color: rgba(white, 0.9);
+      background: gray(50);
+    }
+
+    &__promo-image {
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-size: cover;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(black, 0.5);
+      }
+    }
+
+    &__icon {
+      position: relative;
+      z-index: 10;
+      font-size: 34px;
+
+      &--previous {
+        @include mdi-icon('arrow-left-bold-circle-outline', before, 0);
+        margin-right: gap(4);
+      }
+
+      &--next {
+        @include mdi-icon('arrow-right-bold-circle-outline', before, 0);
+        margin-left: gap(4);
+      }
+    }
+
+    &__content {
+      position: relative;
+      z-index: 10;
+
+      &--next {
+        text-align: right;
+        margin-left: auto;
+      }
+    }
+
+    &__tag {
+      color: theme-color('secondary');
+      font-weight: bold;
+
+      &:not(:last-child)::after {
+        content: ',';
+        display: inline;
+      }
+    }
+  }
+}

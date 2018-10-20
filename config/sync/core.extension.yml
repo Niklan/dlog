@@ -22,6 +22,7 @@ module:
   datetime: 0
   dblog: 0
   dlog: 0
+  dlog_blog: 0
   dlog_hero: 0
   dlog_paragraphs: 0
   dynamic_page_cache: 0

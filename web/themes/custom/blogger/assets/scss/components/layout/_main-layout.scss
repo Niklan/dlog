@@ -1,5 +1,23 @@
 .main-layout {
   @include media-container();
-  padding-top: gap(6);
-  padding-bottom: gap(6);
+  position: relative;
+  z-index: 15;
+
+  &__inner {
+    lost-flex-container: row;
+    padding: gap(3);
+    background: white;
+    box-shadow: 0 0 15px 5px rgba(black, 0.05);
+    margin-top: -100px;
+  }
+
+  &--sidebar-first {
+    .region-content {
+      lost-column: 9/12;
+    }
+
+    .region-sidebar-first {
+      lost-column: 3/12;
+    }
+  }
 }

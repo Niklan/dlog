@@ -1,0 +1,93 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for DLOG - Blog article module.
+ */
+
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function dlog_blog_entity_extra_field_info() {
+  $extra = [];
+
+  $extra['node']['blog_article']['display']['estimated_read_time'] = [
+    'label' => t('Estimated read time'),
+    'weight' => 100,
+    'visible' => FALSE,
+  ];
+
+  $extra['node']['blog_article']['display']['previous_next_article'] = [
+    'label' => t('Buttons to previous and next blog article'),
+    'weight' => 100,
+    'visible' => FALSE,
+  ];
+
+  return $extra;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function dlog_blog_node_view(array &$build, NodeInterface $node, EntityViewDisplayInterface $display, $view_mode) {
+  $bem_block = Html::getClass('node-' . $node->bundle() . ($view_mode == 'default' ?: '-' . $view_mode));
+  if ($display->getComponent('estimated_read_time')) {
+    $node_paragraphs = $node->get('field_paragraphs')->referencedEntities();
+    $estimated_read_time = _dlog_blog_esitmated_read_time($node_paragraphs);
+    $build['estimated_read_time'] = [
+      '#type' => 'inline_template',
+      '#template' => '<div class="{{ bem_block }}__estimated-read-time">{{ estimated_read_time }} мин.</div>',
+      '#context' => [
+        'bem_block' => $bem_block,
+        'estimated_read_time' => $estimated_read_time,
+      ],
+    ];
+  }
+
+  if ($display->getComponent('previous_next_article')) {
+    $build['previous_next_article'] = [
+      '#theme' => 'dlog_previous_next__blog_article',
+      '#entity' => $node,
+    ];
+  }
+}
+
+/**
+ * Calculates estimated read time for article.
+ *
+ * @param \Drupal\paragraphs\ParagraphInterface[] $paragraphs
+ *   An array with paragraphs.
+ *
+ * @return float
+ *   The estimated read time in minutes.
+ */
+function _dlog_blog_esitmated_read_time(array $paragraphs) {
+  $word_per_minute = 143;
+  $estimated_read_time = 0;
+
+  /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
+  foreach ($paragraphs as $paragraph) {
+    switch ($paragraph->bundle()) {
+      case 'text':
+        $word_count = str_word_count(strip_tags($paragraph->get('field_body')->value));
+        $estimated_read_time += floor(($word_count / $word_per_minute) * 60);
+        break;
+
+      case 'gallery':
+      case 'image':
+        $estimated_read_time += 10;
+        break;
+
+      case 'code':
+        $word_count = str_word_count(strip_tags($paragraph->get('field_body')->value));
+        $estimated_read_time += floor(($word_count / $word_per_minute / 3) * 60);
+        break;
+    }
+  }
+
+  return ceil($estimated_read_time / 60);
+}

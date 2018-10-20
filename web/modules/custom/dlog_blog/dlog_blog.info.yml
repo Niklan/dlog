@@ -1,0 +1,5 @@
+name: DLOG - Blog article
+type: module
+description: The custom code for blog article node type.
+package: dlog
+core: 8.x

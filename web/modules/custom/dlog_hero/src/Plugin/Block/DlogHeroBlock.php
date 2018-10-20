@@ -95,6 +95,7 @@ class DlogHeroBlock extends BlockBase implements ContainerFactoryPluginInterface
       '#subtitle' => $instance->getHeroSubtitle(),
       '#image' => $instance->getHeroImage(),
       '#video' => $instance->getHeroVideo(),
+      '#plugin_id' => $instance->getPluginId(),
     ];
     return $build;
   }

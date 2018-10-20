@@ -60,7 +60,7 @@
   padding: 0 0;
   margin-bottom: 0;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 18px;
   display: flex; }
   .breadcrumbs__path {
     display: inline; }
@@ -97,7 +97,7 @@
 .button--primary,
 .button--action, .button--warning, .button-danger, .button--success, .button--info, .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .button {
   padding: 8px 16px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.25;
   border-radius: 3px;
   display: inline-block;
@@ -414,7 +414,7 @@ table, .table {
   border-collapse: collapse; }
   table > thead > tr > th, .table > thead > tr > th, table > thead > tr > td, .table > thead > tr > td, table > tbody > tr > th, .table > tbody > tr > th, table > tbody > tr > td, .table > tbody > tr > td, table > tfoot > tr > th, .table > tfoot > tr > th, table > tfoot > tr > td, .table > tfoot > tr > td {
     padding: 0.75rem;
-    line-height: 1.5;
+    line-height: 1.6;
     vertical-align: top;
     border-top: 1px solid #e9ecef; }
   table > thead > tr > th, .table > thead > tr > th {
@@ -438,7 +438,7 @@ table > tbody > tr:hover, .table--hover > tbody > tr:hover {
   @media (max-width: 467px) {
     .table-responsive-container {
       width: 100%;
-      margin-bottom: 18px;
+      margin-bottom: 21px;
       overflow-y: hidden;
       -ms-overflow-style: -ms-autohiding-scrollbar;
       border: 1px solid #e9ecef; }
@@ -604,7 +604,7 @@ a.tabledrag-handle .handle {
   border-radius: 4px;
   border: transparent !important;
   max-width: 100%;
-  font-size: 16px; }
+  font-size: 18px; }
   .ui-dialog .ui-widget-header {
     border-radius: 4px;
     background: transparent;
@@ -615,7 +615,7 @@ a.tabledrag-handle .handle {
     .ui-dialog .ui-widget-header .ui-dialog-title {
       color: #333333;
       font-weight: bold;
-      font-size: 16px; }
+      font-size: 18px; }
     .ui-dialog .ui-widget-header .ui-dialog-titlebar-close {
       float: right;
       background: none;
@@ -642,7 +642,7 @@ a.tabledrag-handle .handle {
       .ui-dialog .ui-widget-header .ui-dialog-titlebar-close .ui-button-text {
         padding: 0;
         font-size: "Roboto", sans-serif;
-        line-height: 1.5; }
+        line-height: 1.6; }
   .ui-dialog .ui-dialog-content {
     padding: 0 16px;
     border: none;
@@ -700,6 +700,69 @@ a.tabledrag-handle .handle {
 .views-mini-pager__item-link {
   padding: 8px;
   display: block; }
+
+.node-blog-article-full__field-paragraphs {
+  margin-bottom: 48px; }
+
+.node-blog-article-full .previous-next {
+  margin-bottom: 48px; }
+
+.node-blog-article-teaser__field-image {
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px; }
+
+.node-blog-article-teaser__field-tags {
+  font-size: 14px;
+  display: flex;
+  margin-bottom: 16px; }
+
+.node-blog-article-teaser__field-tags-item {
+  margin-right: 8px; }
+  .node-blog-article-teaser__field-tags-item:last-child {
+    margin-right: 0; }
+
+.node-blog-article-teaser__field-tags-item a {
+  display: block;
+  background: #3F5EFB;
+  color: white;
+  border-radius: 2px;
+  padding: 0 8px; }
+
+.node-blog-article-teaser__title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 16px; }
+  .node-blog-article-teaser__title a {
+    color: #333333; }
+    .node-blog-article-teaser__title a:hover {
+      color: #3F5EFB; }
+
+.node-blog-article-teaser__meta {
+  font-size: 14px;
+  color: #757575;
+  display: flex; }
+
+.node-blog-article-teaser__created {
+  margin-right: 16px; }
+  .node-blog-article-teaser__created:before {
+    content: "\F0F0";
+    font-family: "Material Design Icons";
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    text-decoration: inherit;
+    margin-right: 0.4em; }
+
+.node-blog-article-teaser__estimated-read-time:before {
+  content: "\F06B";
+  font-family: "Material Design Icons";
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  margin-right: 0.4em; }
 
 .node-page-full__field-paragraphs-item {
   margin-bottom: 32px; }
@@ -1037,7 +1100,8 @@ a.tabledrag-handle .handle {
   height: 100%; }
 
 .header {
-  position: relative; }
+  position: relative;
+  z-index: 10; }
   .header__top {
     margin-right: auto;
     margin-left: auto;
@@ -1084,8 +1148,10 @@ a.tabledrag-handle .handle {
     margin-right: 30px; }
 
 .footer {
-  background: #fafafa;
-  padding: 40px 0; }
+  background: #f5f5f5;
+  padding: 40px 0;
+  position: relative;
+  z-index: 20; }
   .footer__content {
     margin-right: auto;
     margin-left: auto;
@@ -1237,6 +1303,7 @@ a.tabledrag-handle .handle {
   z-index: 0;
   margin-top: -42px;
   height: 600px;
+  padding-bottom: 100px;
   overflow: hidden; }
   .dlog-hero__content {
     margin-right: auto;
@@ -1245,7 +1312,7 @@ a.tabledrag-handle .handle {
     padding-left: 15px;
     position: relative;
     z-index: 10;
-    top: 200px; }
+    top: 150px; }
     @media (min-width: 468px) {
       .dlog-hero__content {
         width: 420px;
@@ -1311,14 +1378,135 @@ a.tabledrag-handle .handle {
     left: 0;
     background-image: linear-gradient(to bottom, #373B44 0%, rgba(66, 134, 244, 0.2) 100%);
     background-repeat: repeat-x; }
+  .dlog-hero__tags {
+    display: flex;
+    margin-bottom: 16px; }
+  .dlog-hero__tag {
+    display: block;
+    background: rgba(55, 59, 68, 0.7);
+    color: white;
+    border-radius: 4px;
+    padding: 4px 16px;
+    font-size: 14px;
+    margin-right: 8px; }
+    .dlog-hero__tag:hover {
+      background: #373B44; }
+
+.previous-next {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between; }
+  .previous-next__previous, .previous-next__next {
+    width: 47%; }
+
+.previous-next--blog-article .previous-next__previous, .previous-next--blog-article .previous-next__next {
+  border-radius: 8px;
+  overflow: hidden; }
+
+.previous-next--blog-article .previous-next__link {
+  display: flex;
+  align-items: center;
+  padding: 16px 32px;
+  height: 100%;
+  position: relative;
+  color: rgba(255, 255, 255, 0.9);
+  background: #fafafa; }
+
+.previous-next--blog-article .previous-next__promo-image {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: cover; }
+  .previous-next--blog-article .previous-next__promo-image::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); }
+
+.previous-next--blog-article .previous-next__icon {
+  position: relative;
+  z-index: 10;
+  font-size: 34px; }
+  .previous-next--blog-article .previous-next__icon--previous {
+    margin-right: 32px; }
+    .previous-next--blog-article .previous-next__icon--previous:before {
+      content: "\F050";
+      font-family: "Material Design Icons";
+      font-weight: normal;
+      font-style: normal;
+      display: inline-block;
+      text-decoration: inherit;
+      margin-right: 0; }
+  .previous-next--blog-article .previous-next__icon--next {
+    margin-left: 32px; }
+    .previous-next--blog-article .previous-next__icon--next:before {
+      content: "\F057";
+      font-family: "Material Design Icons";
+      font-weight: normal;
+      font-style: normal;
+      display: inline-block;
+      text-decoration: inherit;
+      margin-right: 0; }
+
+.previous-next--blog-article .previous-next__content {
+  position: relative;
+  z-index: 10; }
+  .previous-next--blog-article .previous-next__content--next {
+    text-align: right;
+    margin-left: auto; }
+
+.previous-next--blog-article .previous-next__tag {
+  color: #FC466B;
+  font-weight: bold; }
+  .previous-next--blog-article .previous-next__tag:not(:last-child)::after {
+    content: ',';
+    display: inline; }
+
+.view-blog-articles-page__content {
+  display: flex;
+  flex-flow: row wrap; }
+
+.view-blog-articles-page__row {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: calc(100% * 4/12 - (30px - 30px * 4/12));
+  width: calc(100% * 4/12 - (30px - 30px * 4/12));
+  max-width: calc(100% * 4/12 - (30px - 30px * 4/12));
+  height: calc(100% * 4/12 - (30px - 30px * 4/12)); }
+
+.view-blog-articles-page__row:nth-child(1n) {
+  margin-right: 30px;
+  margin-bottom: 30px;
+  margin-left: 0; }
+
+.view-blog-articles-page__row:last-child {
+  margin-right: 0;
+  margin-bottom: 0; }
+
+.view-blog-articles-page__row:nth-child(3n) {
+  margin-right: 0;
+  margin-left: auto; }
+
+.view-blog-articles-page__row:nth-last-child(-n + 3) {
+  margin-bottom: 0; }
+
+.app {
+  background: #fafafa; }
 
 .main-layout {
   margin-right: auto;
   margin-left: auto;
   padding-right: 15px;
   padding-left: 15px;
-  padding-top: 48px;
-  padding-bottom: 48px; }
+  position: relative;
+  z-index: 15; }
   @media (min-width: 468px) {
     .main-layout {
       width: 420px;
@@ -1351,5 +1539,40 @@ a.tabledrag-handle .handle {
     .main-layout {
       padding-right: 15px;
       padding-left: 15px; } }
+  .main-layout__inner {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 24px;
+    background: white;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.05);
+    margin-top: -100px; }
+  .main-layout--sidebar-first .region-content {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: calc(100% * 9/12 - (30px - 30px * 9/12));
+    max-width: calc(100% * 9/12 - (30px - 30px * 9/12));
+    width: calc(100% * 9/12 - (30px - 30px * 9/12)); }
+  .main-layout--sidebar-first .region-content:nth-child(1n) {
+    margin-right: 30px;
+    margin-left: 0; }
+  .main-layout--sidebar-first .region-content:last-child {
+    margin-right: 0; }
+  .main-layout--sidebar-first .region-content:nth-child(12n) {
+    margin-right: 0;
+    margin-left: auto; }
+  .main-layout--sidebar-first .region-sidebar-first {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: calc(100% * 3/12 - (30px - 30px * 3/12));
+    max-width: calc(100% * 3/12 - (30px - 30px * 3/12));
+    width: calc(100% * 3/12 - (30px - 30px * 3/12)); }
+  .main-layout--sidebar-first .region-sidebar-first:nth-child(1n) {
+    margin-right: 30px;
+    margin-left: 0; }
+  .main-layout--sidebar-first .region-sidebar-first:last-child {
+    margin-right: 0; }
+  .main-layout--sidebar-first .region-sidebar-first:nth-child(12n) {
+    margin-right: 0;
+    margin-left: auto; }
 
 /*# sourceMappingURL=maps/components.css.map */

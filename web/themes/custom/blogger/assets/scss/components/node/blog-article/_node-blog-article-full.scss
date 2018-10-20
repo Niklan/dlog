@@ -1,3 +1,9 @@
 .node-blog-article-full {
+  &__field-paragraphs {
+    margin-bottom: gap(6);
+  }
 
+  .previous-next {
+    margin-bottom: gap(6);
+  }
 }

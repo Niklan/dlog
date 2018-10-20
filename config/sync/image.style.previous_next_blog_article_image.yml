@@ -1,0 +1,15 @@
+uuid: 1607d149-419e-4192-8a8e-ce9b9fc1c6de
+langcode: ru
+status: true
+dependencies: {  }
+name: previous_next_blog_article_image
+label: 'Previous Next - Blog article image'
+effects:
+  3df5160a-99c8-401d-b56b-4f6d8bf8b9d9:
+    uuid: 3df5160a-99c8-401d-b56b-4f6d8bf8b9d9
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 499
+      height: 120
+      anchor: center-center

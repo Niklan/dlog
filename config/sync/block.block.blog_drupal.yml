@@ -1,0 +1,28 @@
+uuid: 46b3ccf4-6c26-42db-8339-17487286d877
+langcode: ru
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.blog
+  module:
+    - block_visibility_groups
+    - system
+  theme:
+    - blogger
+id: blog_drupal
+theme: blogger
+region: sidebar_first
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Сделано на Drupal'
+  provider: system
+  label_display: visible
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: blog
+    context_mapping: {  }
