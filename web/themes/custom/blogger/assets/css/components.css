@@ -717,10 +717,13 @@ a.tabledrag-handle .handle {
 .node-blog-article-teaser__field-tags {
   font-size: 14px;
   display: flex;
-  margin-bottom: 16px; }
+  flex-flow: wrap;
+  margin-bottom: 16px;
+  margin-top: -8px; }
 
 .node-blog-article-teaser__field-tags-item {
-  margin-right: 8px; }
+  margin-right: 8px;
+  margin-top: 8px; }
   .node-blog-article-teaser__field-tags-item:last-child {
     margin-right: 0; }
 

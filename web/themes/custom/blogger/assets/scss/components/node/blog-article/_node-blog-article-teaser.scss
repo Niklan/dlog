@@ -9,11 +9,14 @@
   &__field-tags {
     font-size: 14px;
     display: flex;
+    flex-flow: wrap;
     margin-bottom: gap(2);
+    margin-top: gap(-1);
   }
 
   &__field-tags-item {
     margin-right: gap();
+    margin-top: gap();
 
     &:last-child {
       margin-right: 0;
