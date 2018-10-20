@@ -1308,8 +1308,8 @@ a.tabledrag-handle .handle {
   position: relative;
   z-index: 0;
   margin-top: -42px;
-  height: 600px;
-  padding-bottom: 100px;
+  min-height: 600px;
+  padding: 142px 0 200px 0;
   overflow: hidden; }
   .dlog-hero__content {
     margin-right: auto;
@@ -1317,8 +1317,7 @@ a.tabledrag-handle .handle {
     padding-right: 15px;
     padding-left: 15px;
     position: relative;
-    z-index: 10;
-    top: 150px; }
+    z-index: 10; }
     @media (min-width: 468px) {
       .dlog-hero__content {
         width: 420px;
@@ -1366,13 +1365,15 @@ a.tabledrag-handle .handle {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
-       object-fit: cover; }
+       object-fit: cover;
+    top: 0; }
   .dlog-hero__video {
     position: absolute;
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
-       object-fit: cover; }
+       object-fit: cover;
+    top: 0; }
   .dlog-hero::before {
     content: '';
     display: block;
