@@ -1,0 +1,8 @@
+{% extends 'paragraph.html.twig' %}
+{% block content %}
+  {{ content.field_title }}
+
+  <div class="{{ bem_block }}__image-and-text">
+    {{ content|without('field_title') }}
+  </div>
+{% endblock content %}
