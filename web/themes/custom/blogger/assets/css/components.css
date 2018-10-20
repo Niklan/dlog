@@ -27,7 +27,8 @@
   display: block;
   color: #3F5EFB;
   font-weight: bold;
-  font-size: 28px; }
+  font-size: 28px;
+  line-height: 42px; }
 
 .block-footer__menu {
   margin: 0;
