@@ -70,7 +70,7 @@
     margin-right: gap();
 
     &:hover {
-      background: #373B44;
+      background: theme-color('secondary');
     }
   }
 }

@@ -1396,7 +1396,7 @@ a.tabledrag-handle .handle {
     font-size: 14px;
     margin-right: 8px; }
     .dlog-hero__tag:hover {
-      background: #373B44; }
+      background: #FC466B; }
 
 .previous-next {
   display: flex;
@@ -1427,14 +1427,15 @@ a.tabledrag-handle .handle {
   left: 0;
   background-size: cover; }
   .previous-next--blog-article .previous-next__promo-image::before {
+    background-image: radial-gradient(circle, rgba(63, 94, 251, 0.3), rgba(252, 70, 107, 0.3));
+    background-repeat: no-repeat;
     content: '';
     display: block;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.5); }
+    left: 0; }
 
 .previous-next--blog-article .previous-next__icon {
   position: relative;
@@ -1463,14 +1464,16 @@ a.tabledrag-handle .handle {
 
 .previous-next--blog-article .previous-next__content {
   position: relative;
-  z-index: 10; }
+  z-index: 10;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); }
   .previous-next--blog-article .previous-next__content--next {
     text-align: right;
     margin-left: auto; }
 
 .previous-next--blog-article .previous-next__tag {
   color: #FC466B;
-  font-weight: bold; }
+  font-weight: bold;
+  font-size: 14px; }
   .previous-next--blog-article .previous-next__tag:not(:last-child)::after {
     content: ',';
     display: inline; }

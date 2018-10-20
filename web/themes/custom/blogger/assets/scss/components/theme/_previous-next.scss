@@ -38,6 +38,7 @@
       background-size: cover;
 
       &::before {
+        @include gradient-radial(rgba(theme-color(), 0.3), rgba(theme-color('secondary'), 0.3));
         content: '';
         display: block;
         position: absolute;
@@ -45,7 +46,6 @@
         right: 0;
         bottom: 0;
         left: 0;
-        background: rgba(black, 0.5);
       }
     }
 
@@ -68,6 +68,7 @@
     &__content {
       position: relative;
       z-index: 10;
+      text-shadow: 1px 1px 1px rgba(black, 0.2);
 
       &--next {
         text-align: right;
@@ -78,6 +79,7 @@
     &__tag {
       color: theme-color('secondary');
       font-weight: bold;
+      font-size: 14px;
 
       &:not(:last-child)::after {
         content: ',';
