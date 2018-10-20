@@ -8,8 +8,7 @@
 use Drupal\node\NodeInterface;
 
 /**
- * Implements hook_preprocess_HOOK() for
- * dlog-previous-next--blog-article.html.twig.
+ * Implements hook_preprocess_HOOK() for dlog-previous-next--blog-article.html.twig.
  */
 function blogger_preprocess_dlog_previous_next__blog_article(array &$variables) {
   /** @var \Drupal\node\NodeInterface $node */
@@ -49,8 +48,7 @@ function blogger_preprocess_dlog_previous_next__blog_article(array &$variables) 
 }
 
 /**
- * Implements hook_preprocess_HOOK() for
- * dlog-hero--dlog-node-blog-article.html.twig.
+ * Implements hook_preprocess_HOOK() for dlog-hero--dlog-node-blog-article.html.twig.
  */
 function blogger_preprocess_dlog_hero__dlog_node_blog_article(array &$variables) {
   $tags = [];

@@ -29,6 +29,10 @@
     color: white;
     border-radius: 2px;
     padding: 0 gap();
+
+    &:hover {
+      background: theme-color('secondary');
+    }
   }
 
   &__title {

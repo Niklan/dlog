@@ -733,6 +733,8 @@ a.tabledrag-handle .handle {
   color: white;
   border-radius: 2px;
   padding: 0 8px; }
+  .node-blog-article-teaser__field-tags-item a:hover {
+    background: #FC466B; }
 
 .node-blog-article-teaser__title {
   font-size: 20px;
