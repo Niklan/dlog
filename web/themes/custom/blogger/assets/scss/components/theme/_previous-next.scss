@@ -5,7 +5,7 @@
 
   &__previous,
   &__next {
-    width: 47%;
+    width: calc(50% - #{gap(1.5)});
   }
 
 }
@@ -46,6 +46,14 @@
         right: 0;
         bottom: 0;
         left: 0;
+      }
+    }
+
+    &__next {
+      .previous-next__promo-image {
+        &::before {
+          @include gradient-directional(rgba(theme-color('secondary'), 0.3), rgba(theme-color(), 0.3));
+        }
       }
     }
 
