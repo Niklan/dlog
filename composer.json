@@ -117,7 +117,10 @@
             "initial": {
                 ".editorconfig": "../.editorconfig",
                 ".gitattributes": "../.gitattributes"
-            }
+            },
+            "excludes": [
+                "sites/development.services.yml"
+            ]
         },
         "patches": {
             "drupal/photoswipe": {
