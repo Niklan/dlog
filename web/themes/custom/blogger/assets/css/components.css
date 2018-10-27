@@ -706,17 +706,17 @@ a.tabledrag-handle .handle {
   margin-bottom: 24px; }
 
 .node-blog-article-full__field-paragraphs {
-  margin-bottom: 48px; }
+  margin-bottom: 24px; }
 
 .node-blog-article-full .previous-next {
-  margin-bottom: 48px; }
+  margin-bottom: 24px; }
 
 .node-blog-article-full__field-attachments {
   margin-left: -24px;
   margin-right: -24px;
   padding: 24px;
   background: #fafafa;
-  margin-bottom: 48px;
+  margin-bottom: 24px;
   border-top: 1px solid #f5f5f5;
   border-bottom: 1px solid #f5f5f5; }
 
