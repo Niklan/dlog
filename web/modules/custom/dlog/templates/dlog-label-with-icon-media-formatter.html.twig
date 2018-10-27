@@ -1,0 +1,21 @@
+{% set bem_block = 'dlog-label-with-icon-media-formatter' %}
+{% set classes = [
+  bem_block,
+  bem_block ~ '--' ~ media_type|clean_class
+] %}
+<div{{ attributes.addClass(classes) }}>
+  <a href="{{ url }}" target="_blank" rel="noopener nofollow" class="{{ bem_block }}__icon">
+    {{ source(mime_icon_path) }}
+  </a>
+
+  <div class="{{ bem_block }}__content">
+    <a href="{{ url }}" target="_blank" rel="noopener nofollow" class="{{ bem_block }}__label">
+      {{ label }}
+    </a>
+    {% if filesize %}
+      <div class="{{ bem_block }}__filesize">
+        {{ filesize }}
+      </div>
+    {% endif %}
+  </div>
+</div>

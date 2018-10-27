@@ -1,0 +1,18 @@
+{% set share_links = {
+  'vk': 'https://vk.com/share.php?url=' ~ url ~ '&title=' ~ label,
+  'facebook': 'https://facebook.com/sharer/sharer.php?u=' ~ url,
+  'twitter': 'https://twitter.com/intent/tweet?url=' ~ url ~ '&text=' ~ label,
+  'telegram': 'https://telegram.me/share/url?url=' ~ url ~ '&text=' ~ label,
+} %}
+{% set bem_block = 'dlog-social-share' %}
+<div{{ attributes.addClass(bem_block) }}>
+  <div class="{{ bem_block }}__label">Поделиться /</div>
+  <div class="{{ bem_block }}__links">
+    {% for social_network, share_url in share_links %}
+      <a href="{{ share_url }}"
+         class="{{ bem_block }}__link {{ bem_block }}__link--{{ social_network }}"
+         rel="noopener nofollow"
+         target="_blank"></a>
+    {% endfor %}
+  </div>
+</div>

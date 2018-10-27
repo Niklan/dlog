@@ -1,9 +1,37 @@
 .node-blog-article-full {
+  .dlog-social-share {
+    margin-bottom: gap(3);
+  }
+
   &__field-paragraphs {
     margin-bottom: gap(6);
   }
 
   .previous-next {
     margin-bottom: gap(6);
+  }
+
+  &__field-attachments {
+    margin-left: gap(-3);
+    margin-right: gap(-3);
+    padding: gap(3);
+    background: gray(50);
+    margin-bottom: gap(6);
+    border-top: 1px solid gray(100);
+    border-bottom: 1px solid gray(100);
+  }
+
+  &__field-attachments-label {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: gap(3);
+  }
+
+  &__field-attachments-items {
+    lost-flex-container: row;
+  }
+
+  &__field-attachments-item {
+    lost-waffle: 4/12 3;
   }
 }

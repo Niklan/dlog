@@ -1,0 +1,48 @@
+$social_icons: (
+  'facebook': ('facebook', #3b5999),
+  'vk': ('vk', #4a76a8),
+  'twitter': ('twitter', #1da1f2),
+  'telegram': ('telegram', #0088cc),
+);
+
+.dlog-social-share {
+  display: flex;
+  align-items: center;
+
+  &__label {
+    color: gray(600);
+    font-size: 16px;
+    margin-right: gap(2);
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    font-size: 24px;
+    line-height: 40px;
+    width: 40px;
+    text-align: center;
+    background: gray(100);
+    display: block;
+    margin-left: gap();
+    color: white;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  @each $modifier, $icon_data in $social_icons {
+    &__link--#{$modifier} {
+      @include mdi-icon(nth($icon_data, 1), before, 0);
+      background-color: nth($icon_data, 2);
+    }
+  }
+}

@@ -27,6 +27,12 @@ function dlog_blog_entity_extra_field_info() {
     'visible' => FALSE,
   ];
 
+  $extra['node']['blog_article']['display']['social_share'] = [
+    'label' => t('Links to share article'),
+    'weight' => 100,
+    'visible' => FALSE,
+  ];
+
   return $extra;
 }
 
@@ -52,6 +58,14 @@ function dlog_blog_node_view(array &$build, NodeInterface $node, EntityViewDispl
     $build['previous_next_article'] = [
       '#theme' => 'dlog_previous_next__blog_article',
       '#entity' => $node,
+    ];
+  }
+
+  if ($display->getComponent('social_share')) {
+    $build['social_share'] = [
+      '#theme' => 'dlog_social_share',
+      '#url' => $node->toUrl('canonical', ['absolute' => TRUE])->toString(TRUE)->getGeneratedUrl(),
+      '#label' => $node->label(),
     ];
   }
 }

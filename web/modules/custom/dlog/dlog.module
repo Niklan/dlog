@@ -19,6 +19,23 @@ function dlog_theme($existing, $type, $theme, $path) {
       'file' => 'dlog.theme.inc',
       'pattern' => 'dlog_previous_next__',
     ],
+    'dlog_social_share' => [
+      'variables' => [
+        'url' => NULL,
+        'label' => NULL,
+      ],
+      'file' => 'dlog.theme.inc',
+    ],
+    'dlog_label_with_icon_media_formatter' => [
+      'variables' => [
+        'url' => NULL,
+        'label' => NULL,
+        'filesize' => NULL,
+        'media_type' => NULL,
+        'mime_type' => NULL,
+      ],
+      'file' => 'dlog.theme.inc',
+    ],
   ];
 }
 

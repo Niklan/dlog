@@ -702,11 +702,56 @@ a.tabledrag-handle .handle {
   padding: 8px;
   display: block; }
 
+.node-blog-article-full .dlog-social-share {
+  margin-bottom: 24px; }
+
 .node-blog-article-full__field-paragraphs {
   margin-bottom: 48px; }
 
 .node-blog-article-full .previous-next {
   margin-bottom: 48px; }
+
+.node-blog-article-full__field-attachments {
+  margin-left: -24px;
+  margin-right: -24px;
+  padding: 24px;
+  background: #fafafa;
+  margin-bottom: 48px;
+  border-top: 1px solid #f5f5f5;
+  border-bottom: 1px solid #f5f5f5; }
+
+.node-blog-article-full__field-attachments-label {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 24px; }
+
+.node-blog-article-full__field-attachments-items {
+  display: flex;
+  flex-flow: row wrap; }
+
+.node-blog-article-full__field-attachments-item {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: calc(100% * 4/12 - (30px - 30px * 4/12));
+  width: calc(100% * 4/12 - (30px - 30px * 4/12));
+  max-width: calc(100% * 4/12 - (30px - 30px * 4/12));
+  height: calc(100% * 4/12 - (30px - 30px * 4/12)); }
+
+.node-blog-article-full__field-attachments-item:nth-child(1n) {
+  margin-right: 30px;
+  margin-bottom: 30px;
+  margin-left: 0; }
+
+.node-blog-article-full__field-attachments-item:last-child {
+  margin-right: 0;
+  margin-bottom: 0; }
+
+.node-blog-article-full__field-attachments-item:nth-child(3n) {
+  margin-right: 0;
+  margin-left: auto; }
+
+.node-blog-article-full__field-attachments-item:nth-last-child(-n + 3) {
+  margin-bottom: 0; }
 
 .node-blog-article-teaser__field-image {
   border-radius: 4px;
@@ -1478,6 +1523,90 @@ a.tabledrag-handle .handle {
   .previous-next--blog-article .previous-next__tag:not(:last-child)::after {
     content: ',';
     display: inline; }
+
+.dlog-social-share {
+  display: flex;
+  align-items: center; }
+  .dlog-social-share__label {
+    color: #757575;
+    font-size: 16px;
+    margin-right: 16px; }
+  .dlog-social-share__links {
+    display: flex;
+    align-items: center; }
+  .dlog-social-share__link {
+    font-size: 24px;
+    line-height: 40px;
+    width: 40px;
+    text-align: center;
+    background: #f5f5f5;
+    display: block;
+    margin-left: 8px;
+    color: white; }
+    .dlog-social-share__link:first-child {
+      margin-left: 0; }
+    .dlog-social-share__link:hover {
+      opacity: 0.8; }
+  .dlog-social-share__link--facebook {
+    background-color: #3b5999; }
+    .dlog-social-share__link--facebook:before {
+      content: "\F20C";
+      font-family: "Material Design Icons";
+      font-weight: normal;
+      font-style: normal;
+      display: inline-block;
+      text-decoration: inherit;
+      margin-right: 0; }
+  .dlog-social-share__link--vk {
+    background-color: #4a76a8; }
+    .dlog-social-share__link--vk:before {
+      content: "\F579";
+      font-family: "Material Design Icons";
+      font-weight: normal;
+      font-style: normal;
+      display: inline-block;
+      text-decoration: inherit;
+      margin-right: 0; }
+  .dlog-social-share__link--twitter {
+    background-color: #1da1f2; }
+    .dlog-social-share__link--twitter:before {
+      content: "\F544";
+      font-family: "Material Design Icons";
+      font-weight: normal;
+      font-style: normal;
+      display: inline-block;
+      text-decoration: inherit;
+      margin-right: 0; }
+  .dlog-social-share__link--telegram {
+    background-color: #0088cc; }
+    .dlog-social-share__link--telegram:before {
+      content: "\F501";
+      font-family: "Material Design Icons";
+      font-weight: normal;
+      font-style: normal;
+      display: inline-block;
+      text-decoration: inherit;
+      margin-right: 0; }
+
+.dlog-label-with-icon-media-formatter {
+  display: flex;
+  align-items: center; }
+  .dlog-label-with-icon-media-formatter__icon {
+    margin-right: 8px;
+    flex: 0 0 70px;
+    width: 70px; }
+    .dlog-label-with-icon-media-formatter__icon svg {
+      width: 100%; }
+  .dlog-label-with-icon-media-formatter__label {
+    display: block;
+    color: #333333;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 4px; }
+  .dlog-label-with-icon-media-formatter__filesize {
+    color: #757575;
+    font-size: 14px; }
 
 .view-blog-articles-page__content {
   display: flex;
