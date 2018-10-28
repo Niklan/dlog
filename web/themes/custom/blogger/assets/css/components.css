@@ -817,6 +817,8 @@ a.tabledrag-handle .handle {
 
 .node-page-full__field-paragraphs-item {
   margin-bottom: 24px; }
+  .node-page-full__field-paragraphs-item:last-child {
+    margin-bottom: unset; }
 
 /**
  * @file

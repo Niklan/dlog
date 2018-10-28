@@ -1,5 +1,9 @@
 .node-page-full {
   &__field-paragraphs-item {
     margin-bottom: gap(3);
+
+    &:last-child {
+      margin-bottom: unset;
+    }
   }
 }
