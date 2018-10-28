@@ -14,7 +14,7 @@
     }
 
     &__field-image {
-      margin-left: 30px !important;
+      margin-left: lost-vars('gutter') !important;
       margin-right: 0 !important;
     }
   }
@@ -25,7 +25,7 @@
     }
 
     &__field-body {
-      lost-column: 8/12;
+      lost-column: 8/12; 
     }
   }
 
