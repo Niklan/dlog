@@ -10,6 +10,25 @@ use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\node\NodeInterface;
 
 /**
+ * Implements hook_theme().
+ */
+function dlog_blog_theme($existing, $type, $theme, $path) {
+  return [
+    'dlog_blog_related_posts' => [
+      'variables' => [
+        'max' => 4,
+        'max_exact_same_tags' => 2,
+      ],
+      'file' => 'dlog_blog.theme.inc',
+    ],
+    'dlog_blog_random_posts' => [
+      'variables' => [],
+      'file' => 'dlog_blog.theme.inc',
+    ],
+  ];
+}
+
+/**
  * Implements hook_entity_extra_field_info().
  */
 function dlog_blog_entity_extra_field_info() {
@@ -29,6 +48,18 @@ function dlog_blog_entity_extra_field_info() {
 
   $extra['node']['blog_article']['display']['social_share'] = [
     'label' => t('Links to share article'),
+    'weight' => 100,
+    'visible' => FALSE,
+  ];
+
+  $extra['node']['blog_article']['display']['related_posts'] = [
+    'label' => t('Related posts'),
+    'weight' => 100,
+    'visible' => FALSE,
+  ];
+
+  $extra['node']['blog_article']['display']['random_posts'] = [
+    'label' => t('Random posts'),
     'weight' => 100,
     'visible' => FALSE,
   ];
@@ -66,6 +97,21 @@ function dlog_blog_node_view(array &$build, NodeInterface $node, EntityViewDispl
       '#theme' => 'dlog_social_share',
       '#url' => $node->toUrl('canonical', ['absolute' => TRUE])->toString(TRUE)->getGeneratedUrl(),
       '#label' => $node->label(),
+    ];
+  }
+
+  if ($display->getComponent('related_posts')) {
+    $build['related_posts'] = [
+      '#theme' => 'dlog_blog_related_posts',
+    ];
+  }
+
+  if ($display->getComponent('random_posts')) {
+    $build['random_posts'] = [
+      '#create_placeholder' => TRUE,
+      '#lazy_builder' => [
+        'dlog_blog.lazy_builder:randomBlogPosts', [],
+      ],
     ];
   }
 }

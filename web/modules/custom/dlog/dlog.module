@@ -5,6 +5,7 @@
  * Main file for custom hooks and functions.
  */
 
+use Drupal\Core\Database\Query\AlterableInterface;
 use Drupal\imagemagick\ImagemagickExecArguments;
 
 /**
@@ -46,4 +47,11 @@ function dlog_imagemagick_arguments_alter(ImagemagickExecArguments $arguments, $
   $arguments->add('-sampling-factor 4:2:0');
   $arguments->add('-interlace Plane');
   $arguments->add('-strip');
+}
+
+/**
+ * Implements hook_query_TAG_alter() for entity_query_random.
+ */
+function dlog_query_entity_query_random_alter(AlterableInterface $query) {
+  $query->orderRandom();
 }

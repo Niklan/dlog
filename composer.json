@@ -26,6 +26,7 @@
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/admin_toolbar": "^1.24",
         "drupal/antibot": "^1.2",
+        "drupal/big_pipe_sessionless": "^1.2",
         "drupal/block_visibility_groups": "^1.2",
         "drupal/config_installer": "^1.8",
         "drupal/console": "^1.0.2",
