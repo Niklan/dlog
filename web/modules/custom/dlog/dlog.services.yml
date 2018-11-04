@@ -1,6 +1,0 @@
-services:
-  dlog.event_subscriber:
-    class: Drupal\dlog\EventSubscriber\DlogSubscriber
-    arguments: ['@session_manager']
-    tags:
-      - { name: event_subscriber }
