@@ -77,11 +77,16 @@
       position: relative;
       z-index: 10;
       text-shadow: 1px 1px 1px rgba(black, 0.2);
+      line-height: 1.2;
 
       &--next {
         text-align: right;
         margin-left: auto;
       }
+    }
+
+    &__tags {
+      margin-bottom: gap();
     }
 
     &__tag {

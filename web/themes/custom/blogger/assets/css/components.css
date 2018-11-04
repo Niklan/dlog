@@ -1535,10 +1535,14 @@ a.tabledrag-handle .handle {
 .previous-next--blog-article .previous-next__content {
   position: relative;
   z-index: 10;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); }
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  line-height: 1.2; }
   .previous-next--blog-article .previous-next__content--next {
     text-align: right;
     margin-left: auto; }
+
+.previous-next--blog-article .previous-next__tags {
+  margin-bottom: 8px; }
 
 .previous-next--blog-article .previous-next__tag {
   color: #FC466B;
