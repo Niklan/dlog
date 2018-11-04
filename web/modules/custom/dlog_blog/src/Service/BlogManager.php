@@ -137,6 +137,9 @@ class BlogManager implements BlogManagerInterface {
       if ($exact_tags > $max) {
         $exact_tags = $max;
       }
+      $exclude_ids = [
+        $node->id(),
+      ];
 
       $counter = 0;
       $result = [];
@@ -144,24 +147,19 @@ class BlogManager implements BlogManagerInterface {
         $exact_same = $this->getRelatedPostsWithExactSameTags($node, $exact_tags);
         $result += $exact_same;
         $counter += count($exact_same);
+
+        $exclude_ids += $exact_same;
       }
 
       if ($counter < $max) {
-        $exclude_ids = [];
-        if (!empty($exact_same)) {
-          $exclude_ids = $exact_same;
-        }
-
         $same_tags = $this->getRelatedPostsWithSameTags($node, $exclude_ids, ($max - $counter));
         $result += $same_tags;
         $counter += count($same_tags);
+
+        $exclude_ids += $same_tags;
       }
 
       if ($counter < $max) {
-        if (!empty($same_tags)) {
-          $exclude_ids += $same_tags;
-        }
-
         $random = $this->getRandomPosts(($max - $counter), $exclude_ids);
         $result += $random;
       }
