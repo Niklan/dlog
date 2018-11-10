@@ -293,7 +293,7 @@
     margin-bottom: 8px;
     color: gray("500");
     font-size: 85%; }
-  .form-item__label.is-required:after {
+  .form-item__label--required::after {
     content: "*";
     display: inline-block;
     color: #f44336;
@@ -314,9 +314,8 @@
   margin-bottom: 0; }
 
 .form-wrapper {
-  border: 1px solid #e0e0e0; }
+  border: 1px solid; }
   .form-wrapper__summary {
-    background: #f5f5f5;
     padding: 8px;
     cursor: pointer; }
   .form-wrapper__content {
