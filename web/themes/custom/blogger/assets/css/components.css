@@ -897,7 +897,8 @@ a.tabledrag-handle .handle {
       left: 0; }
   .comment-comment__letter-avatar-letter {
     position: relative;
-    z-index: 10; }
+    z-index: 10;
+    text-transform: uppercase; }
   .comment-comment__header {
     display: flex;
     margin-bottom: 8px; }

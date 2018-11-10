@@ -38,6 +38,7 @@ $avatar-width: 70px;
   &__letter-avatar-letter {
     position: relative;
     z-index: 10;
+    text-transform: uppercase;
   }
 
   &__header {
