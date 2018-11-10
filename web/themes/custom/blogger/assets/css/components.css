@@ -51,8 +51,8 @@
 
 @font-face {
   font-family: "Material Design Icons";
-  src: url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot?v=2.8.94");
-  src: url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot?#iefix&v=2.8.94") format("embedded-opentype"), url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff2?v=2.8.94") format("woff2"), url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff?v=2.8.94") format("woff"), url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.ttf?v=2.8.94") format("truetype"), url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.svg?v=2.8.94#materialdesigniconsregular") format("svg");
+  src: url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot?v=3.0.39");
+  src: url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot?#iefix&v=3.0.39") format("embedded-opentype"), url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff2?v=3.0.39") format("woff2"), url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff?v=3.0.39") format("woff"), url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.ttf?v=3.0.39") format("truetype"), url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.svg?v=3.0.39#materialdesigniconsregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -1352,6 +1352,42 @@ a.tabledrag-handle .handle {
     color: #616161;
     font-size: 14px;
     margin-bottom: 16px; }
+  .footer__powered-by {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 16px; }
+  .footer__powered-by-heart {
+    color: #FC466B; }
+    .footer__powered-by-heart:before {
+      content: "\F2D1";
+      font-family: "Material Design Icons";
+      font-weight: normal;
+      font-style: normal;
+      display: inline-block;
+      text-decoration: inherit;
+      margin-right: 0; }
+  .footer__powered-by-drupal {
+    color: #28A9E0;
+    font-weight: bold; }
+    .footer__powered-by-drupal:before {
+      content: "\F1E4";
+      font-family: "Material Design Icons";
+      font-weight: normal;
+      font-style: normal;
+      display: inline-block;
+      text-decoration: inherit;
+      margin-right: 4px; }
+  .footer__powered-by-gitlab {
+    color: #FCA326;
+    font-weight: bold; }
+    .footer__powered-by-gitlab:before {
+      content: "\FB7C";
+      font-family: "Material Design Icons";
+      font-weight: normal;
+      font-style: normal;
+      display: inline-block;
+      text-decoration: inherit;
+      margin-right: 4px; }
   .footer__top {
     display: table;
     margin: 0 auto;
