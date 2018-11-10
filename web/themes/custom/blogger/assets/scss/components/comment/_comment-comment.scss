@@ -2,9 +2,6 @@ $avatar-width: 70px;
 
 .comment-comment {
   display: flex;
-  margin-bottom: gap(3);
-  padding-bottom: gap(3);
-  border-bottom: 1px solid gray(300);
 
   &__left {
     width: $avatar-width;
@@ -56,10 +53,4 @@ $avatar-width: 70px;
     @include list-unstyled;
     display: flex;
   }
-
-  //&:last-child {
-  //  border-bottom: unset;
-  //  margin-bottom: unset;
-  //  padding-bottom: unset;
-  //}
 }

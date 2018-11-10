@@ -791,6 +791,16 @@ a.tabledrag-handle .handle {
   .node-blog-article-full__field-comments-content .indented {
     margin-left: 48px; }
 
+.node-blog-article-full .comment-comment {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e0e0e0; }
+
+.node-blog-article-full__field-comments-content > .comment-comment:last-child {
+  border-bottom: unset;
+  margin-bottom: unset;
+  padding-bottom: unset; }
+
 .node-blog-article-teaser__field-image {
   border-radius: 4px;
   overflow: hidden;
@@ -859,10 +869,7 @@ a.tabledrag-handle .handle {
     margin-bottom: unset; }
 
 .comment-comment {
-  display: flex;
-  margin-bottom: 24px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid #e0e0e0; }
+  display: flex; }
   .comment-comment__left {
     width: 70px;
     margin-right: 24px; }
