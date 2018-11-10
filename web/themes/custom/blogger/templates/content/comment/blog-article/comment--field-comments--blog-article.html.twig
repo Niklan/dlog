@@ -1,0 +1,26 @@
+{% set bem_block = bem_block ?: ('comment-' ~ comment.bundle ~ (elements['#view_mode'] != 'default' ? '-' ~ elements['#view_mode']))|clean_class %}
+{% set classes = [
+  bem_block,
+  bem_block ~ '--' ~ status,
+] %}
+<article{{ attributes.addClass('js-comment', classes) }}>
+  <div class="{{ bem_block }}__left">
+    {{ content.letter_avatar }}
+  </div>
+
+  <div class="{{ bem_block }}__right">
+    <header class="{{ bem_block }}__header">
+      <div class="{{ bem_block }}__header-left">
+        {{ author }}
+        {{ created }}
+        {{ comment.homepage.value }}
+        <mark class="hidden" data-comment-timestamp="{{ new_indicator_timestamp }}"></mark>
+      </div>
+
+      <div class="{{ bem_block }}__header-right">
+        {{ content.links }}
+      </div>
+    </header>
+    {{ content|without('letter_avatar', 'links') }}
+  </div>
+</article>

@@ -1,0 +1,7 @@
+name: DLOG — Comments
+type: module
+description: The comments custom code.
+package: dlog
+core: 8.x
+dependencies:
+  - drupal:comment

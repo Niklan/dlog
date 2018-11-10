@@ -31,11 +31,15 @@
 @import "ui/views-mini-pager";
 
 // Form.
+@import "form/form-comment-comment-form";
 
 // Node.
 @import "node/blog-article/node-blog-article-full";
 @import "node/blog-article/node-blog-article-teaser";
 @import "node/page/node-page-full";
+
+// Comments.
+@import "comment/comment-comment";
 
 // Paragraphs.
 @import "paragraph/paragraph-styles";
