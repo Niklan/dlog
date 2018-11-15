@@ -46,7 +46,7 @@ class LetterAvatar implements LetterAvatarInterface {
     $username_sliced = array_slice($username_parts, 0, 2);
     $letter = '';
     foreach ($username_sliced as $username_part) {
-      $letter .= $username_part[0];
+      $letter .= mb_substr($username_part, 0, 1);
     }
     return $letter;
   }
