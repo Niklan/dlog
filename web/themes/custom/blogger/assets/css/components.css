@@ -795,7 +795,7 @@ a.tabledrag-handle .handle {
   padding-bottom: 24px;
   border-bottom: 1px solid #e0e0e0; }
 
-:not(.indented) .node-blog-article-full__field-comments-content > .comment-comment:last-child {
+.node-blog-article-full__field-comments-content > .comment-comment:last-child {
   border-bottom: unset;
   margin-bottom: unset;
   padding-bottom: unset; }

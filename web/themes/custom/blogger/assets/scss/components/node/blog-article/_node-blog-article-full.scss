@@ -87,7 +87,7 @@
   }
 
   &__field-comments-content > .comment-comment {
-    :not(.indented) &:last-child {
+     &:last-child {
       border-bottom: unset;
       margin-bottom: unset;
       padding-bottom: unset;
