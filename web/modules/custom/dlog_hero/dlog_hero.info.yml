@@ -3,4 +3,5 @@ description: Custom page title.
 type: module
 core: 8.x
 dependencies:
+  - drupal:system
   - twig_tweak:twig_tweak
