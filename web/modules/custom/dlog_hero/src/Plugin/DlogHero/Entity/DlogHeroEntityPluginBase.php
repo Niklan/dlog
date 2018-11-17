@@ -7,7 +7,7 @@ use Drupal\dlog_hero\Plugin\DlogHero\DlogHeroPluginBase;
 /**
  * The base for DlogHero entity plugin type.
  */
-abstract class DlogHeroEntityPluginBase extends DlogHeroPluginBase implements DlogHeroEntityPluginInterface {
+abstract class DlogHeroEntityPluginBase extends DlogHeroPluginBase {
 
   /**
    * {@inheritdoc}

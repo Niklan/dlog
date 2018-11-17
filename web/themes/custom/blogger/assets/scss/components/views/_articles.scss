@@ -7,3 +7,13 @@
     lost-waffle: 4/12 3;
   }
 }
+
+.view-blog-articles-in-tag {
+  &__content {
+    lost-flex-container: row;
+  }
+
+  &__row {
+    lost-waffle: 3/12 4;
+  }
+}

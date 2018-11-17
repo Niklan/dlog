@@ -1,0 +1,4 @@
+services:
+  dlog_taxonomy.tags_helper:
+    class: Drupal\dlog_taxonomy\Service\TagsHelper
+    arguments: ['@entity_type.manager']

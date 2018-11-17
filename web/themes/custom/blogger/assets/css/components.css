@@ -1927,6 +1927,34 @@ a.tabledrag-handle .handle {
 .view-blog-articles-page__row:nth-last-child(-n + 3) {
   margin-bottom: 0; }
 
+.view-blog-articles-in-tag__content {
+  display: flex;
+  flex-flow: row wrap; }
+
+.view-blog-articles-in-tag__row {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: calc(100% * 3/12 - (24px - 24px * 3/12));
+  width: calc(100% * 3/12 - (24px - 24px * 3/12));
+  max-width: calc(100% * 3/12 - (24px - 24px * 3/12));
+  height: calc(100% * 3/12 - (24px - 24px * 3/12)); }
+
+.view-blog-articles-in-tag__row:nth-child(1n) {
+  margin-right: 24px;
+  margin-bottom: 24px;
+  margin-left: 0; }
+
+.view-blog-articles-in-tag__row:last-child {
+  margin-right: 0;
+  margin-bottom: 0; }
+
+.view-blog-articles-in-tag__row:nth-child(4n) {
+  margin-right: 0;
+  margin-left: auto; }
+
+.view-blog-articles-in-tag__row:nth-last-child(-n + 4) {
+  margin-bottom: 0; }
+
 .app {
   background: #fafafa; }
 
@@ -2004,5 +2032,8 @@ a.tabledrag-handle .handle {
   .main-layout--sidebar-first .region-sidebar-first:nth-child(12n) {
     margin-right: 0;
     margin-left: auto; }
+
+.region-content {
+  width: 100%; }
 
 /*# sourceMappingURL=maps/components.css.map */

@@ -26,6 +26,7 @@ module:
   dlog_comments: 0
   dlog_hero: 0
   dlog_paragraphs: 0
+  dlog_taxonomy: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
   editor: 0
