@@ -68,6 +68,12 @@ function dlog_comments_entity_extra_field_info() {
     'visible' => FALSE,
   ];
 
+  $extra['comment']['comment']['display']['homepage'] = [
+    'label' => t('User homepage'),
+    'weight' => 100,
+    'visible' => FALSE,
+  ];
+
   return $extra;
 }
 
@@ -94,4 +100,28 @@ function dlog_comments_comment_view(array &$build, CommentInterface $comment, En
       ],
     ];
   }
+
+  if ($display->getComponent('homepage') && !$comment->get('homepage')->isEmpty()) {
+    $build['homepage'] = [
+      '#type' => 'inline_template',
+      '#template' => '<a href="{{ url }}" class="{{ class }}" rel="noopener nofollow">WWW</a>',
+      '#context' => [
+        'class' => $bem_block . '__homepage',
+        'url' => $comment->get('homepage')->value,
+      ],
+    ];
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for username.html.twig.
+ */
+function dlog_comments_preprocess_username(&$variables) {
+  // Remove link to homepage for anonymous users. We created pseudo-field for
+  // this value.
+  // @see dlog_comments_entity_extra_field_info
+  // @see dlog_comments_comment_view
+  unset($variables['link_path']);
+  unset($variables['attributes']['rel']);
+  $variables['attributes']['class'][] = 'username';
 }

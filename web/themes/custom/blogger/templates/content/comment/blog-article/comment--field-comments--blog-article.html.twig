@@ -10,17 +10,23 @@
 
   <div class="{{ bem_block }}__right">
     <header class="{{ bem_block }}__header">
-      <div class="{{ bem_block }}__header-left">
-        {{ author }}
-        {{ created }}
-        {{ comment.homepage.value }}
-        <mark class="hidden" data-comment-timestamp="{{ new_indicator_timestamp }}"></mark>
-      </div>
-
-      <div class="{{ bem_block }}__header-right">
-        {{ content.links }}
+      <div class="{{ bem_block }}__header-item">{{ author }}</div>
+      <div class="{{ bem_block }}__header-item">{{ content.homepage }}</div>
+      <div class="{{ bem_block }}__header-item">
+        <mark class="{{ bem_block }}__new hidden"
+              data-comment-timestamp="{{ new_indicator_timestamp }}"></mark>
       </div>
     </header>
-    {{ content|without('letter_avatar', 'links') }}
+    {{ content|without('letter_avatar', 'links', 'homepage') }}
+
+    <footer class="{{ bem_block }}__footer">
+      <div class="{{ bem_block }}__footer-item">
+        {{ content.links }}
+      </div>
+
+      <div class="{{ bem_block }}__footer-item">
+        <span class="{{ bem_block }}__created">{{ created }}</span>
+      </div>
+    </footer>
   </div>
 </article>

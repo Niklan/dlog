@@ -3,7 +3,7 @@ langcode: ru
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment.default
+    - core.entity_view_display.comment.comment.full
     - core.entity_view_mode.node.full
     - field.field.node.blog_article.body
     - field.field.node.blog_article.field_attachments
@@ -33,7 +33,7 @@ content:
     weight: 6
     label: above
     settings:
-      view_mode: default
+      view_mode: full
       pager_id: 0
     third_party_settings: {  }
     type: comment_default

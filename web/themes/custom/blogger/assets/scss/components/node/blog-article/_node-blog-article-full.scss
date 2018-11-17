@@ -80,13 +80,13 @@
     }
   }
 
-  .comment-comment {
+  .comment-comment-full {
     margin-bottom: gap(3);
     padding-bottom: gap(3);
     border-bottom: 1px solid gray(300);
   }
 
-  &__field-comments-content > .comment-comment {
+  &__field-comments-content > .comment-comment-full {
      &:last-child {
       border-bottom: unset;
       margin-bottom: unset;
