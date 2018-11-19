@@ -46,7 +46,7 @@ class BlogManager implements BlogManagerInterface {
    * {@inheritdoc}
    */
   public function getRelatedPostsWithExactSameTags(NodeInterface $node, $limit = 2) {
-    $result = &drupal_static(this::class . __METHOD__ . $node->id() . $limit);
+    $result = &drupal_static(this::class . '_' . __METHOD__ . '_' . $node->id() . '_' . $limit);
 
     if (!isset($result)) {
       if ($node->hasField('field_tags') && !$node->get('field_tags')->isEmpty()) {
@@ -77,7 +77,7 @@ class BlogManager implements BlogManagerInterface {
    * {@inheritdoc}
    */
   public function getRelatedPostsWithSameTags(NodeInterface $node, array $exclude_ids = [], $limit = 2) {
-    $result = &drupal_static(this::class . __METHOD__ . $node->id() . $limit);
+    $result = &drupal_static(this::class . '_' . __METHOD__ . '_' . $node->id() . '_' . $limit);
 
     if (!isset($result)) {
       if ($node->hasField('field_tags') && !$node->get('field_tags')->isEmpty()) {
@@ -131,7 +131,7 @@ class BlogManager implements BlogManagerInterface {
    * {@inheritdoc}
    */
   public function getRelatedPosts(NodeInterface $node, $max = 4, $exact_tags = 2) {
-    $result = &drupal_static(this::class . __METHOD__ . $node->id() . $max . $exact_tags);
+    $result = &drupal_static(this::class . '_' . __METHOD__ . '_' . $node->id() . '_' . $max . '_' . $exact_tags);
 
     if (!isset($result)) {
       if ($exact_tags > $max) {
