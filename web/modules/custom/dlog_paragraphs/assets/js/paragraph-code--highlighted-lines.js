@@ -59,7 +59,7 @@
       let codeElementStyles = window.getComputedStyle(codeElement);
       let codeElementPaddingTop = parseFloat(codeElementStyles.getPropertyValue('padding-top'));
       let codeElementPaddingBottom = parseFloat(codeElementStyles.getPropertyValue('padding-bottom'));
-      let codeElementHeight = codeElement.offsetHeight;
+      let codeElementHeight = parseFloat(codeElementStyles.getPropertyValue('height'));
       let codeElementContentHeight = codeElementHeight - codeElementPaddingTop - codeElementPaddingBottom;
       let codeLineHeight = this.getLineHeight(codeElement);
 

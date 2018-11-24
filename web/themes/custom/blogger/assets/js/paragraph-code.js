@@ -1,6 +1,6 @@
 /**
  * @file
- * Paragraph code hilight behaviors.
+ * Paragraph code higlight behaviors.
  */
 
 (function (Drupal) {
