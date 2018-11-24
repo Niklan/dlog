@@ -1192,15 +1192,29 @@ a.tabledrag-handle .handle {
       text-decoration: inherit;
       margin-right: 0.4em; }
   .paragraph-code__field-body {
-    padding: 8px 24px;
+    padding: 8px 0;
     border-top: 1px solid #e0e0e0;
     background: white; }
   .paragraph-code pre {
     margin: 0;
     padding: 0; }
+    .paragraph-code pre code {
+      padding: 16px 40px;
+      position: relative; }
   .paragraph-code .hljs {
-    padding: 16px;
     font-size: 16px; }
+  .paragraph-code__highlight-line {
+    background-image: linear-gradient(to right, rgba(63, 94, 251, 0.1) 0%, rgba(252, 70, 107, 0.1) 100%);
+    background-repeat: repeat-x;
+    position: absolute;
+    left: 0;
+    right: 0;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    pointer-events: none;
+    z-index: 10; }
 
 .paragraph-remote-video--video-width-720px .paragraph-remote-video__field-remote-video {
   max-width: 720px;

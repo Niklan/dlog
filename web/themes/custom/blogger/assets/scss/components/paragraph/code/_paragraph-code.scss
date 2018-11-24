@@ -23,7 +23,7 @@
   }
 
   &__field-body {
-    padding: gap() gap(3);
+    padding: gap() 0;
     border-top: 1px solid gray(300);
     background: white;
   }
@@ -31,10 +31,24 @@
   pre {
     margin: 0;
     padding: 0;
+
+    code {
+      padding: gap(2) gap(5);
+      position: relative;
+    }
   }
 
   .hljs {
-    padding: gap(2);
     font-size: 16px;
+  }
+
+  &__highlight-line {
+    @include gradient-x(rgba(theme-color(), 0.1), rgba(theme-color('secondary'), 0.1));
+    position: absolute;
+    left: 0;
+    right: 0;
+    user-select: none;
+    pointer-events: none;
+    z-index: 10;
   }
 }
