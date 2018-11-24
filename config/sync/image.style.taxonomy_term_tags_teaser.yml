@@ -1,0 +1,15 @@
+uuid: 9fbbd5a8-afae-46bd-9e66-54bfe2cba9ae
+langcode: ru
+status: true
+dependencies: {  }
+name: taxonomy_term_tags_teaser
+label: 'Taxonomy Term - Tags - Teaser'
+effects:
+  c0a4dc5b-0e08-4be7-ba82-327a9d3db2ff:
+    uuid: c0a4dc5b-0e08-4be7-ba82-327a9d3db2ff
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 199
+      height: 199
+      anchor: center-center

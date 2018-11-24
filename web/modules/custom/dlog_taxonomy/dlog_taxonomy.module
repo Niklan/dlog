@@ -38,7 +38,7 @@ function dlog_taxonomy_taxonomy_term_view(array &$build, TermInterface $term, En
       $build['promo_image_with_replacement'] = [
         '#theme' => 'image_style',
         '#uri' => $promo_uri,
-        '#style_name' => 'medium',
+        '#style_name' => 'taxonomy_term_tags_teaser',
         '#alt' => $term->label(),
         '#attributes' => [
           'class' => [
