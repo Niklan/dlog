@@ -1199,10 +1199,9 @@ a.tabledrag-handle .handle {
     margin: 0;
     padding: 0; }
     .paragraph-code pre code {
+      font-size: 16px;
       padding: 16px 40px;
       position: relative; }
-  .paragraph-code .hljs {
-    font-size: 16px; }
   .paragraph-code__highlight-line {
     background-image: linear-gradient(to right, rgba(63, 94, 251, 0.1) 0%, rgba(252, 70, 107, 0.1) 100%);
     background-repeat: repeat-x;

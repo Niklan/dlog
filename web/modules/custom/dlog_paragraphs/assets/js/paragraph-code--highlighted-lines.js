@@ -71,8 +71,8 @@
      */
     getLineHeight: function (element) {
       let elementStyles = window.getComputedStyle(element);
-      // @todo get with JS.
-      return 25.6;
+
+      return elementStyles.getPropertyValue('line-height');
     },
 
     /**

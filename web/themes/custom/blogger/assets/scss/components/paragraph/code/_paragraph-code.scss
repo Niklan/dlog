@@ -33,13 +33,10 @@
     padding: 0;
 
     code {
+      font-size: 16px;
       padding: gap(2) gap(5);
       position: relative;
     }
-  }
-
-  .hljs {
-    font-size: 16px;
   }
 
   &__highlight-line {
