@@ -3,18 +3,18 @@
  * Paragraph code hilight behaviors.
  */
 
-(function ($, Drupal) {
+(function (Drupal) {
 
   Drupal.behaviors.paragraphCodeHighlight = {
     attach: function (context, settings) {
-      const elements = $(context).find('pre code').once('highlight');
+      const elements = context.querySelectorAll('pre code');
 
       if (elements.length) {
-        $.each(elements, (key, element) => {
+        elements.forEach(element => {
           hljs.highlightBlock(element);
         });
       }
-    }
+    },
   };
 
-})(jQuery, Drupal);
+})(Drupal);
