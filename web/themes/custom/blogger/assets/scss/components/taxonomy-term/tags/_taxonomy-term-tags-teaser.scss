@@ -1,0 +1,61 @@
+.taxonomy-term-tags-teaser {
+  &__link {
+    display: block;
+    position: relative;
+    height: 0;
+    padding-bottom: 100%;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 10;
+      top: gap();
+      right: gap();
+      bottom: gap();
+      left: gap();
+      border: 1px solid #FFFFFF;
+      transition: border-color 0.25s ease;
+    }
+
+    &:hover {
+      &::before {
+        border-color: theme-color('secondary');
+        transition: border-color 0.25s ease;
+      }
+
+      .taxonomy-term-tags-teaser__title {
+        background-color: theme-color('secondary');
+        color: #FFFFFF;
+        transition: background-color 0.25s ease;
+      }
+    }
+  }
+
+  &__promo-image {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__title {
+    position: absolute;
+    z-index: 15;
+    top: 50%;
+    left: 50%;
+    background-color: #FFFFFF;
+    color: $text-color;
+    transform: translate(-50%, -50%);
+    display: block;
+    padding: 4px gap();
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.25s ease;
+    font-size: 16px;
+  }
+}

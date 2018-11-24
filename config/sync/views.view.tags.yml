@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.taxonomy_term.teaser
     - taxonomy.vocabulary.tags
   module:
+    - node
     - taxonomy
     - user
 id: tags
@@ -49,9 +50,8 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
-        type: some
+        type: none
         options:
-          items_per_page: 24
           offset: 0
       style:
         type: default
@@ -130,14 +130,38 @@ display:
           entity_type: taxonomy_term
           entity_field: vid
           plugin_id: bundle
-      sorts: {  }
+      sorts:
+        uuid:
+          id: uuid
+          table: node
+          field: uuid
+          relationship: nid
+          group_type: count
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          entity_type: node
+          entity_field: uuid
+          plugin_id: standard
       title: Теги
       header: {  }
       footer: {  }
       empty: {  }
-      relationships: {  }
+      relationships:
+        nid:
+          id: nid
+          table: taxonomy_index
+          field: nid
+          relationship: none
+          group_type: group
+          admin_label: node
+          required: false
+          plugin_id: standard
       arguments: {  }
       display_extenders: {  }
+      group_by: true
     cache_metadata:
       max-age: -1
       contexts:

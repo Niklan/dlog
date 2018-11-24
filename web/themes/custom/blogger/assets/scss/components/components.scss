@@ -58,6 +58,7 @@
 @import "include/social-links";
 
 // Taxonomy term.
+@import "taxonomy-term/tags/taxonomy-term-tags-teaser";
 
 // Theme (hook_theme).
 @import "theme/dlog-hero";
@@ -69,6 +70,7 @@
 
 // Views.
 @import "views/articles";
+@import "views/tags";
 
 // Layout.
 @import "layout/app";
