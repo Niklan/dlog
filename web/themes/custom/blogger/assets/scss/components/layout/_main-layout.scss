@@ -1,7 +1,7 @@
 .main-layout {
   @include media-container();
   position: relative;
-  z-index: 15;
+  z-index: 60;
 
   &__inner {
     lost-flex-container: row;

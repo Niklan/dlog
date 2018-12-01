@@ -1,0 +1,7 @@
+{% set bem_block = 'app' %}
+<div class="{{ bem_block }}">
+  {% include '@blogger/include/header.html.twig' with {'show_dlog_hero': false, 'bem_modifers': ['light-menu']} %}
+  {% include '@blogger/include/pages/contact.html.twig' %}
+  {% include '@blogger/include/footer.html.twig' %}
+</div>
+

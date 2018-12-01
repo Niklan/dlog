@@ -23,6 +23,12 @@
   .block-main__menu-item-link:hover {
     color: #3F5EFB; }
 
+.header--light-menu .block-main__menu-item-link {
+  color: #333333;
+  text-shadow: unset; }
+  .header--light-menu .block-main__menu-item-link:hover {
+    color: #3F5EFB; }
+
 .block-system-branding-block__site-name {
   display: block;
   color: #3F5EFB;
@@ -96,7 +102,7 @@
 
 .button, .form-submit,
 .button--primary,
-.button--action, .button--warning, .button-danger, .button--success, .button--info, .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .button {
+.button--action, .button--warning, .button-danger, .button--success, .button--info, .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .button, .frontpage__search-submit, .frontpage__articles-more {
   padding: 8px 16px;
   font-size: 18px;
   line-height: 1.25;
@@ -1311,7 +1317,7 @@ a.tabledrag-handle .handle {
 
 .header {
   position: relative;
-  z-index: 10; }
+  z-index: 50; }
   .header__top {
     margin-right: auto;
     margin-left: auto;
@@ -2021,6 +2027,34 @@ a.tabledrag-handle .handle {
 .view-blog-articles-in-tag__row:nth-last-child(-n + 4) {
   margin-bottom: 0; }
 
+.view-blog-articles-frontpage-articles__content {
+  display: flex;
+  flex-flow: row wrap; }
+
+.view-blog-articles-frontpage-articles__row {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: calc(100% * 2/10 - (24px - 24px * 2/10));
+  width: calc(100% * 2/10 - (24px - 24px * 2/10));
+  max-width: calc(100% * 2/10 - (24px - 24px * 2/10));
+  height: calc(100% * 2/10 - (24px - 24px * 2/10)); }
+
+.view-blog-articles-frontpage-articles__row:nth-child(1n) {
+  margin-right: 24px;
+  margin-bottom: 24px;
+  margin-left: 0; }
+
+.view-blog-articles-frontpage-articles__row:last-child {
+  margin-right: 0;
+  margin-bottom: 0; }
+
+.view-blog-articles-frontpage-articles__row:nth-child(5n) {
+  margin-right: 0;
+  margin-left: auto; }
+
+.view-blog-articles-frontpage-articles__row:nth-last-child(-n + 5) {
+  margin-bottom: 0; }
+
 .view-tags-page__content {
   display: flex;
   flex-flow: row wrap; }
@@ -2058,7 +2092,7 @@ a.tabledrag-handle .handle {
   padding-right: 16px;
   padding-left: 16px;
   position: relative;
-  z-index: 15; }
+  z-index: 60; }
   @media (min-width: 576px) {
     .main-layout {
       width: 544px;
@@ -2129,5 +2163,267 @@ a.tabledrag-handle .handle {
 
 .region-content {
   width: 100%; }
+
+.frontpage {
+  margin-top: -42px;
+  position: relative; }
+  .frontpage__container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 16px;
+    padding-left: 16px; }
+    @media (min-width: 576px) {
+      .frontpage__container {
+        width: 544px;
+        max-width: 100%; } }
+    @media (min-width: 752px) {
+      .frontpage__container {
+        width: 720px;
+        max-width: 100%; } }
+    @media (min-width: 992px) {
+      .frontpage__container {
+        width: 960px;
+        max-width: 100%; } }
+    @media (min-width: 1200px) {
+      .frontpage__container {
+        width: 1168px;
+        max-width: 100%; } }
+    @media (min-width: 576px) {
+      .frontpage__container {
+        padding-right: 16px;
+        padding-left: 16px; } }
+    @media (min-width: 752px) {
+      .frontpage__container {
+        padding-right: 16px;
+        padding-left: 16px; } }
+    @media (min-width: 992px) {
+      .frontpage__container {
+        padding-right: 16px;
+        padding-left: 16px; } }
+    @media (min-width: 1200px) {
+      .frontpage__container {
+        padding-right: 16px;
+        padding-left: 16px; } }
+  .frontpage__welcome {
+    padding-top: 42px;
+    position: relative; }
+    .frontpage__welcome::before {
+      background-image: linear-gradient(125deg, rgba(252, 70, 107, 0.5), rgba(63, 94, 251, 0.5));
+      background-repeat: repeat-x;
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 5;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0; }
+  .frontpage__welcome-video {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center; }
+  .frontpage__welcome-inner {
+    position: relative;
+    z-index: 10;
+    padding: 160px 0; }
+  .frontpage__welcome-title {
+    font-size: 48px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1); }
+  .frontpage__welcome-description {
+    color: #ffffff;
+    margin-bottom: 48px;
+    max-width: 600px;
+    font-size: 18px;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1); }
+  .frontpage__search {
+    display: flex;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2); }
+  .frontpage__search-input {
+    padding: 16px !important;
+    border-radius: 4px 0 0 4px !important; }
+  .frontpage__search-submit {
+    color: white;
+    background-color: #3F5EFB;
+    background-image: none;
+    border-color: transparent;
+    transition: all .15s ease-in-out;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);
+    border-radius: 0 4px 4px 0;
+    padding: 0 32px;
+    text-transform: uppercase;
+    font-weight: bold; }
+    .frontpage__search-submit:focus, .frontpage__search-submit:hover {
+      color: white;
+      background-color: #0d34fa;
+      border-color: transparent; }
+    .frontpage__search-submit:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(63, 94, 251, 0.5); }
+    .frontpage__search-submit:disabled {
+      background-color: #3F5EFB;
+      border-color: transparent;
+      opacity: .65; }
+    .frontpage__search-submit:active {
+      color: white;
+      background-color: #0d34fa;
+      background-image: none;
+      border-color: transparent;
+      box-shadow: 0 0 0 3px rgba(63, 94, 251, 0.5); }
+  .frontpage__author {
+    position: relative; }
+  .frontpage__author-bg {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center bottom;
+       object-position: center bottom; }
+  .frontpage__author-inner {
+    position: relative;
+    z-index: 10;
+    padding: 160px 0 160px; }
+  .frontpage__author-avatar {
+    display: table;
+    margin: 0 auto 32px;
+    border-radius: 100%;
+    border: 20px solid #eeeeee; }
+  .frontpage__author-hello {
+    text-align: center;
+    color: #757575;
+    font-weight: bold; }
+  .frontpage__author-name {
+    text-align: center;
+    color: #000000;
+    font-weight: bold;
+    font-size: 48px;
+    margin-bottom: 24px; }
+  .frontpage__author-about {
+    max-width: 800px;
+    color: #757575;
+    margin: 0 auto 24px;
+    text-align: center; }
+  .frontpage__author-more {
+    display: table;
+    margin: 0 auto;
+    color: #FC466B; }
+    .frontpage__author-more:after {
+      content: "\F054";
+      font-family: "Material Design Icons";
+      font-weight: normal;
+      font-style: normal;
+      display: inline-block;
+      text-decoration: inherit;
+      margin-left: 0.4em; }
+    .frontpage__author-more:hover {
+      color: #3F5EFB; }
+  .frontpage__articles {
+    padding: 80px 0; }
+  .frontpage__articles-title {
+    text-align: center;
+    color: #000000;
+    font-weight: bold;
+    font-size: 48px;
+    margin-bottom: 48px; }
+  .frontpage__articles-more {
+    color: white;
+    background-color: #FC466B;
+    background-image: none;
+    border-color: transparent;
+    transition: all .15s ease-in-out;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);
+    display: table;
+    margin: 48px auto 0; }
+    .frontpage__articles-more:focus, .frontpage__articles-more:hover {
+      color: white;
+      background-color: #fb1443;
+      border-color: transparent; }
+    .frontpage__articles-more:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(252, 70, 107, 0.5); }
+    .frontpage__articles-more:disabled {
+      background-color: #FC466B;
+      border-color: transparent;
+      opacity: .65; }
+    .frontpage__articles-more:active {
+      color: white;
+      background-color: #fb1443;
+      background-image: none;
+      border-color: transparent;
+      box-shadow: 0 0 0 3px rgba(252, 70, 107, 0.5); }
+    .frontpage__articles-more:after {
+      content: "\F054";
+      font-family: "Material Design Icons";
+      font-weight: normal;
+      font-style: normal;
+      display: inline-block;
+      text-decoration: inherit;
+      margin-left: 0.4em; }
+
+.contact-page {
+  margin-top: -42px;
+  position: relative; }
+  .contact-page__inner {
+    display: flex;
+    max-height: 100vh; }
+  .contact-page__left {
+    background-image: linear-gradient(135deg, #eeeeee, white);
+    background-repeat: repeat-x;
+    width: 50%;
+    padding: 160px 80px;
+    position: relative;
+    overflow: auto; }
+  .contact-page__right {
+    width: 50%;
+    position: relative;
+    padding-top: 42px; }
+    .contact-page__right::before {
+      background-image: linear-gradient(125deg, rgba(252, 70, 107, 0.5), rgba(63, 94, 251, 0.5));
+      background-repeat: repeat-x;
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 5;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0; }
+  .contact-page__contact-video {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center; }
+  .contact-page__title {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 60px;
+    font-size: 80px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0.1;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; }
 
 /*# sourceMappingURL=maps/components.css.map */

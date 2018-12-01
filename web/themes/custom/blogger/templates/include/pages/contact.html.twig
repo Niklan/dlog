@@ -1,0 +1,21 @@
+{% set bem_block = 'contact-page' %}
+<div class="{{ bem_block }}">
+  <div class="{{ bem_block }}__inner">
+    <div class="{{ bem_block }}__left">
+      <h1 class="{{ bem_block }}__title">Контакты</h1>
+      Давайте пообщаемся
+
+      Адрес, имейл,  телефон, доступность.
+
+      {{ contact_form_ajax('feedback') }}
+    </div>
+
+    <div class="{{ bem_block }}__right">
+      <video poster="{{ contact_image_uri|image_style('thumbnail') }}" autoplay loop muted class="{{ bem_block }}__contact-video">
+        <source src="{{ file_url(contact_video_uri) }}" type="video/mp4">
+        {{ 'Your browser does not support the video tag'|t }}
+      </video>
+    </div>
+  </div>
+</div>
+

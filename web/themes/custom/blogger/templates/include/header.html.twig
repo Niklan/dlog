@@ -1,13 +1,26 @@
+{% set header_attributes = create_attribute() %}
+{% do header_attributes.setAttribute('role', 'banner') %}
 {% set bem_block = 'header' %}
+{% set classes = [
+  bem_block
+] %}
 {% set branding_config = {
   use_site_logo: false,
   use_site_slogan: false,
 } %}
-<header class="{{ bem_block }}" role="banner">
+{% set show_dlog_hero = show_dlog_hero is defined ? show_dlog_hero : true %}
+{% if bem_modifers is defined %}
+  {% for modifer in bem_modifers %}
+    {% set classes = classes|merge([bem_block ~ '--' ~ modifer]) %}
+  {% endfor %}
+{% endif %}
+<header{{ header_attributes.addClass(classes) }}>
   <div class="{{ bem_block }}__top">
     {{ drupal_block('system_branding_block', branding_config) }}
     {{ drupal_block('system_menu_block:main', { label_display: false }) }}
   </div>
 
- {{ drupal_block('dlog_hero') }}
+  {% if show_dlog_hero %}
+    {{ drupal_block('dlog_hero') }}
+  {% endif %}
 </header>
