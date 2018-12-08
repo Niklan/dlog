@@ -115,9 +115,11 @@ function blogger_preprocess_page__about(array &$variables) {
 
   /** @var \Drupal\media\MediaInterface $media_image */
   $media_image = $media_storage->load(42);
-  $variables['about_image_uri'] = $media_image->get('field_media_image')
-    ->entity
-    ->getFileUri();
+  if ($media_image instanceof MediaInterface) {
+    $variables['about_image_uri'] = $media_image->get('field_media_image')
+      ->entity
+      ->getFileUri();
+  }
 
   $media_image = $media_storage->load(43);
   if ($media_image instanceof MediaInterface) {
