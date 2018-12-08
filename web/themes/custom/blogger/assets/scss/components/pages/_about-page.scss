@@ -1,0 +1,241 @@
+$icons: (
+  'drupal': 'drupal',
+  'php': 'language-php',
+  'html': 'language-html5',
+  'css': 'language-css3',
+  'js': 'language-javascript',
+  'server': 'server',
+);
+
+$price_icons: (
+  'hour-rate': 'account-clock-outline',
+  'audit': 'file-document-outline',
+);
+
+.about-page {
+  margin-top: -42px;
+  position: relative;
+
+  &__inner {
+    display: flex;
+    max-height: 100vh;
+  }
+
+  &__left {
+    @include gradient-directional(gray(300), white, 135deg);
+    width: 50%;
+    padding: gap(20) gap(10);
+    position: relative;
+    overflow: auto;
+  }
+
+  &__right {
+    width: 50%;
+    position: relative;
+    padding-top: 42px;
+
+    &::before {
+      @include gradient-directional(rgba(theme-color('secondary'), 0.5), rgba(theme-color(), 0.5), 125deg);
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 5;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &__about-poster {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__title {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 60px;
+    font-size: 80px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0.1;
+    user-select: none;
+  }
+
+  &__quote {
+    max-width: 630px;
+    display: table;
+    margin: 0 auto;
+  }
+
+  &__quote-cite {
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+  }
+
+  &__quote-author {
+    text-align: right;
+    font-size: 20px;
+    font-style: italic;
+    margin-top: gap(2);
+  }
+
+  &__quote-signature {
+    float: right;
+    margin-top: gap(2);
+  }
+
+  &__skills {
+    margin-bottom: gap(6);
+  }
+
+  &__skills-title {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: gap(3);
+    text-transform: uppercase;
+
+    span {
+      color: theme-color();
+    }
+  }
+
+  &__skills-items {
+    lost-flex-container: row;
+  }
+
+  &__skills-item {
+    lost-waffle: 6/12 2;
+    background-color: rgba(white, 0.05);
+    padding: gap(2);
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 0 50px rgba(black, 0.2);
+  }
+
+  &__skills-item-title {
+    color: black;
+    font-weight: bold;
+    margin-bottom: gap();
+  }
+
+  &__skills-item-description {
+    font-size: 16px;
+  }
+
+  @each $modifier, $icon in $icons {
+    &__skills-item-icon--#{$modifier} {
+      @include mdi-icon($icon, before, 0);
+    }
+  }
+
+  &__skills-item-icon {
+    color: theme-color(secondary);
+    font-size: 40px;
+    line-height: 1;
+    margin-bottom: gap();
+  }
+
+  &__services {
+    margin-bottom: gap(6);
+  }
+
+  &__services-title {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: gap(3);
+    text-transform: uppercase;
+
+    span {
+      color: theme-color();
+    }
+  }
+
+  &__prices {
+    lost-flex-container: row;
+  }
+
+  &__price {
+    lost-waffle: 6/12 2;
+    background-color: rgba(white, 0.05);
+    padding: gap(2);
+    border-radius: 10px;
+    position: relative;
+    height: auto;
+    box-shadow: 0 0 50px rgba(black, 0.2);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @each $modifier, $icon in $price_icons {
+    &__price-icon--#{$modifier} {
+      @include mdi-icon($icon, before, 0);
+    }
+  }
+
+  &__price-icon {
+    color: theme-color(secondary);
+    font-size: 40px;
+    line-height: 1;
+    margin-bottom: gap();
+  }
+
+  &__price-title {
+    font-weight: bold;
+    color: black;
+    text-transform: uppercase;
+    margin-bottom: gap();
+  }
+
+  &__price-price {
+    margin-bottom: gap();
+  }
+
+  &__price-price-amount {
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  &__price-price-currency {
+    color: gray(600);
+    font-weight: bold;
+  }
+
+  &__price-price-for {
+    color: gray(600);
+
+    &::before {
+      content: '/';
+      margin-right: 4px;
+      display: inline-block;
+    }
+  }
+
+  &__price-services {
+    @include list-unstyled;
+    font-size: 16px;
+    margin-bottom: gap(2);
+  }
+
+  &__price-contact {
+    background-color: theme-color();
+    color: white;
+    padding: gap();
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    margin: auto #{gap(-2)} #{gap(-2)} #{gap(-2)};
+    border-radius: 0 0 10px 10px;
+  }
+}

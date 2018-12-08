@@ -1,0 +1,15 @@
+dlog.admin:
+  path: '/admin/dlog'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'DLOG'
+  requirements:
+    _permission: 'access dlog admin page'
+
+dlog.availability_settings:
+  path: '/admin/dlog/availability'
+  defaults:
+    _title: 'Availability settings'
+    _form: 'Drupal\dlog\Form\AvailabilitySettingsForm'
+  requirements:
+    _permission: 'access dlog admin page'

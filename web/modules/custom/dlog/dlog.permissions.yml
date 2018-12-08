@@ -1,0 +1,3 @@
+access dlog admin page:
+  title: 'Access dlog admin pages'
+  restrict access: true

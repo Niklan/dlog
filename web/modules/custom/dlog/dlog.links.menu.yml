@@ -1,0 +1,10 @@
+dlog.admin:
+  title: 'DLOG'
+  parent: system.admin
+  route_name: dlog.admin
+  weight: -50
+
+dlog.availability_settings:
+  title: 'Availability'
+  parent: dlog.admin
+  route_name: dlog.availability_settings
