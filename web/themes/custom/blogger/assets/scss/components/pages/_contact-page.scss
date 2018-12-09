@@ -26,6 +26,7 @@ $icons: (
     width: 50%;
     position: relative;
     padding-top: 42px;
+    overflow: hidden;
 
     &::before {
       @include gradient-directional(rgba(theme-color('secondary'), 0.5), rgba(theme-color(), 0.5), 125deg);

@@ -2256,11 +2256,15 @@ a.tabledrag-handle .handle {
       right: 0;
       bottom: 0;
       left: 0; }
-  .frontpage__welcome-video {
+  .frontpage__welcome-video-wrapper {
     position: absolute;
     z-index: 0;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; }
+  .frontpage__welcome-video {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
@@ -2426,7 +2430,8 @@ a.tabledrag-handle .handle {
   .contact-page__right {
     width: 50%;
     position: relative;
-    padding-top: 42px; }
+    padding-top: 42px;
+    overflow: hidden; }
     .contact-page__right::before {
       background-image: linear-gradient(125deg, rgba(252, 70, 107, 0.5), rgba(63, 94, 251, 0.5));
       background-repeat: repeat-x;

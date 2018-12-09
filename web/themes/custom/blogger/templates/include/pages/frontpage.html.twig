@@ -1,10 +1,12 @@
 {% set bem_block = 'frontpage' %}
 <main class="{{ bem_block }}">
   <div class="{{ bem_block }}__welcome">
-    <video poster="{{ search_image_uri|image_style('thumbnail') }}" autoplay loop muted class="{{ bem_block }}__welcome-video">
-      <source src="{{ file_url(search_video_uri) }}" type="video/mp4">
-      {{ 'Your browser does not support the video tag'|t }}
-    </video>
+    <div class="{{ bem_block }}__welcome-video-wrapper">
+      <video poster="{{ search_image_uri|image_style('thumbnail') }}" autoplay loop muted class="{{ bem_block }}__welcome-video">
+        <source src="{{ file_url(search_video_uri) }}" type="video/mp4">
+        {{ 'Your browser does not support the video tag'|t }}
+      </video>
+    </div>
 
     <div class="{{ bem_block }}__container">
       <div class="{{ bem_block }}__welcome-inner">
