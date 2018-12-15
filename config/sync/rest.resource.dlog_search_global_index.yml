@@ -1,0 +1,18 @@
+uuid: bb9866b0-6fd3-4551-b124-bd98e113ad53
+langcode: ru
+status: true
+dependencies:
+  module:
+    - dlog_search
+    - serialization
+    - user
+id: dlog_search_global_index
+plugin_id: dlog_search_global_index
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+  authentication:
+    - cookie

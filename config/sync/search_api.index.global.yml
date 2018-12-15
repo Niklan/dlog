@@ -1,0 +1,214 @@
+uuid: 7ce7c746-c82e-4aed-8bc2-eed222a9b0de
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - field.storage.node.field_comments
+    - field.storage.node.field_tags
+    - search_api.server.database
+    - core.entity_view_mode.node.search_index
+  module:
+    - taxonomy
+    - node
+    - search_api
+    - snowball_stemmer
+id: global
+name: Global
+description: ''
+read_only: false
+field_settings:
+  body:
+    label: Анонс
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
+  changed:
+    label: Изменение
+    datasource_id: 'entity:taxonomy_term'
+    property_path: changed
+    type: date
+    dependencies:
+      module:
+        - taxonomy
+  description:
+    label: Описание
+    datasource_id: 'entity:taxonomy_term'
+    property_path: description
+    type: text
+    dependencies:
+      module:
+        - taxonomy
+  field_comments:
+    label: Комментарии
+    datasource_id: 'entity:node'
+    property_path: field_comments
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_comments
+  field_tags:
+    label: Тэги
+    datasource_id: 'entity:node'
+    property_path: field_tags
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_tags
+  name:
+    label: Name
+    datasource_id: 'entity:taxonomy_term'
+    property_path: name
+    type: string
+    dependencies:
+      module:
+        - taxonomy
+  name_fulltext:
+    label: Name
+    datasource_id: 'entity:taxonomy_term'
+    property_path: name
+    type: text
+    dependencies:
+      module:
+        - taxonomy
+  nid:
+    label: ID
+    datasource_id: 'entity:node'
+    property_path: nid
+    type: integer
+    dependencies:
+      module:
+        - node
+  promote:
+    label: 'Помещено на главную страницу'
+    datasource_id: 'entity:node'
+    property_path: promote
+    type: boolean
+    dependencies:
+      module:
+        - node
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          blog_article: search_index
+          page: ''
+        'entity:taxonomy_term':
+          taxonomy_term: ''
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: string
+    dependencies:
+      module:
+        - node
+  title_fulltext:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: !!float 21
+    dependencies:
+      module:
+        - node
+  uuid:
+    label: UUID
+    datasource_id: 'entity:taxonomy_term'
+    property_path: uuid
+    type: string
+    dependencies:
+      module:
+        - taxonomy
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+  'entity:taxonomy_term':
+    bundles:
+      default: true
+      selected:
+        - tags
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  entity_status: {  }
+  ignorecase:
+    all_fields: true
+    fields:
+      - body
+      - description
+      - name
+      - name_fulltext
+      - rendered_item
+      - title
+      - title_fulltext
+      - uuid
+    weights:
+      preprocess_index: -46
+      preprocess_query: -20
+  rendered_item: {  }
+  snowball_stemmer:
+    all_fields: 1
+    fields:
+      - body
+      - description
+      - name_fulltext
+      - rendered_item
+      - title_fulltext
+    exceptions:
+      texan: texa
+      mexican: mexic
+    weights:
+      preprocess_index: -48
+      preprocess_query: 0
+  tokenizer:
+    all_fields: true
+    fields:
+      - body
+      - description
+      - name_fulltext
+      - rendered_item
+      - title_fulltext
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '3'
+    weights:
+      preprocess_index: -49
+      preprocess_query: -6
+  transliteration:
+    all_fields: true
+    fields:
+      - body
+      - description
+      - name
+      - name_fulltext
+      - rendered_item
+      - title
+      - title_fulltext
+      - uuid
+    weights:
+      preprocess_index: -47
+      preprocess_query: -20
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: database
