@@ -57,8 +57,8 @@
 
 @font-face {
   font-family: "Material Design Icons";
-  src: url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot?v=3.0.39");
-  src: url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot?#iefix&v=3.0.39") format("embedded-opentype"), url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff2?v=3.0.39") format("woff2"), url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff?v=3.0.39") format("woff"), url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.ttf?v=3.0.39") format("truetype"), url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.svg?v=3.0.39#materialdesigniconsregular") format("svg");
+  src: url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot?v=3.2.89");
+  src: url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot?#iefix&v=3.2.89") format("embedded-opentype"), url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff2?v=3.2.89") format("woff2"), url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff?v=3.2.89") format("woff"), url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.ttf?v=3.2.89") format("truetype"), url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.svg?v=3.2.89#materialdesigniconsregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 
