@@ -102,7 +102,7 @@
 
 .button, .form-submit,
 .button--primary,
-.button--action, .button--warning, .button-danger, .button--success, .button--info, .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .button, .frontpage__search-submit, .frontpage__articles-more {
+.button--action, .button--warning, .button-danger, .button--success, .button--info, .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .button, .frontpage__articles-more {
   padding: 8px 16px;
   font-size: 18px;
   line-height: 1.25;
@@ -2244,7 +2244,8 @@ a.tabledrag-handle .handle {
         padding-left: 16px; } }
   .frontpage__welcome {
     padding-top: 42px;
-    position: relative; }
+    position: relative;
+    z-index: 10; }
     .frontpage__welcome::before {
       background-image: linear-gradient(125deg, rgba(252, 70, 107, 0.5), rgba(63, 94, 251, 0.5));
       background-repeat: repeat-x;
@@ -2286,42 +2287,9 @@ a.tabledrag-handle .handle {
     max-width: 600px;
     font-size: 18px;
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1); }
-  .frontpage__search {
-    display: flex;
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2); }
-  .frontpage__search-input {
-    padding: 16px !important;
-    border-radius: 4px 0 0 4px !important; }
-  .frontpage__search-submit {
-    color: white;
-    background-color: #3F5EFB;
-    background-image: none;
-    border-color: transparent;
-    transition: all .15s ease-in-out;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);
-    border-radius: 0 4px 4px 0;
-    padding: 0 32px;
-    text-transform: uppercase;
-    font-weight: bold; }
-    .frontpage__search-submit:focus, .frontpage__search-submit:hover {
-      color: white;
-      background-color: #0d34fa;
-      border-color: transparent; }
-    .frontpage__search-submit:focus {
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(63, 94, 251, 0.5); }
-    .frontpage__search-submit:disabled {
-      background-color: #3F5EFB;
-      border-color: transparent;
-      opacity: .65; }
-    .frontpage__search-submit:active {
-      color: white;
-      background-color: #0d34fa;
-      background-image: none;
-      border-color: transparent;
-      box-shadow: 0 0 0 3px rgba(63, 94, 251, 0.5); }
   .frontpage__author {
-    position: relative; }
+    position: relative;
+    z-index: 5; }
   .frontpage__author-bg {
     position: absolute;
     z-index: 0;

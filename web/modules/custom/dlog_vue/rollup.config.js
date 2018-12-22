@@ -1,6 +1,7 @@
 import vuePlugin from 'rollup-plugin-vue';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
+import nodeGlobals from 'rollup-plugin-node-globals';
 
 export default [
   {
@@ -18,6 +19,7 @@ export default [
       commonjs(),
       resolve(),
       vuePlugin(),
+      nodeGlobals(),
     ],
   },
 ];

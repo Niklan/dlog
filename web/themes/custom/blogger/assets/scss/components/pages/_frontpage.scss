@@ -9,6 +9,7 @@
   &__welcome {
     padding-top: 42px;
     position: relative;
+    z-index: 10;
 
     &::before {
       @include gradient-directional(rgba(theme-color('secondary'), 0.5), rgba(theme-color(), 0.5), 125deg);
@@ -61,26 +62,9 @@
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
   }
 
-  &__search {
-    display: flex;
-    box-shadow: 0 0 50px rgba(black, 0.2);
-  }
-
-  &__search-input {
-    padding: gap(2) !important;
-    border-radius: $border-radius-base 0 0 $border-radius-base !important;
-  }
-
-  &__search-submit {
-    @include button-variant(white, theme-color());
-    border-radius: 0 $border-radius-base $border-radius-base 0;
-    padding: 0 gap(4);
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-
   &__author {
     position: relative;
+    z-index: 5;
   }
 
   &__author-bg {
