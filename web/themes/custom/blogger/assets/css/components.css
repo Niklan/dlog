@@ -20,7 +20,7 @@
   font-size: 18px;
   line-height: 42px;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1); }
-  .block-main__menu-item-link:hover {
+  .block-main__menu-item-link:hover, .block-main__menu-item-link.is-active {
     color: #3F5EFB; }
 
 .header--light-menu .block-main__menu-item-link {
