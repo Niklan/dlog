@@ -1,23 +1,52 @@
 .paragraph-code {
+  margin-left: gap(-3);
+  margin-right: gap(-3);
+  border-top: 1px solid gray(300);
+  border-bottom: 1px solid gray(300);
+
   &__content {
-    border: 1px solid gray(300);
-    border-radius: 4px;
     overflow: hidden;
+    background-color: gray(100);
   }
 
   &__field-title {
-    @include mdi-icon('code-braces');
-    background: gray(100);
+    @include mdi-icon('code-not-equal-variant', before);
+    background: white;
     padding: gap(1) gap(2);
     font-weight: bold;
+    display: inline-block;
+    margin-left: gap(3);
+    font-size: 14px;
+    margin-bottom: -1px;
+    border-left: 1px solid gray(300);
+    border-right: 1px solid gray(300);
+  }
+
+  &__field-body {
+    padding: gap() 0;
+    border-top: 1px solid gray(300);
+    background: white;
   }
 
   pre {
     margin: 0;
     padding: 0;
+
+    code {
+      font-size: 16px;
+      padding: gap(2) gap(5);
+      position: relative;
+      display: block;
+    }
   }
 
-  .hljs {
-    padding: gap(2);
+  &__highlight-line {
+    @include gradient-x(rgba(theme-color(), 0.1), rgba(theme-color('secondary'), 0.1));
+    position: absolute;
+    left: 0;
+    right: 0;
+    user-select: none;
+    pointer-events: none;
+    z-index: 10;
   }
 }

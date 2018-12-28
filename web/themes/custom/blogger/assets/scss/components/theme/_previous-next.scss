@@ -5,7 +5,7 @@
 
   &__previous,
   &__next {
-    width: 47%;
+    width: calc(50% - #{gap(1.5)});
   }
 
 }
@@ -49,6 +49,14 @@
       }
     }
 
+    &__next {
+      .previous-next__promo-image {
+        &::before {
+          @include gradient-directional(rgba(theme-color('secondary'), 0.3), rgba(theme-color(), 0.3));
+        }
+      }
+    }
+
     &__icon {
       position: relative;
       z-index: 10;
@@ -69,11 +77,16 @@
       position: relative;
       z-index: 10;
       text-shadow: 1px 1px 1px rgba(black, 0.2);
+      line-height: 1.2;
 
       &--next {
         text-align: right;
         margin-left: auto;
       }
+    }
+
+    &__tags {
+      margin-bottom: gap();
     }
 
     &__tag {

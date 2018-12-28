@@ -23,8 +23,12 @@ module:
   dblog: 0
   dlog: 0
   dlog_blog: 0
+  dlog_comments: 0
   dlog_hero: 0
   dlog_paragraphs: 0
+  dlog_search: 0
+  dlog_taxonomy: 0
+  dlog_vue: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
   editor: 0
@@ -57,17 +61,20 @@ module:
   metatag_views: 0
   node: 0
   options: 0
-  page_cache: 0
   path: 0
   photoswipe: 0
   quickedit: 0
-  rdf: 0
   redirect: 0
+  rest: 0
+  restui: 0
   robotstxt: 0
   scheduler: 0
-  search: 0
+  search_api: 0
+  search_api_db: 0
+  serialization: 0
   shortcut: 0
   snippet_manager: 0
+  snowball_stemmer: 0
   swiftmailer: 0
   system: 0
   taxonomy: 0

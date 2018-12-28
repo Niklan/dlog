@@ -1,0 +1,25 @@
+{# ENTITY_TYPE-ENTITY_BUNDLE-VIEW_MODE-FIELD_NAME #}
+{% set bem_block = (entity_type ~ '-' ~ bundle ~ (view_mode != 'default' ? '-' ~ view_mode))|clean_class ~ '__' ~ field_name|replace({(bundle ~ '__'): ''})|clean_class %}
+{% set bem_element_prefix = bem_element_prefix ?: bem_block ~ '-' %}
+{% set classes = classes ?: [
+  bem_block,
+] %}
+<a id="comments"></a>
+<section{{ attributes.addClass(classes) }}>
+  {% if comments and not label_hidden %}
+    {{ title_prefix }}
+    <h2{{ title_attributes.addClass(bem_element_prefix ~ 'title') }}><span>{{ label|t }}</span></h2>
+    {{ title_suffix }}
+  {% endif %}
+
+  <div class="{{ bem_element_prefix }}content">
+    {{ comments }}
+  </div>
+
+  {% if comment_form %}
+    <div class="{{ bem_element_prefix }}form-container">
+      <h2{{ content_attributes.addClass(bem_element_prefix ~ 'form-title') }}><span>{{ 'Add new comment'|t }}</span></h2>
+      {{ comment_form }}
+    </div>
+  {% endif %}
+</section>

@@ -1,0 +1,52 @@
+{% set bem_block = 'contact-page' %}
+<div class="{{ bem_block }}">
+  <div class="{{ bem_block }}__inner">
+    <div class="{{ bem_block }}__left">
+      <h1 class="{{ bem_block }}__title">Контакты</h1>
+
+      <div class="{{ bem_block }}__contact-information">
+        <h2 class="{{ bem_block }}__lets-talk">Давайте <span>пообщаемся</span></h2>
+
+        <div class="{{ bem_block }}__contact-items">
+          <div class="{{ bem_block }}__contact-item">
+            <span class="{{ bem_block }}__contact-item-icon {{ bem_block }}__contact-item-icon--address"></span>
+            <div class="{{ bem_block }}__contact-item-label">Адрес</div>
+            <div class="{{ bem_block }}__contact-item-value">Россия, Москва</div>
+          </div>
+
+          <div class="{{ bem_block }}__contact-item">
+            <span class="{{ bem_block }}__contact-item-icon {{ bem_block }}__contact-item-icon--email"></span>
+            <div class="{{ bem_block }}__contact-item-label">Email</div>
+            <div class="{{ bem_block }}__contact-item-value"><a href="mailto:gavin.belson@hooli.com">gavin.belson@hooli.com</a></div>
+          </div>
+
+          <div class="{{ bem_block }}__contact-item">
+            <span class="{{ bem_block }}__contact-item-icon {{ bem_block }}__contact-item-icon--phone"></span>
+            <div class="{{ bem_block }}__contact-item-label">Телефон</div>
+            <div class="{{ bem_block }}__contact-item-value"><a href="tel:+78005553535">+7 (800) 555-35-35</a></div>
+          </div>
+
+          <div class="{{ bem_block }}__contact-item">
+            <span class="{{ bem_block }}__contact-item-icon {{ bem_block }}__contact-item-icon--availability"></span>
+            <div class="{{ bem_block }}__contact-item-label">Доступность</div>
+            <div class="{{ bem_block }}__contact-item-value">{{ dlog_availability_status() }}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="{{ bem_block }}__contact-form">
+        <h2 class="{{ bem_block }}__contact-form-title">Форма <span>связи</span></h2>
+
+        {{ contact_form_ajax('feedback') }}
+      </div>
+    </div>
+
+    <div class="{{ bem_block }}__right">
+      <video poster="{{ contact_image_uri|image_style('thumbnail') }}" autoplay loop muted class="{{ bem_block }}__contact-video">
+        <source src="{{ file_url(contact_video_uri) }}" type="video/mp4">
+        {{ 'Your browser does not support the video tag'|t }}
+      </video>
+    </div>
+  </div>
+</div>
+

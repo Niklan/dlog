@@ -3,7 +3,7 @@ langcode: ru
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment.default
+    - core.entity_view_display.comment.comment.full
     - core.entity_view_mode.node.full
     - field.field.node.blog_article.body
     - field.field.node.blog_article.field_attachments
@@ -30,10 +30,10 @@ content:
     third_party_settings: {  }
     region: content
   field_comments:
-    weight: 4
+    weight: 6
     label: above
     settings:
-      view_mode: default
+      view_mode: full
       pager_id: 0
     third_party_settings: {  }
     type: comment_default
@@ -54,6 +54,16 @@ content:
     third_party_settings: {  }
   previous_next_article:
     weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  random_posts:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  related_posts:
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }

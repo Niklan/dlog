@@ -1,0 +1,121 @@
+{% set bem_block = 'about-page' %}
+<div class="{{ bem_block }}">
+  <div class="{{ bem_block }}__inner">
+    <div class="{{ bem_block }}__left">
+      <h1 class="{{ bem_block }}__title">Об авторе</h1>
+
+      <div class="{{ bem_block }}__quote">
+        <div class="{{ bem_block }}__quote-cite">
+          “The Box III cements Hooli’s legacy of innovation. And my signature — that’s a promise from me to the Hooli user. To buck the impossible. To keep imagining new ways to change the world. To keep striving for a better tomorrow. To stay restless, never settling for the status quo in data storage devices.”
+        </div>
+        <div class="{{ bem_block }}__quote-author">— Gavin Belson, Founder and CEO</div>
+        <img src="{{ about_signature_uri|image_style('thumbnail') }}" class="{{ bem_block }}__quote-signature" alt="Gavin Belson Signature">
+      </div>
+
+      <div class="{{ bem_block }}__skills">
+        <h2 class="{{ bem_block }}__skills-title">Мои <span>навыки</span></h2>
+
+        <div class="{{ bem_block }}__skills-items">
+          <div class="{{ bem_block }}__skills-item">
+            <div class="{{ bem_block }}__skills-item-icon {{ bem_block }}__skills-item-icon--drupal"></div>
+            <div class="{{ bem_block }}__skills-item-title">Drupal</div>
+            <div class="{{ bem_block }}__skills-item-description">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, modi?
+            </div>
+          </div>
+
+          <div class="{{ bem_block }}__skills-item">
+            <div class="{{ bem_block }}__skills-item-icon {{ bem_block }}__skills-item-icon--php"></div>
+            <div class="{{ bem_block }}__skills-item-title">PHP</div>
+            <div class="{{ bem_block }}__skills-item-description">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, modi?
+            </div>
+          </div>
+
+          <div class="{{ bem_block }}__skills-item">
+            <div class="{{ bem_block }}__skills-item-icon {{ bem_block }}__skills-item-icon--html"></div>
+            <div class="{{ bem_block }}__skills-item-title">HTML</div>
+            <div class="{{ bem_block }}__skills-item-description">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, modi?
+            </div>
+          </div>
+
+          <div class="{{ bem_block }}__skills-item">
+            <div class="{{ bem_block }}__skills-item-icon {{ bem_block }}__skills-item-icon--css"></div>
+            <div class="{{ bem_block }}__skills-item-title">CSS/SCSS</div>
+            <div class="{{ bem_block }}__skills-item-description">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, modi?
+            </div>
+          </div>
+
+          <div class="{{ bem_block }}__skills-item">
+            <div class="{{ bem_block }}__skills-item-icon {{ bem_block }}__skills-item-icon--js"></div>
+            <div class="{{ bem_block }}__skills-item-title">JavaScript</div>
+            <div class="{{ bem_block }}__skills-item-description">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, modi?
+            </div>
+          </div>
+
+          <div class="{{ bem_block }}__skills-item">
+            <div class="{{ bem_block }}__skills-item-icon {{ bem_block }}__skills-item-icon--server"></div>
+            <div class="{{ bem_block }}__skills-item-title">Администрирование серверов</div>
+            <div class="{{ bem_block }}__skills-item-description">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, modi?
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="{{ bem_block }}__services">
+        <h2 class="{{ bem_block }}__services-title">Мои <span>услуги</span></h2>
+
+        <div class="{{ bem_block }}__prices">
+          <div class="{{ bem_block }}__price">
+            <div class="{{ bem_block }}__price-icon {{ bem_block }}__price-icon--hour-rate"></div>
+            <div class="{{ bem_block }}__price-title">Разработка</div>
+            <div class="{{ bem_block }}__price-price">
+              <span class="{{ bem_block }}__price-price-amount">1 500</span>
+              <span class="{{ bem_block }}__price-price-currency">₽</span>
+              <span class="{{ bem_block }}__price-price-for">час</span>
+            </div>
+
+            <ul class="{{ bem_block }}__price-services">
+              <li class="{{ bem_block }}__price-service">Написание кастомных модулей</li>
+              <li class="{{ bem_block }}__price-service">Верстка</li>
+              <li class="{{ bem_block }}__price-service">Настройка и деплой</li>
+              <li class="{{ bem_block }}__price-service">Рефакторинг и оптимизация</li>
+              <li class="{{ bem_block }}__price-service">Доработка чужих модулей</li>
+            </ul>
+
+            <a href="{{ url('contact.site_page') }}" class="{{ bem_block }}__price-contact">Написать</a>
+          </div>
+
+          <div class="{{ bem_block }}__price">
+            <div class="{{ bem_block }}__price-icon {{ bem_block }}__price-icon--audit"></div>
+            <div class="{{ bem_block }}__price-title">Анализ кода и аудит</div>
+            <div class="{{ bem_block }}__price-price">
+              <span class="{{ bem_block }}__price-price-amount">5 000</span>
+              <span class="{{ bem_block }}__price-price-currency">₽</span>
+              <span class="{{ bem_block }}__price-price-for">2 дня</span>
+            </div>
+
+            <ul class="{{ bem_block }}__price-services">
+              <li class="{{ bem_block }}__price-service">Анализ и аудит кода</li>
+              <li class="{{ bem_block }}__price-service">Документ с отчетом</li>
+              <li class="{{ bem_block }}__price-service">90 минут на разговор по скайпу</li>
+              <li class="{{ bem_block }}__price-service">Различные отчеты от инструментов с проверками</li>
+              <li class="{{ bem_block }}__price-service">Пример рефакторинга</li>
+            </ul>
+
+            <a href="{{ url('contact.site_page') }}" class="{{ bem_block }}__price-contact">Написать</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="{{ bem_block }}__right">
+      <img src="{{ about_image_uri|image_style('dlog_hero') }}" alt="Об авторе" class="{{ bem_block }}__about-poster">
+    </div>
+  </div>
+</div>
+

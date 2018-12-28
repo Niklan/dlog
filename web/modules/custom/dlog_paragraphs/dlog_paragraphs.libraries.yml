@@ -1,0 +1,7 @@
+highlighted_lines:
+  version: VERSION
+  js:
+    assets/js/paragraph-code--highlighted-lines.js: {}
+  dependencies:
+    - core/drupal
+

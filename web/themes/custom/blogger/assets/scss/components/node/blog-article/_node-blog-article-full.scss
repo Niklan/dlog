@@ -3,12 +3,12 @@
     margin-bottom: gap(3);
   }
 
-  &__field-paragraphs {
-    margin-bottom: gap(6);
+  &__field-paragraphs-item {
+    margin-bottom: gap(3);
   }
 
   .previous-next {
-    margin-bottom: gap(6);
+    margin-bottom: gap(3);
   }
 
   &__field-attachments {
@@ -16,7 +16,7 @@
     margin-right: gap(-3);
     padding: gap(3);
     background: gray(50);
-    margin-bottom: gap(6);
+    margin-bottom: gap(3);
     border-top: 1px solid gray(100);
     border-bottom: 1px solid gray(100);
   }
@@ -32,6 +32,65 @@
   }
 
   &__field-attachments-item {
-    lost-waffle: 4/12 3;
+    lost-waffle: 4/12 3 gap();
+  }
+
+  .dlog-blog-related-posts {
+    margin-bottom: gap(3);
+  }
+
+  .dlog-blog-random-posts {
+    margin-bottom: gap(3);
+  }
+
+  &__field-comments-title,
+  &__field-comments-form-title {
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: gap(3);
+    position: relative;
+    text-transform: uppercase;
+
+    span {
+      background: white;
+      position: relative;
+      z-index: 10;
+      padding: 0 gap(2);
+    }
+
+    &::before {
+      content: '';
+      height: 2px;
+      width: 100%;
+      background-color: gray(300);
+      position: absolute;
+      z-index: 5;
+      left: 0;
+      right: 0;
+      top: calc(50% - 1px);
+    }
+  }
+
+  &__field-comments-content {
+    margin-bottom: gap(3);
+
+    .indented {
+      margin-left: gap(6);
+    }
+  }
+
+  .comment-comment-full {
+    margin-bottom: gap(3);
+    padding-bottom: gap(3);
+    border-bottom: 1px solid gray(300);
+  }
+
+  &__field-comments-content > .comment-comment-full {
+     &:last-child {
+      border-bottom: unset;
+      margin-bottom: unset;
+      padding-bottom: unset;
+    }
   }
 }

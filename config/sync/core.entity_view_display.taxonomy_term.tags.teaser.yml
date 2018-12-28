@@ -1,0 +1,22 @@
+uuid: 03ec3811-88ad-461c-bec2-980cfd89400f
+langcode: ru
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.teaser
+    - field.field.taxonomy_term.tags.field_image
+    - taxonomy.vocabulary.tags
+id: taxonomy_term.tags.teaser
+targetEntityType: taxonomy_term
+bundle: tags
+mode: teaser
+content:
+  promo_image_with_replacement:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  description: true
+  field_image: true
+  langcode: true

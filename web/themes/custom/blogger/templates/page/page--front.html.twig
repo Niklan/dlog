@@ -1,0 +1,7 @@
+{% set bem_block = 'app' %}
+<div class="{{ bem_block }}">
+  {% include '@blogger/include/header.html.twig' with {'show_dlog_hero': false} %}
+  {% include '@blogger/include/pages/frontpage.html.twig' %}
+  {% include '@blogger/include/footer.html.twig' %}
+</div>
+

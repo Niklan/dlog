@@ -1,0 +1,138 @@
+$icons: (
+  'address': 'map-marker-outline',
+  'email': 'email-outline',
+  'phone': 'cellphone-android',
+  'availability': 'progress-clock',
+);
+
+.contact-page {
+  margin-top: -42px;
+  position: relative;
+
+  &__inner {
+    display: flex;
+    max-height: 100vh;
+  }
+
+  &__left {
+    @include gradient-directional(gray(300), white, 135deg);
+    width: 50%;
+    padding: gap(20) gap(10);
+    position: relative;
+    overflow: auto;
+  }
+
+  &__right {
+    width: 50%;
+    position: relative;
+    padding-top: 42px;
+    overflow: hidden;
+
+    &::before {
+      @include gradient-directional(rgba(theme-color('secondary'), 0.5), rgba(theme-color(), 0.5), 125deg);
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 5;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &__contact-video {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__title {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 60px;
+    font-size: 80px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0.1;
+    user-select: none;
+  }
+
+  &__lets-talk {
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+
+    span {
+      color: theme-color();
+    }
+  }
+
+  &__contact-items {
+    lost-flex-container: row;
+    margin-top: gap(3);
+  }
+
+  &__contact-item {
+    background-color: rgba(white, 0.05);
+    lost-waffle: 6/12 2;
+    padding: gap(2);
+    padding-left: calc(#{gap(2)} + #{gap(2)} + 40px);
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 0 50px rgba(black, 0.2);
+    height: auto;
+  }
+
+  &__contact-item-label {
+    color: black;
+    font-weight: bold;
+    margin-bottom: gap();
+  }
+
+  &__contact-item-value {
+    font-size: 16px;
+    line-height: 1.2;
+
+    a {
+      color: $text-color;
+    }
+  }
+
+  @each $modifier, $icon in $icons {
+    &__contact-item-icon--#{$modifier} {
+      @include mdi-icon($icon, before, 0);
+    }
+  }
+
+  &__contact-item-icon {
+    color: theme-color(secondary);
+    position: absolute;
+    left: gap(2);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+  }
+
+  &__contact-form {
+    margin-top: gap(6);
+  }
+
+  &__contact-form-title {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: gap(3);
+    text-transform: uppercase;
+
+    span {
+      color: theme-color();
+    }
+  }
+}

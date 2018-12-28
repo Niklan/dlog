@@ -1,0 +1,7 @@
+dlog.availability.settings:
+  type: config_object
+  label: 'Dlog availability settings'
+  mapping:
+    status:
+      type: string
+      label: 'Status'

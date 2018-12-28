@@ -1,0 +1,6 @@
+<div class="form-contact-message-feedback-form__header">
+  {{ form.name }}
+  {{ form.mail }}
+</div>
+
+{{ form|without('name', 'mail') }}

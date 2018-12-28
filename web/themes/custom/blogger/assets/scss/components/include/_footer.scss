@@ -21,6 +21,29 @@
     margin-bottom: gap(2);
   }
 
+  &__powered-by {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: gap(2);
+  }
+
+  &__powered-by-heart {
+    @include mdi-icon('heart', before, 0);
+    color: color(heart);
+  }
+
+  &__powered-by-drupal {
+    @include mdi-icon('drupal', before, 4px);
+    color: color(drupal);
+    font-weight: bold;
+  }
+
+  &__powered-by-gitlab {
+    @include mdi-icon('gitlab', before, 4px);
+    color: color(gitlab);
+    font-weight: bold;
+  }
+
   &__top {
     @include mdi-icon('menu-up', before, 0);
     display: table;

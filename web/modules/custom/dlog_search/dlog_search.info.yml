@@ -1,0 +1,8 @@
+name: DLOG - Search
+type: module
+description: Search helpers.
+package: dlog
+core: 8.x
+dependencies:
+  - search_api:search_api
+  - restui:restui

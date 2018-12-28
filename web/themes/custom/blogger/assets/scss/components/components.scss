@@ -31,11 +31,16 @@
 @import "ui/views-mini-pager";
 
 // Form.
+@import "form/form-comment-comment-form";
+@import "form/form-contact-message-feedback-form";
 
 // Node.
 @import "node/blog-article/node-blog-article-full";
 @import "node/blog-article/node-blog-article-teaser";
 @import "node/page/node-page-full";
+
+// Comments.
+@import "comment/comment-comment-full";
 
 // Paragraphs.
 @import "paragraph/paragraph-styles";
@@ -54,16 +59,26 @@
 @import "include/social-links";
 
 // Taxonomy term.
+@import "taxonomy-term/tags/taxonomy-term-tags-teaser";
 
 // Theme (hook_theme).
 @import "theme/dlog-hero";
 @import "theme/previous-next";
 @import "theme/dlog-social-share";
 @import "theme/dlog-label-with-icon-media-formatter";
+@import "theme/dlog-blog-related-posts";
+@import "theme/dlog-blog-random-posts";
 
 // Views.
 @import "views/articles";
+@import "views/tags";
 
 // Layout.
 @import "layout/app";
 @import "layout/main-layout";
+@import "layout/region-content";
+
+// Pages.
+@import "pages/frontpage";
+@import "pages/contact-page";
+@import "pages/about-page";

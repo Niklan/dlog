@@ -5,6 +5,7 @@
  * Main file for custom hooks and functions.
  */
 
+use Drupal\Core\Database\Query\AlterableInterface;
 use Drupal\imagemagick\ImagemagickExecArguments;
 
 /**
@@ -36,6 +37,10 @@ function dlog_theme($existing, $type, $theme, $path) {
       ],
       'file' => 'dlog.theme.inc',
     ],
+    'contact_message_feedback_form' => [
+      'render element' => 'form',
+      'file' => 'dlog.theme.inc',
+    ],
   ];
 }
 
@@ -46,4 +51,18 @@ function dlog_imagemagick_arguments_alter(ImagemagickExecArguments $arguments, $
   $arguments->add('-sampling-factor 4:2:0');
   $arguments->add('-interlace Plane');
   $arguments->add('-strip');
+}
+
+/**
+ * Implements hook_query_TAG_alter() for entity_query_random.
+ */
+function dlog_query_entity_query_random_alter(AlterableInterface $query) {
+  $query->orderRandom();
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for toolbar.html.twig.
+ */
+function dlog_preprocess_toolbar(&$variables) {
+  $variables['#attached']['library'][] = 'dlog/toolbar';
 }

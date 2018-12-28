@@ -1,0 +1,14 @@
+{% set bem_block = 'dlog-blog-related-posts' %}
+{% if items|length %}
+  <div{{ attributes.addClass(bem_block) }}>
+    <h2 class="{{ bem_block }}__title"><span>Похожие материалы</span></h2>
+
+    <div class="{{ bem_block }}__items">
+      {% for item in items %}
+        <div class="{{ bem_block }}__item">
+          {{ item }}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

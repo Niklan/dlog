@@ -15,3 +15,5 @@ behavior_plugins:
     enabled: true
   dlog_paragraphs_paragraph_title:
     enabled: true
+  dlog_paragraphs_code_line_highlight:
+    enabled: true

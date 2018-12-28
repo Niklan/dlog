@@ -1,0 +1,6 @@
+services:
+  dlog.twig_extension:
+    class: Drupal\dlog\Service\DlogTwigExtension
+    arguments: ['@config.factory']
+    tags:
+      - { name: twig.extension }

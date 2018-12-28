@@ -33,7 +33,7 @@ class NodeBlogArticle extends DlogHeroEntityPluginBase {
     /** @var \Drupal\media\MediaInterface $media */
     $media = $node->get('field_image')->entity;
 
-    return $media->get('field_media_image')->entity->get('uri')->value;
+    return $media->get('field_media_image')->entity->getFileUri();
   }
 
 }

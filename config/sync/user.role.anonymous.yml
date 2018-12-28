@@ -12,6 +12,8 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'access site-wide contact form'
+  - 'post comments'
+  - 'restful get dlog_search_global_index'
   - 'search content'
   - 'use text format markdown'
   - 'use text format restricted_html'

@@ -1,0 +1,6 @@
+services:
+  dlog_blog.manager:
+    class: 'Drupal\dlog_blog\Service\BlogManager'
+    arguments: ['@entity_type.manager']
+  dlog_blog.lazy_builder:
+    class: 'Drupal\dlog_blog\Service\BlogLazyBuilder'

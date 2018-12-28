@@ -1,0 +1,59 @@
+{{ attach_library('dlog_vue/main') }}
+{% set bem_block = 'frontpage' %}
+<main class="{{ bem_block }}">
+  <div class="{{ bem_block }}__welcome">
+    <div class="{{ bem_block }}__welcome-video-wrapper">
+      <video poster="{{ search_image_uri|image_style('thumbnail') }}" autoplay loop muted class="{{ bem_block }}__welcome-video">
+        <source src="{{ file_url(search_video_uri) }}" type="video/mp4">
+        {{ 'Your browser does not support the video tag'|t }}
+      </video>
+    </div>
+
+    <div class="{{ bem_block }}__container">
+      <div class="{{ bem_block }}__welcome-inner">
+        <h1 class="{{ bem_block }}__welcome-title">Блог про разработку и IT</h1>
+
+        <div class="{{ bem_block }}__welcome-description">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
+            beatae blanditiis cumque dolores ducimus eaque expedita impedit
+            inventore labore neque non odio quam qui, quidem recusandae tempora
+            tenetur totam, voluptatum.</p>
+        </div>
+
+        <div id="frontpage-global-search"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="{{ bem_block }}__author">
+    <img src="{{ author_bg|image_style('dlog_hero') }}" alt="" class="{{ bem_block }}__author-bg">
+
+    <div class="{{ bem_block }}__container">
+      <div class="{{ bem_block }}__author-inner">
+        <img src="{{ author_avatar|image_style('thumbnail') }}" alt="Гэвин Белсон" class="{{ bem_block }}__author-avatar">
+        <div class="{{ bem_block }}__author-hello">Привет! Меня зовут</div>
+        <div class="{{ bem_block }}__author-name">Гевин Белсон</div>
+        <div class="{{ bem_block }}__author-about">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Aspernatur aut autem blanditiis consequatur consequuntur doloribus
+            dolorum, eum eveniet exercitationem fuga harum id mollitia natus
+            necessitatibus neque non optio pariatur quae quos rem rerum saepe
+            tempora vel velit vero voluptate voluptatem. Culpa deserunt esse
+            facere fuga nam necessitatibus saepe vitae voluptatibus.</p>
+        </div>
+
+        <a href="{{ url('entity.node.canonical', { node: 1 }) }}" class="{{ bem_block }}__author-more">Больше об авторе</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="{{ bem_block }}__articles">
+    <div class="{{ bem_block }}__container">
+      <h2 class="{{ bem_block }}__articles-title">Последние публикации</h2>
+
+      {{ drupal_view('blog_articles', 'frontpage_articles') }}
+
+      <a href="{{ url('view.blog_articles.page') }}" class="{{ bem_block }}__articles-more">Перейти в блог</a>
+    </div>
+  </div>
+</main>

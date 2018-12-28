@@ -1,0 +1,37 @@
+.dlog-blog-related-posts {
+  &__title {
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: gap(3);
+    position: relative;
+    text-transform: uppercase;
+
+    span {
+      background: white;
+      position: relative;
+      z-index: 10;
+      padding: 0 gap(2);
+    }
+
+    &::before {
+      content: '';
+      height: 2px;
+      width: 100%;
+      background-color: gray(300);
+      position: absolute;
+      z-index: 5;
+      left: 0;
+      right: 0;
+      top: calc(50% - 1px);
+    }
+  }
+
+  &__items {
+    lost-flex-container: row;
+  }
+
+  &__item {
+    lost-waffle: 3/12 4;
+  }
+}

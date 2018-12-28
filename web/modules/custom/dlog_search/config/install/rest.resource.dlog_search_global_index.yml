@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - dlog_search
+    - serialization
+    - user
+id: dlog_search_global_index
+plugin_id: dlog_search_global_index
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+  authentication:
+    - cookie

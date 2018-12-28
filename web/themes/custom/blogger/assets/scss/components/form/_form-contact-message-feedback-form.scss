@@ -1,0 +1,19 @@
+.form-contact-message-feedback-form {
+  background-color: rgba(white, 0.05);
+  padding: gap(2);
+  border-radius: 10px;
+  box-shadow: 0 0 50px rgba(black, 0.2);
+  margin-bottom: gap(6);
+
+  &__header {
+    lost-flex-container: row;
+  }
+
+  &__name {
+    lost-column: 6/12;
+  }
+
+  &__mail {
+    lost-column: 6/12;
+  }
+}

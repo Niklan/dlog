@@ -85,3 +85,7 @@ content:
 hidden:
   estimated_read_time: true
   langcode: true
+  previous_next_article: true
+  random_posts: true
+  related_posts: true
+  social_share: true

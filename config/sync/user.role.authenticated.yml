@@ -14,6 +14,7 @@ permissions:
   - 'access shortcuts'
   - 'access site-wide contact form'
   - 'post comments'
+  - 'restful get dlog_search_global_index'
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'

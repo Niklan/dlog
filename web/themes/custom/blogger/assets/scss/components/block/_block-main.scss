@@ -24,8 +24,23 @@
     line-height: 42px;
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
 
-    &:hover {
+    &:hover,
+    &.is-active {
       color: theme-color();
+    }
+  }
+}
+
+.header--light-menu {
+  .block-main {
+
+    &__menu-item-link {
+      color: $text-color;
+      text-shadow: unset;
+
+      &:hover {
+        color: theme-color();
+      }
     }
   }
 }

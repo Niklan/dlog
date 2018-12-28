@@ -1,0 +1,127 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for DLOG — Comments module.
+ */
+
+use Drupal\comment\CommentInterface;
+use Drupal\Component\Utility\Color;
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function dlog_comments_theme($existing, $type, $theme, $path) {
+  return [
+    'comment_form__node__blog_article__field_comments' => [
+      'render element' => 'form',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter() for text_textarea.
+ */
+function dlog_comments_field_widget_text_textarea_form_alter(&$element, FormStateInterface $form_state, $context) {
+  /** @var \Drupal\Core\Field\FieldItemListInterface $items */
+  $items = $context['items'];
+  $field_name = $items->getFieldDefinition()->getName();
+
+  if ($field_name == 'comment_body') {
+    $element['#after_build'][] = '_dlog_comments_remove_text_textarea_format';
+  }
+}
+
+/**
+ * After build callback to remove text_textarea format.
+ */
+function _dlog_comments_remove_text_textarea_format($element, FormStateInterface $form_state) {
+  if ($element['#type'] == 'text_format') {
+    hide($element['format']);
+  }
+
+  return $element;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for comment_comment_form.
+ */
+function dlog_comments_form_comment_comment_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form['author']['name']['#attributes']['placeholder'] = 'Gavin Belson';
+  $form['author']['mail']['#attributes']['placeholder'] = 'gavin@hooli.com';
+  unset($form['author']['mail']['#description']);
+  $form['author']['homepage']['#attributes']['placeholder'] = 'http://hooli.com';
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function dlog_comments_entity_extra_field_info() {
+  $extra = [];
+
+  $extra['comment']['comment']['display']['letter_avatar'] = [
+    'label' => t('Letter Avatar'),
+    'weight' => 100,
+    'visible' => FALSE,
+  ];
+
+  $extra['comment']['comment']['display']['homepage'] = [
+    'label' => t('User homepage'),
+    'weight' => 100,
+    'visible' => FALSE,
+  ];
+
+  return $extra;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function dlog_comments_comment_view(array &$build, CommentInterface $comment, EntityViewDisplayInterface $display, $view_mode) {
+  $bem_block = Html::getClass('comment-' . $comment->bundle() . ($view_mode == 'default' ? '' : '-' . $view_mode));
+
+  if ($display->getComponent('letter_avatar')) {
+    /** @var \Drupal\dlog_comments\Service\LetterAvatarInterface $letter_avatar */
+    $letter_avatar = \Drupal::service('dlog_comments.letter_avatar');
+    $bg_color = Color::rgbToHex($letter_avatar->fromUsername($comment->getAuthorName()));
+
+    $build['letter_avatar'] = [
+      '#type' => 'inline_template',
+      '#template' => '<div class="{{ class }}" style="background-color: {{ bg_color }}"><span class="{{ letter_class }}" style="color: {{ letter_color }}">{{ letter }}</span></div>',
+      '#context' => [
+        'class' => $bem_block . '__letter-avatar',
+        'bg_color' => $bg_color,
+        'letter' => $letter_avatar->getLetterFromUsername($comment->getAuthorName()),
+        'letter_class' => $bem_block . '__letter-avatar-letter',
+        'letter_color' => $letter_avatar->getTextColor($bg_color),
+      ],
+    ];
+  }
+
+  if ($display->getComponent('homepage') && !$comment->get('homepage')->isEmpty()) {
+    $build['homepage'] = [
+      '#type' => 'inline_template',
+      '#template' => '<a href="{{ url }}" class="{{ class }}" rel="noopener nofollow">WWW</a>',
+      '#context' => [
+        'class' => $bem_block . '__homepage',
+        'url' => $comment->get('homepage')->value,
+      ],
+    ];
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for username.html.twig.
+ */
+function dlog_comments_preprocess_username(&$variables) {
+  // Remove link to homepage for anonymous users. We created pseudo-field for
+  // this value.
+  // @see dlog_comments_entity_extra_field_info
+  // @see dlog_comments_comment_view
+  unset($variables['link_path']);
+  unset($variables['attributes']['rel']);
+  $variables['attributes']['class'][] = 'username';
+}

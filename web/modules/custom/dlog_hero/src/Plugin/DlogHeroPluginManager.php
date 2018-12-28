@@ -3,10 +3,9 @@
 namespace Drupal\dlog_hero\Plugin;
 
 use Drupal\Core\Cache\CacheBackendInterface;
+use Drupal\Core\Condition\ConditionManager;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
-use Drupal\Core\Path\CurrentPathStack;
-use Drupal\Core\Path\PathMatcher;
 use Drupal\Core\Plugin\DefaultPluginManager;
 use Drupal\Core\Plugin\Factory\ContainerFactory;
 use Drupal\Core\Routing\CurrentRouteMatch;
@@ -18,20 +17,6 @@ use Symfony\Component\DependencyInjection\Container;
 class DlogHeroPluginManager extends DefaultPluginManager {
 
   /**
-   * The current path stack.
-   *
-   * @var \Drupal\Core\Path\CurrentPathStack
-   */
-  protected $pathCurrent;
-
-  /**
-   * The path matcher.
-   *
-   * @var \Drupal\Core\Path\PathMatcher
-   */
-  protected $pathMatcher;
-
-  /**
    * The current route match.
    *
    * @var \Drupal\Core\Routing\CurrentRouteMatch
@@ -39,9 +24,16 @@ class DlogHeroPluginManager extends DefaultPluginManager {
   protected $routeMatch;
 
   /**
+   * The condition manager.
+   *
+   * @var \Drupal\Core\Condition\ConditionManager
+   */
+  protected $conditionManager;
+
+  /**
    * DlogHeroPluginManager constructor.
    *
-   * @param $type
+   * @params string $type
    *   The DlogHero plugin type.
    * @param \Traversable $namespaces
    *   The namespaces.
@@ -49,18 +41,15 @@ class DlogHeroPluginManager extends DefaultPluginManager {
    *   The cache backend.
    * @param \Drupal\Core\Extension\ModuleHandlerInterface $module_handler
    *   The module handler.
-   * @param \Drupal\Core\Path\CurrentPathStack $path_current
-   *   The current path stack.
-   * @param \Drupal\Core\Path\PathMatcher $path_matcher
-   *   The path matcher.
    * @param \Drupal\Core\Routing\CurrentRouteMatch $current_route_match
    *   The current route match.
+   * @param \Drupal\Core\Condition\ConditionManager $condition_manager
+   *   The condition manager.
    */
-  public function __construct($type, \Traversable $namespaces, CacheBackendInterface $cache_backend, ModuleHandlerInterface $module_handler, CurrentPathStack $path_current, PathMatcher $path_matcher, CurrentRouteMatch $current_route_match) {
+  public function __construct($type, \Traversable $namespaces, CacheBackendInterface $cache_backend, ModuleHandlerInterface $module_handler, CurrentRouteMatch $current_route_match, ConditionManager $condition_manager) {
 
-    $this->pathCurrent = $path_current;
-    $this->pathMatcher = $path_matcher;
     $this->routeMatch = $current_route_match;
+    $this->conditionManager = $condition_manager;
 
     // E.g. entity => Entity, path => Path.
     $type_camelized = Container::camelize($type);
@@ -144,24 +133,17 @@ class DlogHeroPluginManager extends DefaultPluginManager {
 
     foreach ($this->getDefinitions() as $plugin_id => $plugin) {
       if ($plugin['enabled']) {
-        $patterns = implode(PHP_EOL, $plugin['match_path']);
-        $current_path = $this->pathCurrent->getPath();
-        $is_match_path = $this->pathMatcher->matchPath($current_path, $patterns);
+        $pages = implode(PHP_EOL, $plugin['match_path']);
 
-        switch ($plugin['match_type']) {
-          case 'listed':
-          default:
-            $math_type = 0;
-            break;
+        /** @var \Drupal\system\Plugin\Condition\RequestPath $request_path_condition */
+        $request_path_condition = $this->conditionManager
+          ->createInstance('request_path');
 
-          case 'unlisted':
-            $math_type = 1;
-            break;
-        }
+        $request_path_condition
+          ->setConfig('pages', $pages)
+          ->setConfig('negate', $plugin['match_type'] == 'unlisted');
 
-        $is_plugin_needed = ($is_match_path xor $math_type);
-
-        if ($is_plugin_needed) {
+        if ($request_path_condition->execute()) {
           $plugins[$plugin_id] = $plugin;
         }
       }

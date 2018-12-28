@@ -1,0 +1,51 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for DLOG - Taxonomy terms module.
+ */
+
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\taxonomy\TermInterface;
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function dlog_taxonomy_entity_extra_field_info() {
+  $extra = [];
+
+  $extra['taxonomy_term']['tags']['display']['promo_image_with_replacement'] = [
+    'label' => t('Promo image with replacement'),
+    'weight' => 100,
+    'visible' => FALSE,
+  ];
+
+  return $extra;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function dlog_taxonomy_taxonomy_term_view(array &$build, TermInterface $term, EntityViewDisplayInterface $display, $view_mode) {
+  $bem_block = Html::getClass('taxonomy-term-' . $term->bundle() . ($view_mode == 'default' ? '' : '-' . $view_mode));
+  if ($display->getComponent('promo_image_with_replacement')) {
+    /** @var \Drupal\dlog_taxonomy\Service\TagsHelperInterface $tags_helper */
+    $tags_helper = \Drupal::service('dlog_taxonomy.tags_helper');
+    $promo_uri = $tags_helper->getPromoUri($term->id());
+
+    if ($promo_uri) {
+      $build['promo_image_with_replacement'] = [
+        '#theme' => 'image_style',
+        '#uri' => $promo_uri,
+        '#style_name' => 'taxonomy_term_tags_teaser',
+        '#alt' => $term->label(),
+        '#attributes' => [
+          'class' => [
+            $bem_block . '__promo-image',
+          ],
+        ],
+      ];
+    }
+  }
+}
