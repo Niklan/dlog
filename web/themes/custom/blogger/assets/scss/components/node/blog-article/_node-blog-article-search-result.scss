@@ -1,0 +1,42 @@
+.node-blog-article-search-result {
+  &__title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: gap(0.5);
+  }
+
+  &__link {
+    font-size: 16px;
+    color: color(green);
+  }
+
+  &__meta {
+    margin-bottom: gap(0.5);
+    display: flex;
+    align-items: center;
+  }
+
+  &__meta-item {
+    font-size: 14px;
+    color: gray(600);
+
+    &:not(:last-child) {
+      margin-right: gap(2);
+    }
+  }
+
+  &__field-tags {
+    display: flex;
+    align-items: center;
+  }
+
+  &__field-tags-item {
+    &:not(:last-child) {
+      margin-right: gap();
+    }
+  }
+
+  &__body {
+    font-size: 16px;
+  }
+}

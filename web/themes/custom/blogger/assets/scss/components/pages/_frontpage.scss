@@ -141,4 +141,40 @@
     display: table;
     margin: gap(6) auto 0;
   }
+
+  @include media-breakpoint-down(sm) {
+    &__welcome-title {
+      font-size: 28px;
+    }
+
+    &__welcome-description {
+      font-size: 16px;
+    }
+
+    &__author-inner {
+      padding-top: gap(4);
+    }
+
+    &__articles-title {
+      font-size: 32px;
+    }
+
+    &__articles {
+      padding: gap(4) 0;
+    }
+  }
+
+  @include media-breakpoint-only(xs) {
+    &__author-name {
+      font-size: 28px;
+    }
+
+    &__author-about {
+      font-size: 16px;
+    }
+
+    &__articles-title {
+      font-size: 24px;
+    }
+  }
 }

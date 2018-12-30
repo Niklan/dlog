@@ -1,0 +1,37 @@
+$icons: (
+  '/blog': 'lead-pencil',
+  '/tags': 'tag-multiple',
+  '/about': 'account-box',
+  '/contact': 'email-open',
+);
+
+.block-mobile {
+  padding: gap(2);
+
+  &__menu {
+    @include list-unstyled;
+  }
+
+  @each $href, $icon in $icons {
+    &__menu-item-link[href="#{$href}"] {
+      @include mdi-icon($icon, before, 0);
+    }
+  }
+
+  &__menu-item-link {
+    position: relative;
+    display: block;
+    line-height: 40px;
+    padding-left: calc(24px + #{gap(2)});
+    color: $text-color;
+
+    &::before {
+      width: 24px;
+      text-align: center;
+      font-size: 24px;
+      line-height: 40px;
+      position: absolute;
+      left: 0;
+    }
+  }
+}

@@ -8,11 +8,6 @@
 // Tools.
 @import "../tools/core";
 
-// Blocks.
-@import "block/block-main";
-@import "block/block-system-branding-block";
-@import "block/block-footer";
-
 // UI elements.
 @import "ui/material-design-icons";
 @import "ui/breadcrumbs";
@@ -30,6 +25,12 @@
 @import "ui/ui-dialog";
 @import "ui/views-mini-pager";
 
+// Blocks.
+@import "block/block-main";
+@import "block/block-mobile";
+@import "block/block-system-branding-block";
+@import "block/block-footer";
+
 // Form.
 @import "form/form-comment-comment-form";
 @import "form/form-contact-message-feedback-form";
@@ -37,6 +38,7 @@
 // Node.
 @import "node/blog-article/node-blog-article-full";
 @import "node/blog-article/node-blog-article-teaser";
+@import "node/blog-article/node-blog-article-search-result";
 @import "node/page/node-page-full";
 
 // Comments.
@@ -57,6 +59,7 @@
 @import "include/header";
 @import "include/footer";
 @import "include/social-links";
+@import "include/header-mobile";
 
 // Taxonomy term.
 @import "taxonomy-term/tags/taxonomy-term-tags-teaser";
@@ -72,6 +75,7 @@
 // Views.
 @import "views/articles";
 @import "views/tags";
+@import "views/site-search";
 
 // Layout.
 @import "layout/app";

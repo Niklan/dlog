@@ -74,4 +74,34 @@
       background: theme-color('secondary');
     }
   }
+
+  @include media-breakpoint-down(md) {
+    // For mobile toolbar.
+    margin-top: 60px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__title {
+      font-size: 28px;
+    }
+
+    &__subtitle {
+      font-size: 16px;
+    }
+
+    &__tags {
+      flex-flow: wrap;
+      margin-top: gap(-1);
+    }
+
+    &__tag {
+      margin-top: gap();
+      font-size: 12px;
+    }
+  }
+
+  @include media-breakpoint-only(xs) {
+    padding: gap(6) 0;
+    min-height: unset;
+  }
 }

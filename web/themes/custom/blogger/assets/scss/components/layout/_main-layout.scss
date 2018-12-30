@@ -20,4 +20,13 @@
       lost-column: 3/12;
     }
   }
+
+  @include media-breakpoint-only(xs) {
+    padding-left: unset;
+    padding-right: unset;
+
+    &__inner {
+      margin-top: unset;
+    }
+  }
 }

@@ -1,0 +1,15 @@
+{% extends 'node.html.twig' %}
+{% block node %}
+  <h2 class="{{ bem_block }}__title"><a href="{{ url }}">{{ label }}</a></h2>
+  <a href="{{ url }}" class="{{ bem_block }}__link">{{ url_absolute }}</a>
+
+  <div class="{{ bem_block }}__meta">
+    <div class="{{ bem_block }}__meta-item {{ bem_block }}__created">{{ node.getCreatedTime|date('d.m.y') }}</div>
+    <div class="{{ bem_block }}__meta-item">{{ content.estimated_read_time }}</div>
+    {% if not node.get('field_tags').isEmpty %}
+      <div class="{{ bem_block }}__meta-item">{{ content.field_tags }}</div>
+    {% endif %}
+  </div>
+
+  {{ content.body }}
+{% endblock node %}

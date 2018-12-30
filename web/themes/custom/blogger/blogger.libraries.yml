@@ -39,6 +39,12 @@ paragraph.code:
     - blogger/highlightjs
     - core/drupal
 
+mobile_menu:
+  js:
+    assets/js/mobile-menu.js: {}
+  dependencies:
+    - core/drupal
+
 # Third party libraries
 highlightjs:
   remote: https://highlightjs.org/

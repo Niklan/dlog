@@ -45,4 +45,10 @@ $social_icons: (
       @include mdi-icon($icon, before, 0);
     }
   }
+
+  @include media-breakpoint-only(xs) {
+    &__item {
+      margin: gap();
+    }
+  }
 }

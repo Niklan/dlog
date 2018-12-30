@@ -10098,7 +10098,7 @@
                 var this$1 = this;
                 if ( runtime === void 0 ) runtime = true;
 
-              if (process.env.NODE_ENV !== 'production') {
+              {
                 assertRawModule(path, rawModule);
               }
 
@@ -10127,7 +10127,7 @@
             };
 
             function update (path, targetModule, newModule) {
-              if (process.env.NODE_ENV !== 'production') {
+              {
                 assertRawModule(path, newModule);
               }
 
@@ -10138,7 +10138,7 @@
               if (newModule.modules) {
                 for (var key in newModule.modules) {
                   if (!targetModule.getChild(key)) {
-                    if (process.env.NODE_ENV !== 'production') {
+                    {
                       console.warn(
                         "[vuex] trying to add a new module '" + key + "' on hot reloading, " +
                         'manual reload is needed'
@@ -10209,7 +10209,7 @@
                 install(window.Vue);
               }
 
-              if (process.env.NODE_ENV !== 'production') {
+              {
                 assert(Vue$2, "must call Vue.use(Vuex) before creating a store instance.");
                 assert(typeof Promise !== 'undefined', "vuex requires a Promise polyfill in this browser.");
                 assert(this instanceof Store, "Store must be called with the new operator.");
@@ -10273,7 +10273,7 @@
             };
 
             prototypeAccessors$2.state.set = function (v) {
-              if (process.env.NODE_ENV !== 'production') {
+              {
                 assert(false, "Use store.replaceState() to explicit replace store state.");
               }
             };
@@ -10290,7 +10290,7 @@
               var mutation = { type: type, payload: payload };
               var entry = this._mutations[type];
               if (!entry) {
-                if (process.env.NODE_ENV !== 'production') {
+                {
                   console.error(("[vuex] unknown mutation type: " + type));
                 }
                 return
@@ -10303,7 +10303,6 @@
               this._subscribers.forEach(function (sub) { return sub(mutation, this$1.state); });
 
               if (
-                process.env.NODE_ENV !== 'production' &&
                 options && options.silent
               ) {
                 console.warn(
@@ -10324,7 +10323,7 @@
               var action = { type: type, payload: payload };
               var entry = this._actions[type];
               if (!entry) {
-                if (process.env.NODE_ENV !== 'production') {
+                {
                   console.error(("[vuex] unknown action type: " + type));
                 }
                 return
@@ -10348,7 +10347,7 @@
             Store.prototype.watch = function watch (getter, cb, options) {
                 var this$1 = this;
 
-              if (process.env.NODE_ENV !== 'production') {
+              {
                 assert(typeof getter === 'function', "store.watch only accepts a function.");
               }
               return this._watcherVM.$watch(function () { return getter(this$1.state, this$1.getters); }, cb, options)
@@ -10367,7 +10366,7 @@
 
               if (typeof path === 'string') { path = [path]; }
 
-              if (process.env.NODE_ENV !== 'production') {
+              {
                 assert(Array.isArray(path), "module path must be a string or an Array.");
                 assert(path.length > 0, 'cannot register the root module by using registerModule.');
               }
@@ -10383,7 +10382,7 @@
 
               if (typeof path === 'string') { path = [path]; }
 
-              if (process.env.NODE_ENV !== 'production') {
+              {
                 assert(Array.isArray(path), "module path must be a string or an Array.");
               }
 
@@ -10536,7 +10535,7 @@
 
                   if (!options || !options.root) {
                     type = namespace + type;
-                    if (process.env.NODE_ENV !== 'production' && !store._actions[type]) {
+                    if (!store._actions[type]) {
                       console.error(("[vuex] unknown local action type: " + (args.type) + ", global type: " + type));
                       return
                     }
@@ -10553,7 +10552,7 @@
 
                   if (!options || !options.root) {
                     type = namespace + type;
-                    if (process.env.NODE_ENV !== 'production' && !store._mutations[type]) {
+                    if (!store._mutations[type]) {
                       console.error(("[vuex] unknown local mutation type: " + (args.type) + ", global type: " + type));
                       return
                     }
@@ -10636,7 +10635,7 @@
 
             function registerGetter (store, type, rawGetter, local) {
               if (store._wrappedGetters[type]) {
-                if (process.env.NODE_ENV !== 'production') {
+                {
                   console.error(("[vuex] duplicate getter key: " + type));
                 }
                 return
@@ -10653,7 +10652,7 @@
 
             function enableStrictMode (store) {
               store._vm.$watch(function () { return this._data.$$state }, function () {
-                if (process.env.NODE_ENV !== 'production') {
+                {
                   assert(store._committing, "Do not mutate vuex store state outside mutation handlers.");
                 }
               }, { deep: true, sync: true });
@@ -10672,7 +10671,7 @@
                 type = type.type;
               }
 
-              if (process.env.NODE_ENV !== 'production') {
+              {
                 assert(typeof type === 'string', ("Expects string as the type, but found " + (typeof type) + "."));
               }
 
@@ -10681,7 +10680,7 @@
 
             function install (_Vue) {
               if (Vue$2 && _Vue === Vue$2) {
-                if (process.env.NODE_ENV !== 'production') {
+                {
                   console.error(
                     '[vuex] already installed. Vue.use(Vuex) should be called only once.'
                   );
@@ -10756,7 +10755,7 @@
                   if (namespace && !getModuleByNamespace(this.$store, 'mapGetters', namespace)) {
                     return
                   }
-                  if (process.env.NODE_ENV !== 'production' && !(val in this.$store.getters)) {
+                  if (!(val in this.$store.getters)) {
                     console.error(("[vuex] unknown getter: " + val));
                     return
                   }
@@ -10821,7 +10820,7 @@
 
             function getModuleByNamespace (store, helper, namespace) {
               var module = store._modulesNamespaceMap[namespace];
-              if (process.env.NODE_ENV !== 'production' && !module) {
+              if (!module) {
                 console.error(("[vuex] module namespace not found in " + helper + "(): " + namespace));
               }
               return module
@@ -11471,11 +11470,11 @@
               /* style */
               const __vue_inject_styles__ = function (inject) {
                 if (!inject) return
-                inject("data-v-44ea2018_0", { source: ".frontpage-global-search[data-v-44ea2018] {\n  position: relative;\n}\n.frontpage-global-search__search-input[data-v-44ea2018] {\n    padding: 16px !important;\n    border-radius: 4px 0 0 4px !important;\n}\n.frontpage-global-search__search-submit[data-v-44ea2018] {\n    color: white;\n    background-color: #3f5efb;\n    background-image: none;\n    border-color: transparent;\n    transition: all .15s ease-in-out;\n    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);\n    border-radius: 0 4px 4px 0;\n    padding: 0 32px;\n    text-transform: uppercase;\n    font-weight: bold;\n}\n.frontpage-global-search__form[data-v-44ea2018] {\n    position: relative;\n    z-index: 50;\n    display: flex;\n    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);\n}\n.frontpage-global-search__form--has-results[data-v-44ea2018] {\n    box-shadow: none;\n}\n.frontpage-global-search__results[data-v-44ea2018] {\n    position: absolute;\n    z-index: 40;\n    top: 54px;\n    width: 100%;\n    background-color: white;\n    border: 1px solid #cccccc;\n    border-radius: 0 0 4px 4px;\n    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);\n}\n.frontpage-global-search__result[data-v-44ea2018] {\n    padding: 8px 16px;\n    border-bottom: 1px solid #cccccc;\n}\n.frontpage-global-search__result[data-v-44ea2018]:hover {\n      background-color: #3f5efb;\n}\n.frontpage-global-search__result:hover a[data-v-44ea2018] {\n        color: white;\n}\n.frontpage-global-search__result[data-v-44ea2018]:last-child {\n      border-bottom: unset;\n}\n\n/*# sourceMappingURL=FrontpageGlobalSearch.vue.map */", map: {"version":3,"sources":["/home/nikita/Projects/local/dlog.niklan.net/code/web/modules/custom/dlog_vue/assets/js/src/components/FrontpageGlobalSearch.vue","FrontpageGlobalSearch.vue"],"names":[],"mappings":"AAyEA;EACA,mBAAA;CA0DA;AAxDA;IACA,yBAAA;IACA,sCAAA;CACA;AAEA;IACA,aAAA;IACA,0BAAA;IACA,uBAAA;IACA,0BAAA;IACA,iCAAA;IACA,2CAAA;IACA,2BAAA;IACA,gBAAA;IACA,0BAAA;IACA,kBAAA;CACA;AAEA;IACA,mBAAA;IACA,YAAA;IACA,cAAA;IACA,wCAAA;CACA;AAEA;IACA,iBAAA;CACA;AAEA;IACA,mBAAA;IACA,YAAA;IACA,UAAA;IACA,YAAA;IACA,wBAAA;IACA,0BAAA;IACA,2BAAA;IACA,wCAAA;CACA;AAEA;IACA,kBAAA;IACA,iCAAA;CAaA;AAfA;MAKA,0BAAA;CAKA;AAVA;QAQA,aAAA;CACA;AATA;MAaA,qBAAA;CACA;;ACxFA,qDAAqD","file":"FrontpageGlobalSearch.vue","sourcesContent":[null,".frontpage-global-search {\n  position: relative; }\n  .frontpage-global-search__search-input {\n    padding: 16px !important;\n    border-radius: 4px 0 0 4px !important; }\n  .frontpage-global-search__search-submit {\n    color: white;\n    background-color: #3f5efb;\n    background-image: none;\n    border-color: transparent;\n    transition: all .15s ease-in-out;\n    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);\n    border-radius: 0 4px 4px 0;\n    padding: 0 32px;\n    text-transform: uppercase;\n    font-weight: bold; }\n  .frontpage-global-search__form {\n    position: relative;\n    z-index: 50;\n    display: flex;\n    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2); }\n  .frontpage-global-search__form--has-results {\n    box-shadow: none; }\n  .frontpage-global-search__results {\n    position: absolute;\n    z-index: 40;\n    top: 54px;\n    width: 100%;\n    background-color: white;\n    border: 1px solid #cccccc;\n    border-radius: 0 0 4px 4px;\n    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2); }\n  .frontpage-global-search__result {\n    padding: 8px 16px;\n    border-bottom: 1px solid #cccccc; }\n    .frontpage-global-search__result:hover {\n      background-color: #3f5efb; }\n      .frontpage-global-search__result:hover a {\n        color: white; }\n    .frontpage-global-search__result:last-child {\n      border-bottom: unset; }\n\n/*# sourceMappingURL=FrontpageGlobalSearch.vue.map */"]}, media: undefined });
+                inject("data-v-5c1c3670_0", { source: ".frontpage-global-search[data-v-5c1c3670] {\n  position: relative;\n}\n.frontpage-global-search__search-input[data-v-5c1c3670] {\n    padding: 16px !important;\n    border-radius: 4px 0 0 4px !important;\n}\n.frontpage-global-search__search-submit[data-v-5c1c3670] {\n    color: white;\n    background-color: #3f5efb;\n    background-image: none;\n    border-color: transparent;\n    transition: all .15s ease-in-out;\n    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);\n    border-radius: 0 4px 4px 0;\n    padding: 0 32px;\n    text-transform: uppercase;\n    font-weight: bold;\n}\n.frontpage-global-search__form[data-v-5c1c3670] {\n    position: relative;\n    z-index: 50;\n    display: flex;\n    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);\n}\n.frontpage-global-search__form--has-results[data-v-5c1c3670] {\n    box-shadow: none;\n}\n.frontpage-global-search__results[data-v-5c1c3670] {\n    position: absolute;\n    z-index: 40;\n    top: 54px;\n    width: 100%;\n    background-color: white;\n    border: 1px solid #cccccc;\n    border-radius: 0 0 4px 4px;\n    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);\n}\n.frontpage-global-search__result[data-v-5c1c3670] {\n    padding: 8px 16px;\n    border-bottom: 1px solid #cccccc;\n}\n.frontpage-global-search__result[data-v-5c1c3670]:hover {\n      background-color: #3f5efb;\n}\n.frontpage-global-search__result:hover a[data-v-5c1c3670] {\n        color: white;\n}\n.frontpage-global-search__result[data-v-5c1c3670]:last-child {\n      border-bottom: unset;\n}\n@media (max-width: 751px) {\n.frontpage-global-search__search-submit[data-v-5c1c3670] {\n      padding: 0 8px;\n      font-size: 18px;\n      width: 130px;\n}\n}\n\n/*# sourceMappingURL=FrontpageGlobalSearch.vue.map */", map: {"version":3,"sources":["/home/nikita/Projects/local/dlog.niklan.net/code/web/modules/custom/dlog_vue/assets/js/src/components/FrontpageGlobalSearch.vue","FrontpageGlobalSearch.vue"],"names":[],"mappings":"AAyEA;EACA,mBAAA;CAkEA;AAhEA;IACA,yBAAA;IACA,sCAAA;CACA;AAEA;IACA,aAAA;IACA,0BAAA;IACA,uBAAA;IACA,0BAAA;IACA,iCAAA;IACA,2CAAA;IACA,2BAAA;IACA,gBAAA;IACA,0BAAA;IACA,kBAAA;CACA;AAEA;IACA,mBAAA;IACA,YAAA;IACA,cAAA;IACA,wCAAA;CACA;AAEA;IACA,iBAAA;CACA;AAEA;IACA,mBAAA;IACA,YAAA;IACA,UAAA;IACA,YAAA;IACA,wBAAA;IACA,0BAAA;IACA,2BAAA;IACA,wCAAA;CACA;AAEA;IACA,kBAAA;IACA,iCAAA;CAaA;AAfA;MAKA,0BAAA;CAKA;AAVA;QAQA,aAAA;CACA;AATA;MAaA,qBAAA;CACA;AAGA;AACA;MACA,eAAA;MACA,gBAAA;MACA,aAAA;CACA;CAAA;;AC3FA,qDAAqD","file":"FrontpageGlobalSearch.vue","sourcesContent":[null,".frontpage-global-search {\n  position: relative; }\n  .frontpage-global-search__search-input {\n    padding: 16px !important;\n    border-radius: 4px 0 0 4px !important; }\n  .frontpage-global-search__search-submit {\n    color: white;\n    background-color: #3f5efb;\n    background-image: none;\n    border-color: transparent;\n    transition: all .15s ease-in-out;\n    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);\n    border-radius: 0 4px 4px 0;\n    padding: 0 32px;\n    text-transform: uppercase;\n    font-weight: bold; }\n  .frontpage-global-search__form {\n    position: relative;\n    z-index: 50;\n    display: flex;\n    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2); }\n  .frontpage-global-search__form--has-results {\n    box-shadow: none; }\n  .frontpage-global-search__results {\n    position: absolute;\n    z-index: 40;\n    top: 54px;\n    width: 100%;\n    background-color: white;\n    border: 1px solid #cccccc;\n    border-radius: 0 0 4px 4px;\n    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2); }\n  .frontpage-global-search__result {\n    padding: 8px 16px;\n    border-bottom: 1px solid #cccccc; }\n    .frontpage-global-search__result:hover {\n      background-color: #3f5efb; }\n      .frontpage-global-search__result:hover a {\n        color: white; }\n    .frontpage-global-search__result:last-child {\n      border-bottom: unset; }\n  @media (max-width: 751px) {\n    .frontpage-global-search__search-submit {\n      padding: 0 8px;\n      font-size: 18px;\n      width: 130px; } }\n\n/*# sourceMappingURL=FrontpageGlobalSearch.vue.map */"]}, media: undefined });
 
               };
               /* scoped */
-              const __vue_scope_id__ = "data-v-44ea2018";
+              const __vue_scope_id__ = "data-v-5c1c3670";
               /* module identifier */
               const __vue_module_identifier__ = undefined;
               /* functional template */

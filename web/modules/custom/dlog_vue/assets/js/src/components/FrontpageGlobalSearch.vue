@@ -130,5 +130,13 @@
         border-bottom: unset;
       }
     }
+
+    @media (max-width: 751px) {
+      &__search-submit {
+        padding: 0 8px;
+        font-size: 18px;
+        width: 130px;
+      }
+    }
   }
 </style>

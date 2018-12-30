@@ -1,0 +1,19 @@
+.view-site-search-page {
+  &__row:not(:last-child) {
+    margin-bottom: gap(3);
+  }
+
+  &__filters {
+    margin-bottom: gap(4);
+  }
+
+  .form-views-exposed-form {
+    display: flex;
+    align-items: center;
+
+    &__text {
+      margin-bottom: 0;
+      margin-right: gap(2);
+    }
+  }
+}

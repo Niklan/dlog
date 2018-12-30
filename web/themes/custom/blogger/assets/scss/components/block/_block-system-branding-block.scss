@@ -6,4 +6,11 @@
     font-size: 28px;
     line-height: 42px;
   }
+
+  @include media-breakpoint-down(md) {
+    &__site-name {
+      line-height: 60px;
+      font-size: 22px;
+    }
+  }
 }
