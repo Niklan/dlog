@@ -1,0 +1,15 @@
+uuid: 2fa55e50-f469-4149-a1dc-5f4d7188602e
+langcode: ru
+status: true
+dependencies: {  }
+id: node__blog_article
+label: 'Content: Запись в блог'
+tags:
+  og_image: '[media:field_media_image:node_blog_article_teaser_image]'
+  og_title: '[node:title]'
+  og_description: '[node:summary]'
+  twitter_cards_image: '[media:field_media_image:node_blog_article_teaser_image]'
+  twitter_cards_page_url: '[node:url]'
+  twitter_cards_type: summary_large_image
+  twitter_cards_description: '[node:summary]'
+  twitter_cards_title: '[node:title]'

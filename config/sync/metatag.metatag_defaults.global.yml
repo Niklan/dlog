@@ -9,3 +9,4 @@ label: Global
 tags:
   canonical_url: '[current-page:url]'
   title: '[current-page:title] | [site:name]'
+  viewport: 'width=device-width, initial-scale=1.0, maximum-scale=5.0'
