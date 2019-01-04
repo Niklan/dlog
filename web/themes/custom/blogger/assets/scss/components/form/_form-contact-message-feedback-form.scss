@@ -9,11 +9,13 @@
     lost-flex-container: row;
   }
 
-  &__name {
-    lost-column: 6/12;
-  }
+  @include media-breakpoint-up(md) {
+    &__name {
+      lost-column: 6/12;
+    }
 
-  &__mail {
-    lost-column: 6/12;
+    &__mail {
+      lost-column: 6/12;
+    }
   }
 }

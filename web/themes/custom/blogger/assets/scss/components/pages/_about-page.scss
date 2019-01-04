@@ -13,7 +13,6 @@ $price_icons: (
 );
 
 .about-page {
-  margin-top: -42px;
   position: relative;
 
   &__inner {
@@ -23,14 +22,12 @@ $price_icons: (
 
   &__left {
     @include gradient-directional(gray(300), white, 135deg);
-    width: 50%;
     padding: gap(20) gap(10);
     position: relative;
     overflow: auto;
   }
 
   &__right {
-    width: 50%;
     position: relative;
     padding-top: 42px;
 
@@ -115,7 +112,6 @@ $price_icons: (
   }
 
   &__skills-item {
-    lost-waffle: 6/12 2;
     background-color: rgba(white, 0.05);
     padding: gap(2);
     border-radius: 10px;
@@ -166,7 +162,6 @@ $price_icons: (
   }
 
   &__price {
-    lost-waffle: 6/12 2;
     background-color: rgba(white, 0.05);
     padding: gap(2);
     border-radius: 10px;
@@ -237,5 +232,77 @@ $price_icons: (
     display: block;
     margin: auto #{gap(-2)} #{gap(-2)} #{gap(-2)};
     border-radius: 0 0 10px 10px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    &__left {
+      width: 50%;
+    }
+
+    &__right {
+      width: 50%;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-top: -42px;
+  }
+
+  @include media-breakpoint-only(lg) {
+    &__left {
+      width: 70%;
+    }
+
+    &__right {
+      width: 30%;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &__inner {
+      display: block;
+      max-height: unset;
+    }
+
+    &__right {
+      display: none;
+    }
+
+    &__left {
+      padding-left: gap(2);
+      padding-right: gap(2);
+      padding-bottom: gap(4);
+      overflow: unset;
+    }
+
+    &__services {
+      margin-bottom: unset;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    &__skills-item {
+      lost-waffle: 6/12 2;
+    }
+
+    &__price {
+      lost-waffle: 6/12 2;
+    }
+  }
+
+  @include media-breakpoint-only(xs) {
+    &__title {
+      font-size: 50px;
+      top: 100px;
+    }
+
+    &__skills-item {
+      margin-bottom: gap(2);
+    }
+
+    &__price {
+      margin-bottom: gap(2);
+      width: 100%;
+    }
   }
 }

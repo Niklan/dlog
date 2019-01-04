@@ -51,6 +51,7 @@
 @import "paragraph/code/paragraph-code";
 @import "paragraph/remote-video/paragraph-remote-video";
 @import "paragraph/remote-video-gallery/paragraph-remote-video-gallery";
+@import "paragraph/image/paragraph-image";
 
 // Media.
 @import "media/remote-video/media-remote-video";
@@ -81,6 +82,7 @@
 @import "layout/app";
 @import "layout/main-layout";
 @import "layout/region-content";
+@import "layout/region-sidebar-first";
 
 // Pages.
 @import "pages/frontpage";

@@ -31,10 +31,6 @@
     lost-flex-container: row;
   }
 
-  &__field-attachments-item {
-    lost-waffle: 4/12 3 gap();
-  }
-
   .dlog-blog-related-posts {
     margin-bottom: gap(3);
   }
@@ -56,7 +52,6 @@
       background: white;
       position: relative;
       z-index: 10;
-      padding: 0 gap(2);
     }
 
     &::before {
@@ -74,10 +69,6 @@
 
   &__field-comments-content {
     margin-bottom: gap(3);
-
-    .indented {
-      margin-left: gap(6);
-    }
   }
 
   .comment-comment-full {
@@ -91,6 +82,49 @@
       border-bottom: unset;
       margin-bottom: unset;
       padding-bottom: unset;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    &__field-attachments-item {
+      lost-waffle: 4/12 3 gap();
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    &__field-comments-title,
+    &__field-comments-form-title {
+      span {
+        padding: 0 gap(2);
+      }
+    }
+  }
+
+  @include media-breakpoint-only(md) {
+    &__field-attachments-item {
+      lost-waffle: 6/12 2 gap();
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .indented {
+      margin-left: gap(6);
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__field-attachments-item {
+      width: 100%;
+    }
+
+    &__field-comments-content {
+      > .indented {
+        margin-left: gap(3);
+
+        > .indented {
+          margin-left: gap(3);
+        }
+      }
     }
   }
 }

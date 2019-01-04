@@ -16,4 +16,23 @@
       margin-right: gap(2);
     }
   }
+
+  @include media-breakpoint-only(xs) {
+    .form-views-exposed-form {
+      flex-flow: wrap;
+
+      &__text {
+        margin-right: unset;
+        margin-bottom: gap();
+      }
+
+      .form-actions {
+        width: 100%;
+      }
+      
+      .form-submit {
+        width: 100%;
+      }
+    }
+  }
 }

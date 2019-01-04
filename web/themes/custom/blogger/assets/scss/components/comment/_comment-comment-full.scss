@@ -115,4 +115,10 @@ $avatar-width: 40px;
   &__created {
     color: gray(500);
   }
+
+  @include media-breakpoint-down(sm) {
+    &__comment-body {
+      font-size: 15px;
+    }
+  }
 }

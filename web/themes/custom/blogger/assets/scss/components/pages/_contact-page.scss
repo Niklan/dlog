@@ -16,14 +16,12 @@ $icons: (
 
   &__left {
     @include gradient-directional(gray(300), white, 135deg);
-    width: 50%;
     padding: gap(20) gap(10);
     position: relative;
     overflow: auto;
   }
 
   &__right {
-    width: 50%;
     position: relative;
     padding-top: 42px;
     overflow: hidden;
@@ -82,7 +80,6 @@ $icons: (
 
   &__contact-item {
     background-color: rgba(white, 0.05);
-    lost-waffle: 6/12 2;
     padding: gap(2);
     padding-left: calc(#{gap(2)} + #{gap(2)} + 40px);
     border-radius: 10px;
@@ -133,6 +130,70 @@ $icons: (
 
     span {
       color: theme-color();
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    &__left {
+      width: 50%;
+    }
+
+    &__right {
+      width: 50%;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-top: -42px;
+  }
+
+  @include media-breakpoint-only(lg) {
+    &__left {
+      width: 70%;
+    }
+
+    &__right {
+      width: 30%;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    &__contact-item {
+      lost-waffle: 6/12 2;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &__title {
+      top: 100px;
+    }
+
+    &__inner {
+      display: block;
+      max-height: unset;
+    }
+
+    &__right {
+      display: none;
+    }
+
+    &__left {
+      padding: gap(26) gap(2) gap(4);
+      overflow: unset;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__contact-item {
+      margin-bottom: gap(2);
+      width: 100%;
+    }
+  }
+
+  @include media-breakpoint-only(xs) {
+    &__title {
+      font-size: 50px;
+      top: 120px;
     }
   }
 }

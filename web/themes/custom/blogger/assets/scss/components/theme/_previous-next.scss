@@ -3,11 +3,26 @@
   align-items: stretch;
   justify-content: space-between;
 
-  &__previous,
-  &__next {
-    width: calc(50% - #{gap(1.5)});
+  @include media-breakpoint-up(lg) {
+    &__previous,
+    &__next {
+      width: calc(50% - #{gap(1.5)});
+    }
   }
 
+  @include media-breakpoint-down(md) {
+    flex-flow: wrap;
+    font-size: 14px;
+
+    &__previous,
+    &__next {
+      width: 100%;
+    }
+
+    &__previous {
+      margin-bottom: gap(2);
+    }
+  }
 }
 
 .previous-next {

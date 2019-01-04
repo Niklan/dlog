@@ -17,6 +17,7 @@
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
     font-size: 48px;
     font-weight: bold;
+    margin: unset;
   }
 
   &__subtitle {
@@ -24,6 +25,7 @@
     font-size: 18px;
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
     max-width: 600px;
+    margin-top: gap(2);
   }
 
   &__image {

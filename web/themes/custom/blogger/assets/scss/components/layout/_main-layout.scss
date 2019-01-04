@@ -11,13 +11,15 @@
     margin-top: -100px;
   }
 
-  &--sidebar-first {
-    .region-content {
-      lost-column: 9/12;
-    }
+  @include media-breakpoint-up(lg) {
+    &--sidebar-first {
+      .region-content {
+        lost-column: 9/12;
+      }
 
-    .region-sidebar-first {
-      lost-column: 3/12;
+      .region-sidebar-first {
+        lost-column: 3/12;
+      }
     }
   }
 

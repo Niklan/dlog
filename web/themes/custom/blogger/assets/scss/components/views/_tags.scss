@@ -3,7 +3,27 @@
     lost-flex-container: row;
   }
 
-  &__row {
-    lost-waffle: 2/10 5;
+  @include media-breakpoint-up(lg) {
+    &__row {
+      lost-waffle: 2/10 5;
+    }
+  }
+
+  @include media-breakpoint-only(md) {
+    &__row {
+      lost-waffle: 3/12 4;
+    }
+  }
+
+  @include media-breakpoint-only(sm) {
+    &__row {
+      lost-waffle: 4/12 3;
+    }
+  }
+
+  @include media-breakpoint-only(xs) {
+    &__row {
+      lost-waffle: 6/12 2;
+    }
   }
 }
