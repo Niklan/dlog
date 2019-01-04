@@ -2778,6 +2778,26 @@
       },
     });
 
+    let clickOutside = {
+      bind: function(el, binding, vnode) {
+        binding.event = function(event) {
+          if (!(el == event.target || el.contains(event.target))) {
+            vnode.context[binding.expression](event);
+          }
+        };
+        document.body.addEventListener('click', binding.event);
+      },
+      unbind: function(el, binding) {
+        document.body.removeEventListener('click', binding.event);
+      },
+    };
+
+    var Plugins = {
+      install(Vue) {
+        Vue.directive('click-outside', clickOutside);
+      },
+    };
+
     /**
      * Checks if `value` is the
      * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
@@ -3492,20 +3512,7 @@
 
     Vue$1.use(plugin);
     Vue$1.use(VueWait);
-
-    Vue$1.directive('click-outside', {
-      bind: function(el, binding, vnode) {
-        binding.event = function(event) {
-          if (!(el == event.target || el.contains(event.target))) {
-            vnode.context[binding.expression](event);
-          }
-        };
-        document.body.addEventListener('click', binding.event);
-      },
-      unbind: function(el, binding) {
-        document.body.removeEventListener('click', binding.event);
-      }
-    });
+    Vue$1.use(Plugins);
 
     new Vue$1({
       el: '#frontpage-global-search',
