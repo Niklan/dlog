@@ -1,10 +1,13 @@
 version: "2"
 
+# This example assumes that you have this folder structure:
+# - project_name/
+# -- code/     - folder with code from repository, including this file.
+# -- database/ - folder for database.
 services:
   php:
     environment:
       PHP_FPM_CLEAR_ENV: "no"
-      PHP_XHPROF: 1
       #PHP_XDEBUG: 1
       #PHP_XDEBUG_DEFAULT_ENABLE: 1
     volumes:
