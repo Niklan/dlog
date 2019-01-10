@@ -1,143 +1,92 @@
-# Composer template for Drupal projects
+# Drupal Blog
 
-[![Build Status](https://travis-ci.org/drupal-composer/drupal-project.svg?branch=8.x)](https://travis-ci.org/drupal-composer/drupal-project)
+## Содержание
 
-This project template provides a starter kit for managing your site
-dependencies with [Composer](https://getcomposer.org/).
+ * [Описание](#description)
+ * [Часто задаваемые вопросы](#faq)
+ * [Установка блога из исходного кода](#install-copy)
 
-If you want to know how to use it as replacement for
-[Drush Make](https://github.com/drush-ops/drush/blob/8.x/docs/make.md) visit
-the [Documentation on drupal.org](https://www.drupal.org/node/2471553).
+## <a name="description"></a> Описание
 
-## Usage
+Данный репозиторий содержит исходный код блога построенного на Drupal 8 с использованием параграфов.
 
-First you need to [install composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx).
+Данный блог создавался полностью под запись и является результатом работы цикла видео про [разработку блога на Drupal 8 с нуля](https://www.youtube.com/watch?v=kIjepXxLjQM&list=PLu13hPnba_XCuinhx0D3H_O6Z6yHhOtp-).
 
-> Note: The instructions below refer to the [global composer installation](https://getcomposer.org/doc/00-intro.md#globally).
-You might need to replace `composer` with `php composer.phar` (or similar) 
-for your setup.
+## <a name="faq"></a> Часто задаваемые вопросы
 
-After that you can create the project:
+### Является ли данный код дистрибутивом?
 
-```
-composer create-project drupal-composer/drupal-project:8.x-dev some-dir --stability dev --no-interaction
-```
+Это **не дистрибутив**, но вы можете его использовать как дистрибутив и точку опоры.
 
-With `composer require ...` you can download new dependencies to your 
-installation.
+### Это готовый к использованию блог?
 
-```
-cd some-dir
-composer require drupal/devel:~1.0
-```
+Да, он завершен, но он заточен под конкретные примеры и задачи, которые были поставлены в ходе обучающих видео. Вы можете взять за основу для какого-то блога, но будьте готовы, что придется разобраться и доработать под себя. Особенно, если вы не смотрели видео.
 
-The `composer create-project` command passes ownership of all files to the 
-project that is created. You should create a new git repository, and commit 
-all files not excluded by the .gitignore file.
+Отвечая на впорос - нет, он **не готов к использованию** без доработки напильником. Это готовый блог в вакууме.
 
-## What does the template do?
+### <a name="future"></a> Будет ли проект развиваться дальше?
 
-When installing the given `composer.json` some tasks are taken care of:
+Проект **не будет развиваться**. Это результат обучающего материала. Он **может улучшаться** в будущем, в контексте того что было сделано и заложено в него. Например, обновление ядра и модулей, улучшение качества кода, фикс багов и ошибок, оптимизация, рефакторинг, но **новый функционал внедряться не будет**.
 
-* Drupal will be installed in the `web`-directory.
-* Autoloader is implemented to use the generated composer autoloader in `vendor/autoload.php`,
-  instead of the one provided by Drupal (`web/vendor/autoload.php`).
-* Modules (packages of type `drupal-module`) will be placed in `web/modules/contrib/`
-* Theme (packages of type `drupal-theme`) will be placed in `web/themes/contrib/`
-* Profiles (packages of type `drupal-profile`) will be placed in `web/profiles/contrib/`
-* Creates default writable versions of `settings.php` and `services.yml`.
-* Creates `web/sites/default/files`-directory.
-* Latest version of drush is installed locally for use at `vendor/bin/drush`.
-* Latest version of DrupalConsole is installed locally for use at `vendor/bin/drupal`.
-* Creates environment variables based on your .env file. See [.env.example](.env.example).
+Если вам по каким-то причинам интересно развитие, лучше всего форкнуть и развивать как отдельный проект.
 
-## Updating Drupal Core
+### У меня есть вопросы, где их задать?
 
-This project will attempt to keep all of your Drupal Core files up-to-date; the 
-project [drupal-composer/drupal-scaffold](https://github.com/drupal-composer/drupal-scaffold) 
-is used to ensure that your scaffold files are updated every time drupal/core is 
-updated. If you customize any of the "scaffolding" files (commonly .htaccess), 
-you may need to merge conflicts if any of your modified files are updated in a 
-new release of Drupal core.
+Лучше всего, задавать вопросы в оригинальном [репозитории на GitLab](https://gitlab.com/Niklan/dlog). Так как этот код подкреплен девятнадцатью видео, вопросы могут появляться под видео, в общем материале в блоге автора, на других ресурсах. Лучше всего, все вопросы собирать в централизованном месте где лежит код. В первую очередь, вы поможет другим, в дальнейшем, найти ответ на похожий вопрос, а возможно, уже там и найдете ответ на свой вопрос.
 
-Follow the steps below to update your core files.
+### Я хочу предложить новый функционал, где и как это сделать?
 
-1. Run `composer update drupal/core webflo/drupal-core-require-dev symfony/* --with-dependencies` to update Drupal Core and its dependencies.
-1. Run `git diff` to determine if any of the scaffolding files have changed. 
-   Review the files for any changes and restore any customizations to 
-  `.htaccess` or `robots.txt`.
-1. Commit everything all together in a single commit, so `web` will remain in
-   sync with the `core` when checking out branches or running `git bisect`.
-1. In the event that there are non-trivial conflicts in step 2, you may wish 
-   to perform these steps on a branch, and use `git merge` to combine the 
-   updated core files with your customized files. This facilitates the use 
-   of a [three-way merge tool such as kdiff3](http://www.gitshah.com/2010/12/how-to-setup-kdiff-as-diff-tool-for-git.html). This setup is not necessary if your changes are simple; 
-   keeping all of your modifications at the beginning or end of the file is a 
-   good strategy to keep merges easy.
+Если вы это читаете, значит видео уже закончились. Ответ - никак. Новый функционал внедряться не будет, так как он может сбить с толку тех кто в дальнейшем развернет проект и не увидит овтета на свой вопрос в видео. Для более подробного объяснения лучше посмотреть ответ на вопрос [Будет ли проект развиваться дальше?](#future).
 
-## Generate composer.json from existing project
+### Почему проект на GitLab, а не на GitHub?
 
-With using [the "Composer Generate" drush extension](https://www.drupal.org/project/composer_generate)
-you can now generate a basic `composer.json` file from an existing project. Note
-that the generated `composer.json` might differ from this project's file.
+Проекты с Drupal.org со временем [будут переведены на GitLab](https://about.gitlab.com/2018/08/16/drupal-moves-to-gitlab/), это отличный способ посмотреть как всё работает заранее (на момент записи видео, этого ещё не произошло), поучиться, подружиться. А также, в видео показано использование GitLab CI, и это круто!
 
+### Есть ли зеркало на GitHub?
 
-## FAQ
+Да, у проекта есть [зеркало на GitHub](https://github.com/Niklan/dlog), но с закрытыми ишьюсами и прочим функционалом. Просто для ознакомления, если вам так проще, и учета статистики контрибуции на гитхаюе. Все пулреквесты с гитхаба будут проигнорированы.
 
-### Should I commit the contrib modules I download?
+### Какая-то странная структура у проекта, что это?
 
-Composer recommends **no**. They provide [argumentation against but also 
-workrounds if a project decides to do it anyway](https://getcomposer.org/doc/faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md).
+Данный сайт построен на [Composer Drupal Project](https://github.com/drupal-composer/drupal-project). По нему много информации как на русском, так и на английском языке. In a nutshell: весь проект ведется через composer.
 
-### Should I commit the scaffolding files?
+## <a name="install-copy"></a> Установка блога из исходного кода
 
-The [drupal-scaffold](https://github.com/drupal-composer/drupal-scaffold) plugin can download the scaffold files (like
-index.php, update.php, …) to the web/ directory of your project. If you have not customized those files you could choose
-to not check them into your version control system (e.g. git). If that is the case for your project it might be
-convenient to automatically run the drupal-scaffold plugin after every install or update of your project. You can
-achieve that by registering `@composer drupal:scaffold` as post-install and post-update command in your composer.json:
+В данном разделе описано как развернуть точную копию проекта, но без данных. Это будте абсолютно чистый сайт на Drupal, со всем функционалом, созданным в процессе разработки.
 
-```json
-"scripts": {
-    "post-install-cmd": [
-        "@composer drupal:scaffold",
-        "..."
-    ],
-    "post-update-cmd": [
-        "@composer drupal:scaffold",
-        "..."
-    ]
-},
-```
-### How can I apply patches to downloaded modules?
+ 1. Зайдите в папку, где желаете сделать корень проекта.
+ 2. `git clone git@gitlab.com:Niklan/dlog.git .`
 
-If you need to apply patches (depending on the project being modified, a pull 
-request is often a better solution), you can do so with the 
-[composer-patches](https://github.com/cweagans/composer-patches) plugin.
+    2.1 Если вы намерены использовать проект с Docker4Drupal, то первым делом почитайте инструкцию ниже, прежде чем переходить к пункут 3.
 
-To add a patch to drupal module foobar insert the patches section in the extra 
-section of composer.json:
-```json
-"extra": {
-    "patches": {
-        "drupal/foobar": {
-            "Patch description": "URL or local path to patch"
-        }
-    }
-}
-```
-### How do I switch from packagist.drupal-composer.org to packages.drupal.org?
+ 3. `composer install`
+ 4. Откройте страницу сайта где вы развернули сайт. Следуйте инструкциям по установке.
+ 5. На этапе **Choose profile** (выбора профиля), необходимо выбрать **Configuration installer**.
+ 6. Следуйте установке как обычно, никаких настроек менять не нужно.
 
-Follow the instructions in the [documentation on drupal.org](https://www.drupal.org/docs/develop/using-composer/using-packagesdrupalorg).
+Если вы хотите разворачивать его с использованием **Docker4Drupal**, то сделайте следующие подготовительные действия, после шага 2:
 
-### How do I specify a PHP version ?
+ 1. Сделайте копию **docker-compose.override.example.yml** и переименуйте его в **docker-compose.override.yml**.
+ 2. Поправьте под свои требования. _Если это вызывает сложности, в таком случае, не создавайте файл, а правьте напрямую docker-compose.yml._
+ 3. Не забудьте поправить **.env** файл, для домена и названия проекта.
 
-Currently Drupal 8 supports PHP 5.5.9 as minimum version (see [Drupal 8 PHP requirements](https://www.drupal.org/docs/8/system-requirements/drupal-8-php-requirements)), however it's possible that a `composer update` will upgrade some package that will then require PHP 7+.
+### После установки у меня нет иконок
 
-To prevent this you can add this code to specify the PHP version you want to use in the `config` section of `composer.json`:
-```json
-"config": {
-    "sort-packages": true,
-    "platform": {"php": "5.5.9"}
-},
-```
+Иконки подгружаются от темы. Вам необходимо установить зависимости темы.
+
+ 1. `cd web/themes/custom/blogger`
+ 2. `npm install` или `yarn install`
+
+### После установки у меня нет меню
+
+Пункты меню в Drupal являются содержимым и не переносятся с конфигурацией. Вам нужно добавить необходимые пункты в "основную навигацию" (/admin/structure/menu/manage/main).
+
+### На главной, странице блога и прочих элементах отсутствуют картинки\видео.
+
+Эти картинки и видео берутся из Media по захардкоженым ID. Вам, либо нужно поменять эти ID, на нужные, под которыми находятся нужные файлы, либо удалить этот код.
+
+ * [Плагин](https://gitlab.com/Niklan/dlog/blob/master/web/modules/custom/dlog/src/Plugin/DlogHero/Path/DlogBlog.php) для страницы /blog.
+ * [blogger_preprocess_page__front()](https://gitlab.com/Niklan/dlog/blob/master/web/themes/custom/blogger/includes/structure.inc#L35) отвечает за медиа на главной - изображение + видео для рагиона с поиском, фотка автора + фон для региона с автором.
+ * [blogger_preprocess_page__contact()](https://gitlab.com/Niklan/dlog/blob/master/web/themes/custom/blogger/includes/structure.inc#L76) отвечает за медиа файлы на странице /contact.
+ * [blogger_preprocess_page__about()](https://gitlab.com/Niklan/dlog/blob/master/web/themes/custom/blogger/includes/structure.inc#L112) отвечает за медиа файлы на странице "Об авторе".
+
