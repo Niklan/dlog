@@ -5,3 +5,4 @@ language_modes:
 _core:
   default_config_hash: jmSW3ENZnSRhjXRZMBmyvPIAFxruNQ0sFvIEts1uP2o
 langcode: ru
+minified: true
